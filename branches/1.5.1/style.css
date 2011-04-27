@@ -240,9 +240,11 @@ h2 {
 	text-align: center;
 	font-size: 85%;
 }
+.wp-caption a, .gallery-icon a {
+	border: none !important;
+}
 .wp-caption img {
 	margin: 0;
-	border: none;
 	padding: 0;
 }
 .wp-caption p.wp-caption-text {
@@ -292,7 +294,7 @@ div#main h3 {
 div#main h3 a, div#main h4 a, div#main h5 a {
 	border: none;
 }
-div#main div.post a img, div#main.single a img, div#main.page a img { /* Linked images in text */
+div#main img {
 	border-width: 6px;
 	border-style: solid;
 }
@@ -338,7 +340,7 @@ div.dateline, div.tags, div.bookmarks {
 	line-height: normal;
 }
 div.dateline img.icon, div.bookmarks img.icon {
-	border: none;
+	border: none !important;
 	vertical-align: text-bottom;
 }
 div.bookmarks img.icon {

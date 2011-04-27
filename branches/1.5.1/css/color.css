@@ -101,7 +101,7 @@ div#main a:hover, div#main a:focus, div#main a:active {
 	border-color: yellow;
 	color: yellow;
 }
-div#main a img { /* Image links */
+div#main img {
 	border-color: white;
 }
 div#main a:hover img, div#main a:focus img, div#main a:active img {
