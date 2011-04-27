@@ -83,7 +83,7 @@ if ($post->comment_status == 'open'): /* If comments open, display comment form 
 			<input type="submit" id="submit" name="submit" value="Submit Comment" />
 			<input type="hidden" name="comment_post_ID" value="<?php echo($id) ?>" />
 			<div class="bookmarks">
-				<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/wifi.gif" width="16" height="16" alt="" />&nbsp;<?php comments_rss_link('Comments Feed'); echo("\n"); ?>
+				<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/wifi.gif" width="16" height="16" alt="" />&nbsp;<?php post_comments_feed_link('Comments Feed'); echo("\n"); ?>
 				<?php if ($post->ping_status == 'open') { /* If pings allowed, display trackback link ... */ ?>
 				&nbsp;&nbsp;<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/trackback.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php trackback_url() ?>" title="Trackback URL for <?php the_title() ?>">Trackback</a>
 				<!-- <?php trackback_rdf() ?> -->
