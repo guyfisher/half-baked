@@ -20,6 +20,9 @@ if (!is_paged()) { // If home page, display highlighted posts ...
 			<h3><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h3>
 			<div class="dateline"><?php the_time('j M Y') ?> | <?php the_category(' and ') ?></div>
 			<?php the_content('Read More &raquo;') ?>
+			<div class="link-pages"><!-- Pages Navigation -->
+				<?php wp_link_pages(); echo("\n"); ?>
+			</div>
 			<div class="tags"><?php the_tags() ?></div>
 			<div class="bookmarks">
 				<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>">Read</a>

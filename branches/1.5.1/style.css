@@ -298,6 +298,7 @@ div#main div.post a img, div#main.single a img, div#main.page a img { /* Linked 
 }
 
 div#prev-next {
+	clear: both; /* Clear below floated images */
 	width: 100%;
 	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
 	margin: 2em 0 1em;
@@ -345,6 +346,9 @@ div.bookmarks img.icon {
 }
 div.dateline {
 	margin: .5em 0 1em;
+}
+div.link-pages, div.tags, div.bookmarks {
+	clear: both; /* Clear below floated images */
 }
 div.tags {
 	margin: 1em 0 .5em;
@@ -397,13 +401,11 @@ body.document div#main.single h3, body.document div#main.page h3 {
 	text-align: left;
 }
 
-/*
-div.link-pages { line-height: normal; }
-div.link-pages a:hover { text-decoration: none; }
-*/
-
 /* Comments */
 
+body.document div#main div#comments {
+	clear: both; /* Clear below floated images */
+}
 body.document div#main div#comments h3 {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -440,6 +442,7 @@ ol#trackbacks li {
 }
 
 form#commentform { /* Comment form */
+	clear: both; /* Clear below floated images */
 	width: 100%;
 	margin: 3em 0 2em;
 }
