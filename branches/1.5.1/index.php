@@ -12,9 +12,9 @@
 			<h3><?php the_search_query(); ?></h3>
 			<p>The following posts published on <em><?php bloginfo('name') ?></em> match your search for <strong><?php the_search_query(); ?></strong>.</p>
 			<?php } else if (is_date()) {
-				if (is_day()) $half_baked_date = get_the_time('F j, Y');
-				if (is_month()) $half_baked_date = get_the_time('F Y');
-				if (is_year()) $half_baked_date = get_the_time('Y');
+				if (is_day()) $half_baked_date = get_the_date();
+				if (is_month()) $half_baked_date = get_the_date('F Y');
+				if (is_year()) $half_baked_date = get_the_date('Y');
 			?>
 			<h3><?php echo($half_baked_date) ?></h3>
 			<p>The following posts on <em><?php bloginfo('name') ?></em> were published <?php echo(is_day() ? 'on' : 'in'); ?> <strong><?php echo($half_baked_date) ?></strong>.</p>
@@ -37,7 +37,7 @@
 <?php while (have_posts()): the_post(); /* Generate Posts */ ?>
 	<div id="post-<?php the_ID() ?>" <?php post_class('excerpt') ?>>
 		<h4><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h4>
-		<div class="dateline"><?php the_time('j M Y') ?> | <?php the_category(' and '); ?></div>
+		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(' and '); ?></div>
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">

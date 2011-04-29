@@ -30,7 +30,7 @@ if ($comments): /* Start Comments Loop */
 ?>
 		<div id="comment-<?php comment_ID() ?>" class="excerpt<?php echo($comment_class) ?>">
 			<h4>Comment by <?php comment_author() ?></h4>
-			<div class="dateline"><?php comment_date('j M Y'); if ($comment->comment_author_url) comment_author_url_link('', ' | ', ' &raquo;'); ?></div>
+			<div class="dateline"><?php comment_date(); if ($comment->comment_author_url) comment_author_url_link('', ' | ', ' &raquo;'); ?></div>
 			<div class="avatar"><?php echo(get_avatar($comment, '32')); ?></div>
 			<?php comment_text() ?>
 			<div class="bookmarks">

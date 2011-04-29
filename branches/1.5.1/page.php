@@ -7,7 +7,7 @@
 <!-- Single Page Meta Information -->
 
 <div id="postmeta">
-	<div class="dateline">Updated on <?php the_modified_date('l, F j, Y'); edit_post_link('<img class="icon" src="' . get_bloginfo('template_directory') . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this page" />', '&nbsp;&nbsp;'); ?></div>
+	<div class="dateline">Updated on <?php the_modified_date(); edit_post_link('<img class="icon" src="' . get_bloginfo('template_directory') . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this page" />', '&nbsp;&nbsp;'); ?></div>
 </div>
 
 <!-- Main Content -->
