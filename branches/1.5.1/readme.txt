@@ -24,7 +24,7 @@ The Half-Baked theme is widget-aware, and you can highlight some of your sidebar
 
 The Half-Baked theme's default sidebar will automatically display the FlickrRSS, Netflix and Scrobbler plugins inside a Scriptaculous accordion.
 
-If you're using widgets, there's a built-in accordion widget that displays any widgets you choose. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Sidebar 1 widget list. Sidebar 1 contains the widgets that will appear in your main sidebar. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
+If you're using widgets, there's a built-in accordion widget that displays any widgets you choose. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Main Sidebar widget list. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
 
 Every widget that you add to the Accordion widget list must have a title. If a widget doesn't have a title, it won't have a heading when it's displayed, and your users won't be able to open it by clicking on its heading.
 
