@@ -77,8 +77,9 @@ div#foot p#about, div#foot p#about a { /* "About" image replacement */
 div#content { /* Index layout center rule */
 	background-image: url("../images/rule.gif");
 }
-body.document div#content {
+body.single div#content, body.page div#content { /* Override center rule */
 	border-color: #cc9;
+	background-image: none;
 }
 
 /* Headings */
@@ -162,25 +163,25 @@ div.bookmarks {
 	border-color: #700;
 }
 
-/* Single Posts */
+/* Single Posts & Pages */
 
-body.document h2 {
+body.single h2, body.page h2 {
 	border-color: #700;
 }
 
-body.document div#postmeta_slider { /* Postmeta Slider */
+div#postmeta div#postmeta_slider { /* Postmeta Slider */
 	background-color: #800;
 }
-body.document div#postmeta div#postmeta_slider dl {
+div#postmeta div#postmeta_slider dl {
 	border-color: #cc9;
 }
-body.document div#postmeta div#postmeta_slider dl dt {
+div#postmeta div#postmeta_slider dl dt {
 	color: #cc9;
 }
 
 /* Comments */
 
-div#comments div.excerpt div.avatar img { /* Gravatars */
+div#comments div.comment div.avatar img { /* Gravatars */
 	border-color: #700;
 }
 ol#trackbacks li { /* Trackbacks */

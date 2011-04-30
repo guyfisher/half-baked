@@ -27,7 +27,7 @@
 
 <!-- Main Content -->
 
-<div id="main" class="single">
+<div id="main" class="single-post">
 	<?php the_content(); ?>
 	<div class="link-pages"><!-- Pages Navigation -->
 		<?php wp_link_pages(); echo("\n"); ?>

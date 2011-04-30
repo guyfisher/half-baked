@@ -12,7 +12,7 @@
 
 <!-- Main Content -->
 
-<div id="main" class="page">
+<div id="main" class="page-post">
 	<?php the_content() ?>
 	<div class="link-pages">
 		<?php wp_link_pages(); echo("\n"); ?>

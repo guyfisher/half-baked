@@ -21,14 +21,12 @@ if ($comments): /* Start Comments Loop */
 	$half_baked_comments = half_baked_comments($comments); // Split comments and trackbacks
 	if (count($half_baked_comments['comments']) > 0) { /* Comments Subloop */
 		$comment_count = count($half_baked_comments['comments']);
-		$comment_odd = true; // Boolean variable for alternating comment class'
 ?>
 		<h3><?php echo($comment_count == 1 ? '1 Comment' : "$comment_count Comments") ?></h3>
 <?php
 		foreach ($half_baked_comments['comments'] as $comment): /* Generate Comments */
-			$comment_odd ? $comment_class = ' odd' : $comment_class = ''; // If odd-numbered comment, set alternating comment class
 ?>
-		<div id="comment-<?php comment_ID() ?>" class="excerpt<?php echo($comment_class) ?>">
+		<div id="comment-<?php comment_ID() ?>" <?php comment_class('excerpt') ?>>
 			<h4>Comment by <?php comment_author() ?></h4>
 			<div class="dateline"><?php comment_date(); if ($comment->comment_author_url) comment_author_url_link('', ' | ', ' &raquo;'); ?></div>
 			<div class="avatar"><?php echo(get_avatar($comment, '32')); ?></div>
@@ -39,7 +37,6 @@ if ($comments): /* Start Comments Loop */
 			</div>
 		</div>
 <?php
-		$comment_odd ? $comment_odd = false : $comment_odd = true; // Reset alternating comment class
 	endforeach; /* Stop Generating Comments */
 	}
 	if (count($half_baked_comments['trackbacks']) > 0) { /* Trackbacks Subloop */
