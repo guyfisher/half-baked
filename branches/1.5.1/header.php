@@ -42,9 +42,6 @@ echo "</title>\n";
 
 </head>
 
-<!--
-<body<?php echo((is_single() || is_page()) ? ' class="document"' : '') /* If single post or page, add class for document layout ... */ ?>>
--->
 <body <?php body_class(); ?>>
 
 <!-- Running Head -->
