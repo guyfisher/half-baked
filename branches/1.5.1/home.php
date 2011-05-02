@@ -36,10 +36,10 @@ if (!is_paged()) { // If home page, display highlighted posts ...
 	endif; /* End of Highlighted Posts Loop */
 }
 if (get_option('sticky_posts')) { // If sticky posts, exclude them ...
-	query_posts(array_merge($wp_query->query_vars, array('caller_get_posts' => '1', 'post__not_in' => get_option('sticky_posts'))));
+	query_posts(array_merge($wp_query->query_vars, array('post__not_in' => get_option('sticky_posts'))));
 }
 else if (!is_paged()) { // If home page, exclude most recent post ...
-	query_posts(array_merge($wp_query->query_vars, array('offset' => '1', 'showposts' => intval(get_option('posts_per_page'))-1)));
+	query_posts(array_merge($wp_query->query_vars, array('offset' => '1')));
 }
 if (have_posts()) : /* WordPress Loop */
 	echo "\t<h3>More Posts</h3>\n";

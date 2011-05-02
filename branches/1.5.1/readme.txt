@@ -2,7 +2,7 @@
 
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post
-Requires at least: 3.0
+Requires at least: 3.1
 Tested up to: 3.1
 Stable tag: trunk
  
@@ -16,7 +16,7 @@ The Half-Baked theme is widget-aware, and you can highlight some of your sidebar
 
 == Installation ==
 
-1. Make sure you're using WordPress version 3.0 or higher.
+1. Make sure you're using WordPress version 3.1 or higher.
 2. Put the half-baked theme folder in your WordPress themes directory.
 3. Activate the Half-Baked theme on your WordPress themes administration panel.
 
