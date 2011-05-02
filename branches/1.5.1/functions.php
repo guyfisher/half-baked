@@ -105,7 +105,7 @@ function half_baked_widgets_ini() {
 		get_search_form();
 		echo $after_widget;
 	}
-	$widget_ops = array('classname' => 'widget_search', 'description' => 'A search form for your blog');
+	$widget_ops = array('classname' => 'widget_search', 'description' => 'A search form for the Half-Baked theme');
 	wp_register_sidebar_widget('search', 'Search', 'widget_half_baked_search', $widget_ops);
 
 	function widget_half_baked_accordion($args) { // Accordion Widget
