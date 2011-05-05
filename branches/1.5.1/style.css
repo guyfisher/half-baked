@@ -317,6 +317,7 @@ div#prev-next div.next {
 /* Index Posts */
 
 div.highlight {
+	width: 100% !important;
 	margin-bottom: 1.5em;
 }
 div.highlight div.post, div.highlight div.message {
@@ -582,6 +583,7 @@ div#feeds li {
 /* Accordion Widget */
 
 div#half-baked-accordion {
+	width: 100% !important;
 	margin: 2em 0;
 }
 div#half-baked-accordion div.accordion_content {
