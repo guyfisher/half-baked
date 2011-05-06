@@ -42,6 +42,16 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.5.1 =
+
+* Fixed accordion widget resizing bug
+* Fixed missing page title on static front page
+* Fixed aligned images and image borders
+* Replaced hard-coded date and time formats with admin settings
+* Replaced deprecated template tags
+* Added body_class and comment_class template tags
+* Added descriptions for sidebars and built-in widgets
+
 = 1.5 =
 
 * Fixed broken navigation and duplicate posts in More Posts loop
@@ -68,7 +78,7 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 = 1.1 =
 
-* Removed built-in Links widget
+* Removed built-in links widget
 
 = 1.0 =
 
@@ -76,9 +86,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.5 =
+= 1.5.1 =
 
-This version fixes broken navigation and duplicate posts in the More Posts loop. Requires WordPress 2.8 or higher.
+This version fixes an accordion widget resizing bug in Internet Explorer. Requires WordPress 3.1 or higher.
 
 == Credits ==
 
