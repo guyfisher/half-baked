@@ -44,29 +44,29 @@ div#sidebar {
 	float: left; /* float sidebar left of main content */
 }
 
-/* Document Layout */
+/* Single Post & Page Layout */
 
-body.document div#content {
+body.single div#content, body.page div#content {
 	overflow: visible; /* Override extended box hack because it "breaks off" Nifty Corners inside floated elements moved by Mootools slider */
 	border-top: 2px solid;
 	border-bottom: 2px solid;
 }
-body.document div#content hr.clear { /* Replace extended box hack with clearing element kludge */
+div#content hr.clear { /* Replace extended box hack with clearing element kludge */
 	position: static !important;
 	clear: both;
 	visibility: hidden;
 }
 
-body.document h2 {
+body.single h2, body.page h2 {
 	float: none;
 	width: auto;
 	overflow: visible;
 }
 
-body.document div#main {
+body.single div#main, body.page div#main {
 	width: 63%;
 }
 
-body.document div#sidebar {
+body.single div#sidebar, body.page div#sidebar {
 	width: 33%;
 }
