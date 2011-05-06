@@ -2,84 +2,105 @@
 
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post
-Requires at least: 2.7
-Tested up to: 2.8
-
-A half-baked theme for your WordPress blog.
+Requires at least: 3.1
+Tested up to: 3.1
+Stable tag: trunk
+ 
+A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
 
 == Description ==
 
 The Half-Baked theme is a bold red, two-column theme that splits the index pages of your WordPress blog right down the middle. It has a fluid layout that's accented with rounded corners thanks to Alessandro Fulciniti's Nifty Corners Cube script and P.J. Onori's Sanscons icons.
 
-Half-Baked is widget-aware, and you can highlight some of your sidebar content inside of Bruce Williams' Scriptaculous Accordion. There's also a Scriptaculous toggle for your post meta-data, Gravatar support and a pair of rollover icons that link to your Contact and About pages.
+The Half-Baked theme is widget-aware, and you can highlight some of your sidebar content inside of Bruce Williams' Scriptaculous Accordion. There's also a Scriptaculous toggle for your post meta-data and a pair of rollover icons that link to your Contact and About pages.
 
 == Installation ==
 
-1. Make sure you're using WordPress version 2.7 or higher.
-2. Place the half-baked theme folder in your WordPress themes directory.
+1. Make sure you're using WordPress version 3.1 or higher.
+2. Put the half-baked theme folder in your WordPress themes directory.
 3. Activate the Half-Baked theme on your WordPress themes administration panel.
 
+= Accordion Widget =
+
+The Half-Baked theme's default sidebar will automatically display the FlickrRSS, Netflix and Scrobbler plugins inside a Scriptaculous accordion.
+
+If you're using widgets, there's a built-in accordion widget that displays any widgets you choose. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Main Sidebar widget list. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
+
+Every widget that you add to the Accordion widget list must have a title. If a widget doesn't have a title, it won't have a heading when it's displayed, and your users won't be able to open it by clicking on its heading.
+
 == Frequently Asked Questions ==
-
-= Does this theme work with earlier versions of WordPress? =
-
-No. The Half-Baked theme is compatible with WordPress version 2.7 or higher. It does not work with earlier versions of WordPress.
 
 = What plugins does this theme support? =
 
 The default sidebar is configured to work with the Fold Page List and Fold Category List plugins, the WordPress Related Posts plugin, and the FlickrRSS, Netflix and Scrobbler plugins.
 
-Half-Baked is also "widget-aware," with several custom widgets and support for the Flexi Pages widget and the Feeds widget.
-
-= How do I configure the Scriptaculous Accordion? =
-
-The default sidebar will automatically place the FlickrRSS, Netflix and Scrobbler plugins inside the accordion if they're activated.
-
-If you're using widgets, there's a built-in accordion widget that displays any widgets you choose. Go to the widgets administration panel and add the Half-Baked Accordion widget to "Sidebar 1." Sidebar 1 contains the widgets that will appear in your main sidebar. Next, add the widgets that you want to display inside the accordion to the "Accordion" sidebar.
-
-Every widget that you place in the Accordion sidebar must have a title. If a widget doesn't have a title, it won't have a heading when it's displayed, and your users won't be able to open and close it by clicking on its heading.
+The Half-Baked theme is also widget-aware, with several built-in widgets and support for the Flexi Pages widget and the Feeds widget.
 
 = How do the rollover icons at the top and bottom of each page work? =
 
-The rollover icons at the top and bottom of each page will automatically link to pages with "contact" and "about" slugs. If there are no pages with those slugs, the top icon will link to the blog's obfuscated administration e-mail address and the bottom icon will link to the WordPress home page.
+The rollover icons at the top and bottom of each page will automatically link to pages with "contact" and "about" slugs. If there are no pages with those slugs, the top icon will link to the blog's e-mail address and the bottom icon will link to the WordPress website.
 
 == Changelog ==
 
+= 1.5.1 =
+
+* Fixed accordion widget resizing bug
+* Fixed missing page title on static front page
+* Fixed aligned images and image borders
+* Replaced hard-coded date and time formats with admin settings
+* Replaced deprecated template tags
+* Added body_class and comment_class template tags
+* Added descriptions for sidebars and built-in widgets
+
 = 1.5 =
-* Fixed broken navigation and duplicate posts in More Posts list.
-* Fixed subcategories error on category indexes.
-* Fixed invalid search box mark-up.
-* Added styles for screen reader text and kbd tag.
+
+* Fixed broken navigation and duplicate posts in More Posts loop
+* Fixed subcategories error on category index pages
+* Fixed invalid search box markup
+* Added styles for screen reader text and kbd element
 
 = 1.4 =
-* Added support for sticky posts.
-* Updated template tags.
-* Cleaned up custom variables.
+
+* Added support for sticky posts
+* Updated template tags
+* Cleaned up custom variables
 
 = 1.3 =
-* Added tagline to theme header.
-* Added tags to post meta-data in indexes.
+
+* Added tagline to header template
+* Added tags to post meta-data on index pages
 
 = 1.2 =
-* Added support for Gravatars.
-* Added support for image alignment.
-* Updated plugin compatibility.
+
+* Added support for Gravatars
+* Added support for image alignment
+* Updated plugin compatibility
 
 = 1.1 =
-* Removed custom Links widget.
+
+* Removed built-in links widget
 
 = 1.0 =
-* Initial release.
+
+* Initial release
+
+== Upgrade Notice ==
+
+= 1.5.1 =
+
+This version fixes an accordion widget resizing bug in Internet Explorer. Requires WordPress 3.1 or higher.
 
 == Credits ==
 
-The Half-Baked theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License. For a summary of your rights under the GNU General Public License, please visit http://creativecommons.org/licenses/GPL/2.0/.
+The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License.
 
-Sanscons icons by P.J. Onori
-http://somerandomdude.net/srd-projects/sanscons/
+http://creativecommons.org/licenses/GPL/2.0/
 
-Nifty Corners Cube script by Alessandro Fulciniti
+Sanscons by P.J. Onori
+http://somerandomdude.com/projects/sanscons/
+
+Nifty Corners Cube by Alessandro Fulciniti
 http://html.it/articoli/niftycube/
 
-Scriptaculous Accordion script by Bruce Williams
-http://codefluency.com/2006/7/16/scriptaculous-accordian/
+Scriptaculous Accordion by Bruce Williams
+http://codefluency.com/

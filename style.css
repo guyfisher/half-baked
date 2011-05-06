@@ -1,26 +1,25 @@
 /*
 
 Theme Name: Half-Baked
-Description: A half-baked theme for your WordPress blog.
 Theme URI: http://guyfisher.com/builder/half-baked/
+Description: A half-baked theme for your WordPress blog.
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post
-Author: Guy M. Fisher
+Author: Guy Fisher
 Author URI: http://guyfisher.com/
-Version: 1.5
+License: GNU General Public License
+License URI: http://gnu.org/licenses/gpl-2.0.html
+Version: 1.5.1
 
-Copyright (c) 2008 by Guy M. Fisher <guyfisher@yahoo.com>
+Copyright © 2007 Guy M. Fisher
 
-Sanscons icons created by P.J. Onori (http://somerandomdude.net/srd-projects/sanscons/)
-Nifty Corners Cube script created by Alessandro Fulciniti (http://html.it/articoli/niftycube/)
-Scriptaculous Accordion script created by Bruce Williams (http://codefluency.com/2006/7/16/scriptaculous-accordian/)
+Sanscons icons created by P.J. Onori
+http://somerandomdude.com/projects/sanscons/
 
-The Half-Baked theme is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+Nifty Corners Cube script created by Alessandro Fulciniti
+http://html.it/articoli/niftycube/
 
-This theme is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this theme; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA, or view the GNU General Public License at http://www.gnu.org/copyleft/gpl.html
-
-For a summary of your rights under the GNU General Public License, please visit http://creativecommons.org/licenses/GPL/2.0/
+Scriptaculous Accordion script created by Bruce Williams
+http://codefluency.com/
 
 */
 
@@ -199,9 +198,6 @@ div#content { /* Index layout center rule */
 	background-position: center top;
 	background-repeat: repeat-y;
 }
-body.document div#content { /* Override center rule */
-	background-image: none;
-}
 
 /* Headings */
 
@@ -233,7 +229,7 @@ h2 {
 	float: right;
 	margin: 0 0 6px 18px;
 }
-alignnone {
+.alignnone {
 	float: none !important;
 }
 
@@ -241,9 +237,11 @@ alignnone {
 	text-align: center;
 	font-size: 85%;
 }
+.wp-caption a, .gallery-icon a {
+	border: none !important;
+}
 .wp-caption img {
 	margin: 0;
-	border: none;
 	padding: 0;
 }
 .wp-caption p.wp-caption-text {
@@ -293,12 +291,13 @@ div#main h3 {
 div#main h3 a, div#main h4 a, div#main h5 a {
 	border: none;
 }
-div#main div.post a img, div#main.single a img, div#main.page a img { /* Linked images in text */
+div#main img {
 	border-width: 6px;
 	border-style: solid;
 }
 
 div#prev-next {
+	clear: both; /* Clear below floated images */
 	width: 100%;
 	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
 	margin: 2em 0 1em;
@@ -318,6 +317,7 @@ div#prev-next div.next {
 /* Index Posts */
 
 div.highlight {
+	width: 100% !important;
 	margin-bottom: 1.5em;
 }
 div.highlight div.post, div.highlight div.message {
@@ -338,7 +338,7 @@ div.dateline, div.tags, div.bookmarks {
 	line-height: normal;
 }
 div.dateline img.icon, div.bookmarks img.icon {
-	border: none;
+	border: none !important;
 	vertical-align: text-bottom;
 }
 div.bookmarks img.icon {
@@ -346,6 +346,9 @@ div.bookmarks img.icon {
 }
 div.dateline {
 	margin: .5em 0 1em;
+}
+div.link-pages, div.tags, div.bookmarks {
+	clear: both; /* Clear below floated images */
 }
 div.tags {
 	margin: 1em 0 .5em;
@@ -357,76 +360,74 @@ div.bookmarks {
 	padding-top: .5em;
 }
 
-/* Single Posts */
+/* Single Posts & Pages */
 
-body.document h2 {
+body.single h2, body.page h2 {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	padding-bottom: .2em;
 	text-align: left;
 }
 
-body.document div#postmeta { /* Postmeta slider */
+div#postmeta { /* Postmeta slider */
 	margin-bottom: 2em;
 	text-align: right;
 }
-body.document div#postmeta div#postmeta_slider div.scriptaculous {
+div#postmeta div#postmeta_slider div.scriptaculous {
 	padding: 1em;
 }
-body.document div#postmeta div#postmeta_slider dl {
+div#postmeta div#postmeta_slider dl {
 	margin: 0;
 	border-right-width: 1px;
 	border-right-style: solid;
 	padding-right: .5em;
 }
-body.document div#postmeta div#postmeta_slider dt {
+div#postmeta div#postmeta_slider dt {
 	margin: .5em 0 .2em;
 	font-weight: bold;
 }
-body.document div#postmeta div#postmeta_slider dt:first-child {
+div#postmeta div#postmeta_slider dt:first-child {
 	margin-top: 0;
 }
 
-body.document div#main > *:first-child {
+body.single div#main > *:first-child, body.page div#main > *:first-child {
 	margin-top: 0 !important;
 	padding-top: 0 !important;
 }
-body.document div#main.single h3, body.document div#main.page h3 {
+body.single div#main h3, body.page div#main h3 {
 	margin-top: 1em;
 	border-bottom: none;
 	padding-bottom: 0;
 	text-align: left;
 }
 
-/*
-div.link-pages { line-height: normal; }
-div.link-pages a:hover { text-decoration: none; }
-*/
-
 /* Comments */
 
-body.document div#main div#comments h3 {
+div#comments {
+	clear: both; /* Clear below floated images */
+}
+div#main div#comments h3 {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	padding-bottom: 2px;
 	text-align: right;
 }
 
-div#comments div.excerpt { /* Gravatars */
+div.comment { /* Gravatars */
  	position: relative;
 }
-div#comments div.excerpt h4, div#comments div.excerpt div.dateline {
+div.comment h4, div.comment div.dateline {
 	margin-left: 46px;
 }
-div#comments div.excerpt div.avatar {
+div.comment div.avatar {
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-div#comments div.excerpt div.avatar img {
+div#comments div.comment div.avatar img {
 	border-width: 3px;
 	border-style: solid;
- }
+}
 
 ol#trackbacks { /* Trackbacks */
 	list-style-type: none;
@@ -441,6 +442,7 @@ ol#trackbacks li {
 }
 
 form#commentform { /* Comment form */
+	clear: both; /* Clear below floated images */
 	width: 100%;
 	margin: 3em 0 2em;
 }
@@ -505,7 +507,7 @@ div#sidebar {
 	margin-top: 2em;
 	text-align: right;
 }
-body.document div#sidebar {
+body.single div#sidebar, body.page div#sidebar {
 	margin-top: 0;
 }
 div#sidebar > h2 + div.widget, div#sidebar > h2 + div.widget h3, div#sidebar > h2 + div.widget form {
@@ -581,6 +583,7 @@ div#feeds li {
 /* Accordion Widget */
 
 div#half-baked-accordion {
+	width: 100% !important;
 	margin: 2em 0;
 }
 div#half-baked-accordion div.accordion_content {
