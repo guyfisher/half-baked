@@ -20,7 +20,7 @@ echo "</title>\n";
 	<meta name="theme" content="Half-Baked" />
 	
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/scripts/niftycorners/niftyCorners.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo(get_template_directory_uri()) ?>/scripts/niftycorners/niftyCorners.css" />
 
 	<link rel="bookmark" href="#content" title="Skip to Content" />
 	<link rel="bookmark" href="#sidebar" title="Skip to Sidebar" />
@@ -36,9 +36,9 @@ echo "</title>\n";
 	wp_head(); /* Plugin API Hook */
 	?>
 
-	<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/scripts/accordion.js"></script><!-- Scriptaculous Accordion (http://codefluency.com/2006/7/16/scriptaculous-accordian/) -->
-	<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/scripts/niftycorners/niftycube.js"></script><!-- Nifty Corners (http://html.it/articoli/niftycube/) -->
-	<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/scripts/half-baked.js"></script>
+	<script type="text/javascript" src="<?php echo(get_template_directory_uri()) ?>/scripts/accordion.js"></script><!-- Scriptaculous Accordion (http://codefluency.com/2006/7/16/scriptaculous-accordian/) -->
+	<script type="text/javascript" src="<?php echo(get_template_directory_uri()) ?>/scripts/niftycorners/niftycube.js"></script><!-- Nifty Corners (http://html.it/articoli/niftycube/) -->
+	<script type="text/javascript" src="<?php echo(get_template_directory_uri()) ?>/scripts/half-baked.js"></script>
 
 </head>
 
@@ -51,7 +51,7 @@ echo "</title>\n";
 	if (is_home() && !is_paged()) { // If home page, omit redundant link ...
 		echo "<h1 class=\"homepage\">" . get_bloginfo('name') . "</h1>\n";
 	}
-	else echo "<h1><a href=\"" . get_bloginfo('url') . '/">' . get_bloginfo('name') . "</a></h1>\n"; // Else, add link to home page ...
+	else echo "<h1><a href=\"" . home_url() . '/">' . get_bloginfo('name') . "</a></h1>\n"; // Else, add link to home page ...)
 	?>
 	<p id="tagline"><?php bloginfo('description') ?></p>
 	<?php half_baked_contact() ?>

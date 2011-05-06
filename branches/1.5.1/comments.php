@@ -32,8 +32,8 @@ if ($comments): /* Start Comments Loop */
 			<div class="avatar"><?php echo(get_avatar($comment, '32')); ?></div>
 			<?php comment_text() ?>
 			<div class="bookmarks">
-				<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID() ?>" title="Permanent link to this comment">Bookmark</a>
-				&nbsp;&nbsp;<?php edit_comment_link('Edit', '<img class="icon" src="' . get_bloginfo('template_directory') . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;'); echo("\n"); ?>
+				<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID() ?>" title="Permanent link to this comment">Bookmark</a>
+				&nbsp;&nbsp;<?php edit_comment_link('Edit', '<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;'); echo("\n"); ?>
 			</div>
 		</div>
 <?php
@@ -80,9 +80,9 @@ if ($post->comment_status == 'open'): /* If comments open, display comment form 
 			<input type="submit" id="submit" name="submit" value="Submit Comment" />
 			<input type="hidden" name="comment_post_ID" value="<?php echo($id) ?>" />
 			<div class="bookmarks">
-				<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/wifi.gif" width="16" height="16" alt="" />&nbsp;<?php post_comments_feed_link('Comments Feed'); echo("\n"); ?>
+				<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/wifi.gif" width="16" height="16" alt="" />&nbsp;<?php post_comments_feed_link('Comments Feed'); echo("\n"); ?>
 				<?php if ($post->ping_status == 'open') { /* If pings allowed, display trackback link ... */ ?>
-				&nbsp;&nbsp;<img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/trackback.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php trackback_url() ?>" title="Trackback URL for <?php the_title() ?>">Trackback</a>
+				&nbsp;&nbsp;<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/trackback.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php trackback_url() ?>" title="Trackback URL for <?php the_title() ?>">Trackback</a>
 				<!-- <?php trackback_rdf() ?> -->
 				<?php } ?>
 			</div>

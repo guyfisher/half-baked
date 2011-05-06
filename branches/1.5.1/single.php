@@ -7,7 +7,7 @@
 <!-- Single Post Meta Information -->
 
 <div id="postmeta">
-	<div class="dateline">Published on <?php echo(get_the_date()) ?>&nbsp;&nbsp;<?php edit_post_link('<img class="icon" src="' . get_bloginfo('template_directory') . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this post" />', '', '&nbsp;|&nbsp;');?><a id="postmeta_toggle" href="#postmeta_slider" title="More information about this post"><img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/arrow2_s.gif" width="16" height="16" alt="" /></a></div>
+	<div class="dateline">Published on <?php echo(get_the_date()) ?>&nbsp;&nbsp;<?php edit_post_link('<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this post" />', '', '&nbsp;|&nbsp;');?><a id="postmeta_toggle" href="#postmeta_slider" title="More information about this post"><img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/arrow2_s.gif" width="16" height="16" alt="" /></a></div>
 	<div id="postmeta_slider">
 		<div class="scriptaculous">
 			<dl>
