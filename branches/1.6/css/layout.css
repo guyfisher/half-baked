@@ -1,0 +1,72 @@
+body {
+	margin: 40px 10%;
+	border: none;
+	padding: 0;
+}
+
+div#head, div#foot {
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+
+div#content {
+	width: 100%;
+	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
+	margin: 20px 0;
+	border: none;
+	padding: 10px 0;
+}
+
+div#foot {
+	clear: both; /* Clear footer below floated content */
+}
+
+/* 50-50 Index Layout */
+
+h2, div#main, div#sidebar {
+	width: 48%;
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+
+h2 {
+	float: left; /* Float headline left of main content */
+	overflow: hidden;
+}
+
+div#main {
+	float: right; /* Float main content right of headline */
+}
+
+div#sidebar {
+	float: left; /* float sidebar left of main content */
+}
+
+/* Single Post & Page Layout */
+
+body.single div#content, body.page div#content {
+	overflow: visible; /* Override extended box hack because it "breaks off" Nifty Corners inside floated elements moved by Mootools slider */
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+}
+div#content hr.clear { /* Replace extended box hack with clearing element kludge */
+	position: static !important;
+	clear: both;
+	visibility: hidden;
+}
+
+body.single h2, body.page h2 {
+	float: none;
+	width: auto;
+	overflow: visible;
+}
+
+body.single div#main, body.page div#main {
+	width: 63%;
+}
+
+body.single div#sidebar, body.page div#sidebar {
+	width: 33%;
+}
