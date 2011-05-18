@@ -1,5 +1,7 @@
 <?php /* Custom PHP Functions for Half-Baked WordPress Theme */
 
+if (!isset($content_width)) $content_width = 640; // Define global content width.
+
 function half_baked_contact() {
 
 	/* Echos a link to any page with a slug matching "contact" ... or a link to the administrator's e-mail address. */
@@ -74,12 +76,16 @@ function half_baked_comments($comments) {
 
 /* Hooks & Filters */
 
-function half_baked_search_form($form) {
+function half_baked_embed_defaults($embed_sizes) { /* Filter default embedded media width on home page. */
+	if (is_home()) {
+		$embed_sizes['width'] = 450;
+	}
+	return $embed_sizes;
+}
+add_filter('embed_defaults', 'half_baked_embed_defaults');
 
-	/* Filters invalid role attribute from default search form. */
-
+function half_baked_search_form($form) { /* Filter invalid role attribute from default search form. */
 	return str_replace('role="search" ', '', $form);
-
 }
 add_filter('get_search_form', 'half_baked_search_form');
 
