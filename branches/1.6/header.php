@@ -26,8 +26,6 @@ echo "</title>\n";
 	<link rel="bookmark" href="#sidebar" title="Skip to Sidebar" />
 	<link rel="bookmark" href="#search" title="Skip to Search Form" />
 
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" />
-	<link rel="alternate" type="application/atom+xml" href="<?php bloginfo('atom_url') ?>" title="Atom Feed" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	
 	<?php

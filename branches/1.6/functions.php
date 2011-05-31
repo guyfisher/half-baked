@@ -2,6 +2,8 @@
 
 if (!isset($content_width)) $content_width = 640; // Define global content width.
 
+add_theme_support( 'automatic-feed-links' ); // Enable automatic RSS feed links.
+
 function half_baked_contact() {
 
 	/* Echos a link to any page with a slug matching "contact" ... or a link to the administrator's e-mail address. */
