@@ -184,9 +184,19 @@ div#postmeta div#postmeta_slider dl dt {
 div#comments div.comment div.avatar img { /* Gravatars */
 	border-color: #700;
 }
+
+div.bypostauthor {
+	background-color: #700;
+}
+div#comments div.bypostauthor div.avatar img,
+div.bypostauthor .bookmarks {
+	border-color: #500;
+}
+
 ol#trackbacks li { /* Trackbacks */
 	background-image: url("../images/sanscons/trackback.gif");
 }
+
 form#commentform fieldset.textarea { /* Comment form */
 	border-color: red;
 	background-color: #c00;

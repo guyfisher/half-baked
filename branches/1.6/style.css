@@ -235,7 +235,6 @@ h2 {
 
 .wp-caption {
 	text-align: center;
-	font-size: 85%;
 }
 .wp-caption a, .gallery-icon a {
 	border: none !important;
@@ -244,9 +243,14 @@ h2 {
 	margin: 0;
 	padding: 0;
 }
-.wp-caption p.wp-caption-text {
+.wp-caption-text {
 	margin: .5em auto 0;
+	font-size: 85%;
 	font-style: italic;
+}
+.gallery-caption {
+	padding: 0 1em;
+	font-style: normal;
 }
 
 /* Main Content */
@@ -325,7 +329,7 @@ div.highlight {
 	width: 100% !important;
 	margin-bottom: 1.5em;
 }
-div.highlight div.post, div.highlight div.message {
+div.highlight div.post, div.sticky, div.message {
 	margin: 0;
 	padding: 1em;
 }
@@ -432,6 +436,14 @@ div.comment div.avatar {
 div#comments div.comment div.avatar img {
 	border-width: 3px;
 	border-style: solid;
+}
+
+div.bypostauthor {
+	padding: .5em;
+}
+div.bypostauthor div.avatar {
+	left: .5em;
+	top: .5em;
 }
 
 ol#trackbacks { /* Trackbacks */
