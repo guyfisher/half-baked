@@ -197,19 +197,30 @@ ol#trackbacks li { /* Trackbacks */
 	background-image: url("../images/sanscons/trackback.gif");
 }
 
-form#commentform fieldset.textarea { /* Comment form */
+div#respond { /* Comment form container */
+	background-color: #700;
+	color: #cc9;
+}
+div#respond span.required {
+	color: #fc0;
+}
+
+fieldset.comment-form-fields p {
+	background-color: #600;
+}
+
+p.comment-form-comment {
 	border-color: red;
 	background-color: #c00;
 }
-form#commentform fieldset.textarea textarea {
+p.comment-form-comment textarea {
+	background-color: transparent;
 	color: white;
 }
-form#commentform input#submit {
+
+div#respond p.form-submit input {
 	border-color: #500;
 	background-color: #600;
-}
-form#commentform div.bookmarks {
-	border-color: #cc9;
 }
 
 /* Sidebar */

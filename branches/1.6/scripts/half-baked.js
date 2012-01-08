@@ -15,6 +15,6 @@ NiftyLoad = function() {
 
 	/* Nifty Corners */
 
-	Nifty("div.highlight,div#half-baked-accordion,form#commentform");
+	Nifty("div.highlight,div#half-baked-accordion");
 
 }

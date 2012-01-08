@@ -91,6 +91,23 @@ function half_baked_search_form($form) { /* Filter invalid role attribute from d
 }
 add_filter('get_search_form', 'half_baked_search_form');
 
+function half_baked_comment_form_defaults( $defaults ) { /* Filter comment form fields and strings. */
+	$defaults['comment_notes_before'] = str_replace( array( '<p class="comment-notes">', '</p>' ), array( '<p class="comment-notes"><em>', '</em></p>' ), $defaults['comment_notes_before'] );
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+}
+add_filter( 'comment_form_defaults', 'half_baked_comment_form_defaults' );
+
+function half_baked_comment_form_before_fields() { /* Insert fieldset opening tag before comment form fields. */
+	echo '<fieldset class="comment-form-fields">';
+}
+add_action( 'comment_form_before_fields', 'half_baked_comment_form_before_fields' );
+
+function half_baked_comment_form_after_fields() { /* Insert fieldset closing tag after comment form fields. */
+	echo '</fieldset>';
+}
+add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
+
 /* Sidebar Widgets */
 
 if (function_exists('register_sidebar')) {

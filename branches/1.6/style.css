@@ -38,10 +38,10 @@ body {
 
 /* "Hidden" Elements (http://www.webaim.org/techniques/articles/hiddentext) */
 
-hr,
+hr, .screen-reader-text,
+p.comment-form-comment label,
 div#sidebar h2,
-div#pages h3, div.flexipages_widget h3, div#search h3, div#feeds h3, div#meta h3,
-.screen-reader-text {
+div#pages h3, div.flexipages_widget h3, div#search h3, div#feeds h3, div#meta h3 {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -458,45 +458,51 @@ ol#trackbacks li {
 	background-repeat: no-repeat;
 }
 
-form#commentform { /* Comment form */
+div#respond { /* Comment form container */
 	clear: both; /* Clear below floated images */
-	width: 100%;
 	margin: 3em 0 2em;
-}
-form#commentform div.box {
-	margin: 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 	padding: 1em;
 }
-form#commentform h3 {
+div#respond h3 {
 	margin-top: 0 !important;
 }
-form#commentform fieldset.input div {
-	margin-top: .25em;
-}
-form#commentform fieldset.input div input {
-	width: 80%;
-}
-form#commentform fieldset.input p {
+
+fieldset.comment-form-fields p {
+	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
+	width: 100%;
 	margin: .5em 0 0;
 }
-form#commentform fieldset.textarea {
-	margin: 1em 0 .5em;
+fieldset.comment-form-fields p label,
+fieldset.comment-form-fields p span {
+	position: relative;
+	left: .5em;
+	top: .25em;
+}
+fieldset.comment-form-fields p input {
+	float: right;
+	width: 75%;
+	margin-left: 1em;
+}
+
+p.comment-form-comment {
+	width: auto;
 	border-width: 2px;
 	border-style: inset;
 }
-form#commentform fieldset.textarea div {
-	width: 100%;
-}
-form#commentform fieldset.textarea div textarea {
+p.comment-form-comment textarea {
 	display: block;
+	resize: vertical;
 	width: 100%;
 	margin: 0;
 	border: none;
 	padding: 0;
-	background-color: transparent !important;
 }
-form#commentform div.bookmarks {
-	margin-top: 2em;
+
+div#respond p.form-submit input {
+	padding: .5em;
 }
 
 /* Archives (archives.php) */
