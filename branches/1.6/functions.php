@@ -172,11 +172,6 @@ function half_baked_embed_defaults($embed_sizes) { /* Filter default embedded me
 }
 add_filter('embed_defaults', 'half_baked_embed_defaults');
 
-function half_baked_search_form($form) { /* Filter invalid role attribute from default search form. */
-	return str_replace('role="search" ', '', $form);
-}
-add_filter('get_search_form', 'half_baked_search_form');
-
 /* Sidebar Widgets */
 
 if (function_exists('register_sidebar')) {
