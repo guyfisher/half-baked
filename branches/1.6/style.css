@@ -3,7 +3,7 @@
 Theme Name: Half-Baked
 Theme URI: http://guyfisher.com/builder/half-baked/
 Description: A half-baked theme for your WordPress blog.
-Tags: red, two-columns, left-sidebar, flexible-width, sticky-post
+Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
 Author: Guy Fisher
 Author URI: http://guyfisher.com/
 License: GNU General Public License
@@ -271,7 +271,7 @@ div#main div.dateline a,
 div#main div.tags a,
 div#main div.bookmarks a,
 ol#trackbacks li a,
-div#prev-next a { /* Override text links */
+divprev-next a { /* Override text links */
 	border: none !important;
 }
 div.highlight a.more-link:hover, div.highlight a.more-link:focus, div.highlight a.more-link:active,
@@ -280,7 +280,7 @@ div#main div.dateline a:hover, div#main div.dateline a:focus, div#main div.datel
 div#main div.tags a:hover, div#main div.tags a:focus, div#main div.tags a:active,
 div#main div.bookmarks a:hover, div#main div.bookmarks a:focus, div#main div.bookmarks a:active,
 ol#trackbacks li a:hover, ol#trackbacks li a:focus, ol#trackbacks li a:active,
-div#prev-next a:hover, div#prev-next a:focus, div#prev-next a:active {
+div.prev-next a:hover, div.prev-next a:focus, div.prev-next a:active {
 	text-decoration: underline !important;
 }
 
@@ -305,19 +305,19 @@ div#main embed, div#main iframe, div#main object {
 	max-width: 100%;
 }
 
-div#prev-next {
+div.prev-next {
 	clear: both; /* Clear below floated images */
 	width: 100%;
 	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
 	margin: 2em 0 1em;
 	line-height: normal;
 }
-div#prev-next div.prev {
+div.prev-next div.prev {
 	float: left;
 	width: 48%;
 	text-align: left;
 }
-div#prev-next div.next {
+div.prev-next div.next {
 	float: right;
 	width: 48%;
 	text-align: right;
@@ -410,83 +410,108 @@ body.single div#main h3, body.page div#main h3 {
 	text-align: left;
 }
 
-/* Comments */
+/* comments */
 
-div#comments {
-	clear: both; /* Clear below floated images */
-}
-div#main div#comments h3 {
+div#main h3#comments {
+	clear: both;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	padding-bottom: 2px;
 	text-align: right;
 }
-
-div.comment { /* Gravatars */
- 	position: relative;
+ol.commentlist,
+ol.children {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
 }
-div.comment h4, div.comment div.dateline {
+ol.children {
 	margin-left: 46px;
 }
-div.comment div.avatar {
+li.comment,
+li.pingback,
+li.trackback {
+	position: relative;
+	margin: 2em 0;
+}
+li.comment h4 {
+	margin: 0;
+	font-size: 110%;
+}
+li.comment h4,
+div.comment-author {
+	margin-left: 46px;
+}
+div.avatar {
 	position: absolute;
-	left: 0;
 	top: 0;
+	left: 0;
 }
-div#comments div.comment div.avatar img {
-	border-width: 3px;
-	border-style: solid;
+div.avatar img {
+	border-width: 3px !important;
 }
-
-div.bypostauthor {
+li.bypostauthor {
 	padding: .5em;
 }
-div.bypostauthor div.avatar {
+li.bypostauthor div.avatar {
 	left: .5em;
 	top: .5em;
 }
 
-ol#trackbacks { /* Trackbacks */
-	list-style-type: none;
-	margin: 1em 0;
-	padding: 0;
+/* pingbacks */
+
+li.pingback,
+li.trackback {
+	padding: 10px;
 }
-ol#trackbacks li {
-	margin-left: 0;
-	padding-left: 20px;
-	background-position: 0 1px;
-	background-repeat: no-repeat;
+li.pingback img.icon,
+li.trackback img.icon {
+	border: none !important;
+	vertical-align: text-bottom;
 }
 
-div#respond { /* Comment form container */
-	clear: both; /* Clear below floated images */
+/* comment form */
+
+div#respond {
+	clear: both;
 	margin: 3em 0 2em;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	padding: 1em;
 }
-div#respond h3 {
+h3#reply-title {
+	position: relative;
 	margin-top: 0 !important;
 }
-
+h3#reply-title small {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	font-size: small;
+	font-family: tahoma, geneva, "bitstream vera sans", lucida, verdana, sans-serif;
+}
+h3#reply-title a#cancel-comment-reply-link:hover,
+h3#reply-title a#cancel-comment-reply-link:focus,
+h3#reply-title a#cancel-comment-reply-link:active {
+	text-decoration: underline;
+}
 fieldset.comment-form-fields p {
-	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
+	overflow: hidden;
 	width: 100%;
 	margin: .5em 0 0;
 }
 fieldset.comment-form-fields p label,
 fieldset.comment-form-fields p span {
 	position: relative;
-	left: .5em;
 	top: .25em;
+	left: .5em;
 }
 fieldset.comment-form-fields p input {
 	float: right;
 	width: 75%;
 	margin-left: 1em;
 }
-
 p.comment-form-comment {
 	width: auto;
 	border-width: 2px;
@@ -500,7 +525,6 @@ p.comment-form-comment textarea {
 	border: none;
 	padding: 0;
 }
-
 div#respond p.form-submit input {
 	padding: .5em;
 }

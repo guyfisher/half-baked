@@ -1,11 +1,11 @@
 === Half-Baked ===
 
 Contributors: guyfisher
-Tags: red, two-columns, left-sidebar, flexible-width, sticky-post
+Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
 Requires at least: 3.1
-Tested up to: 3.1
+Tested up to: 3.3
 Stable tag: trunk
- 
+
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
 
 == Description ==

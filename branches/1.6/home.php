@@ -57,7 +57,7 @@ if (have_posts()) : /* WordPress Loop */
 		</div>
 	</div>
 <?php endwhile; /* Stop Generating Posts */ ?>
-	<div id="prev-next"><!-- Posts Navigation -->
+	<div class="prev-next"><!-- Posts Navigation -->
 		<div class="prev"><?php previous_posts_link('&laquo; Previous Page') ?></div>
 		<div class="next"><?php next_posts_link('Even More Posts &raquo;') ?></div>
 	</div>

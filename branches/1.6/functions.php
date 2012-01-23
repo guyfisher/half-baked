@@ -1,4 +1,15 @@
-<?php /* Custom PHP Functions for Half-Baked WordPress Theme */
+<?php
+/**
+ * Theme Functions
+ *
+ * Custom functions and variable definitions.
+ *
+ * @package Half-Baked
+ * @subpackage Functions
+ * @author Guy Fisher
+ * @copyright Copyright © 2007 Guy M. Fisher
+ * @license http://gnu.org/licenses/gpl-2.0.html
+ */
 
 if (!isset($content_width)) $content_width = 640; // Define global content width.
 
@@ -56,25 +67,100 @@ function half_baked_subcategories() {
 
 }
 
-function half_baked_comments($comments) {
+/* comments */
 
-	/* Splits the comments for a post into comments and trackbacks and returns a multidimensional array. Inspired by Binary Moon (http://www.binarymoon.co.uk/2006/04/wordpress-tips-and-tricks/). */
-
-	// $comments = Array of post comments
-
-	if ($comments) {
-		$split_comments = array('comments' => array(), 'trackbacks' => array());
-		foreach ($comments as $comment) {
-			if ($comment->comment_type == 'trackback' || $comment->comment_type == 'pingback') {
-				$split_comments['trackbacks'][] = $comment;
-			} else {
-				$split_comments['comments'][] = $comment;
-			}
-		}
-		return $split_comments;
-	}
-
+/**
+ * Formats comments and pingbacks in comments loop.
+ *
+ * Callback function for wp_list_comments in comments template.
+ *
+ * @see Walker_Comment::start_el()
+ * @since 1.6
+ *
+ * @param object $comment Current comment
+ * @param array $args Formatting options
+ * @param int $depth Depth of comment in reference to parents
+ */
+function half_baked_start_el( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+?>
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+	<?php if ( 'comment' == get_comment_type() ) : ?>
+		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+			<h4>Comment by <?php comment_author(); ?></h4>
+			<div class="comment-author vcard">
+				<div class="avatar"><?php echo( get_avatar( $comment, 32 ) ); ?></div>
+				<div class="dateline"><?php comment_date(); if ( $comment->comment_author_url ) comment_author_url_link( '', ' | ', '&nbsp;&raquo;' ); ?></div>
+			</div>
+			<?php if ( '0' == $comment->comment_approved ) { ?>
+			<p><em>Your comment is awaiting moderation.</em></p>
+			<?php } ?>
+			<?php comment_text(); ?>
+			<div class="bookmarks">
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="Permanent link to this comment">Bookmark</a>
+				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;' ) ) ); ?>
+				<?php edit_comment_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+			</div>
+		</div>
+	<?php else : ?>
+		<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/trackback.gif" width="16" height="16" alt="Pingback" />&nbsp;<?php comment_author_link(); ?>
+<?php
+	endif;
 }
+
+/**
+ * Enqueues comment reply script.
+ *
+ * Enqueues comment reply script if comment form is displayed and threaded comments are enabled.
+ *
+ * @link http://wpengineer.com/2358/enqueue-comment-reply-js-the-right-way/ WP Engineer
+ * @since 1.6
+ *
+ * @uses wp_enqueue_script()
+ */
+function half_baked_enqueue_comment_reply() {
+	if ( get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'comment_form_before', 'half_baked_enqueue_comment_reply' );
+
+/**
+ * Filters comment form fields and strings.
+ *
+ * Inserts <em> element in comment notes and removes allowed tags note.
+ *
+ * @since 1.6
+ *
+ * @param array $defaults Comment form fields and strings
+ * @return array Filtered form fields and strings
+ */
+function half_baked_comment_form_defaults( $defaults ) {
+	$defaults['comment_notes_before'] = str_replace( array( '<p class="comment-notes">', '</p>' ), array( '<p class="comment-notes"><em>', '</em></p>' ), $defaults['comment_notes_before'] );
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+}
+add_filter( 'comment_form_defaults', 'half_baked_comment_form_defaults' );
+
+/**
+ * Inserts <fieldset> opening tag before comment form fields.
+ *
+ * @since 1.6
+ */
+function half_baked_comment_form_before_fields() {
+	echo '<fieldset class="comment-form-fields">';
+}
+add_action( 'comment_form_before_fields', 'half_baked_comment_form_before_fields' );
+
+/**
+ * Inserts <fieldset> closing tag after comment form fields.
+ *
+ * @since 1.6
+ */
+function half_baked_comment_form_after_fields() {
+	echo '</fieldset>';
+}
+add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
 
 /* Hooks & Filters */
 
@@ -90,23 +176,6 @@ function half_baked_search_form($form) { /* Filter invalid role attribute from d
 	return str_replace('role="search" ', '', $form);
 }
 add_filter('get_search_form', 'half_baked_search_form');
-
-function half_baked_comment_form_defaults( $defaults ) { /* Filter comment form fields and strings. */
-	$defaults['comment_notes_before'] = str_replace( array( '<p class="comment-notes">', '</p>' ), array( '<p class="comment-notes"><em>', '</em></p>' ), $defaults['comment_notes_before'] );
-	$defaults['comment_notes_after'] = '';
-	return $defaults;
-}
-add_filter( 'comment_form_defaults', 'half_baked_comment_form_defaults' );
-
-function half_baked_comment_form_before_fields() { /* Insert fieldset opening tag before comment form fields. */
-	echo '<fieldset class="comment-form-fields">';
-}
-add_action( 'comment_form_before_fields', 'half_baked_comment_form_before_fields' );
-
-function half_baked_comment_form_after_fields() { /* Insert fieldset closing tag after comment form fields. */
-	echo '</fieldset>';
-}
-add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
 
 /* Sidebar Widgets */
 
