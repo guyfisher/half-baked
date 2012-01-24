@@ -15,6 +15,22 @@ if (!isset($content_width)) $content_width = 640; // Define global content width
 
 add_theme_support( 'automatic-feed-links' ); // Enable automatic RSS feed links.
 
+/**
+ * Enqueues custom scripts.
+ *
+ * Enqueues the Scriptaculous Accordion, Nifty Corners Cube and Half-Baked onLoad scripts.
+ *
+ * @since 1.6
+ *
+ * @uses wp_enqueue_script()
+ */
+function half_baked_enqueue_scripts() {
+	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) );
+	wp_enqueue_script( 'niftycube', get_template_directory_uri() . '/scripts/niftycorners/niftycube.js' );
+	wp_enqueue_script( 'halfbaked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'scriptaculous-effects', 'accordion', 'niftycube' ) );
+}
+add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
+
 function half_baked_contact() {
 
 	/* Echos a link to any page with a slug matching "contact" ... or a link to the administrator's e-mail address. */

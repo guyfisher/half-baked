@@ -18,7 +18,7 @@ echo "</title>\n";
 
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta name="theme" content="Half-Baked" />
-	
+
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo(get_template_directory_uri()) ?>/scripts/niftycorners/niftyCorners.css" />
 
@@ -27,16 +27,8 @@ echo "</title>\n";
 	<link rel="bookmark" href="#search" title="Skip to Search Form" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
-	
-	<?php
-	wp_enqueue_script('prototype');
-	wp_enqueue_script('scriptaculous-effects');
-	wp_head(); /* Plugin API Hook */
-	?>
 
-	<script type="text/javascript" src="<?php echo(get_template_directory_uri()) ?>/scripts/accordion.js"></script><!-- Scriptaculous Accordion (http://codefluency.com/2006/7/16/scriptaculous-accordian/) -->
-	<script type="text/javascript" src="<?php echo(get_template_directory_uri()) ?>/scripts/niftycorners/niftycube.js"></script><!-- Nifty Corners (http://html.it/articoli/niftycube/) -->
-	<script type="text/javascript" src="<?php echo(get_template_directory_uri()) ?>/scripts/half-baked.js"></script>
+	<?php wp_head(); /* Plugin API Hook */ ?>
 
 </head>
 
