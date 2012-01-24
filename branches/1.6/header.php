@@ -20,7 +20,6 @@ echo "</title>\n";
 	<meta name="theme" content="Half-Baked" />
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo(get_template_directory_uri()) ?>/scripts/niftycorners/niftyCorners.css" />
 
 	<link rel="bookmark" href="#content" title="Skip to Content" />
 	<link rel="bookmark" href="#sidebar" title="Skip to Sidebar" />

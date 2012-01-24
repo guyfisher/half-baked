@@ -16,18 +16,16 @@ if (!isset($content_width)) $content_width = 640; // Define global content width
 add_theme_support( 'automatic-feed-links' ); // Enable automatic RSS feed links.
 
 /**
- * Enqueues custom scripts.
- *
- * Enqueues the Scriptaculous Accordion, Nifty Corners Cube and Half-Baked onLoad scripts.
+ * Enqueues Scriptaculous Accordion and Half-Baked onLoad scripts.
  *
  * @since 1.6
  *
  * @uses wp_enqueue_script()
  */
 function half_baked_enqueue_scripts() {
+	$theme = get_theme( get_current_theme() );
 	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) );
-	wp_enqueue_script( 'niftycube', get_template_directory_uri() . '/scripts/niftycorners/niftycube.js' );
-	wp_enqueue_script( 'halfbaked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'scriptaculous-effects', 'accordion', 'niftycube' ) );
+	wp_enqueue_script( 'halfbaked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'scriptaculous-effects', 'accordion' ), $theme['Version'] );
 }
 add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
 

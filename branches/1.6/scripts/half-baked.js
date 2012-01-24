@@ -1,4 +1,13 @@
-NiftyLoad = function() {
+var oldonload = window.onload;
+
+if ( typeof oldonload != 'function' ) {
+	window.onload = function() { halfbaked() };
+}
+else {
+	window.onload = function() { oldonload(); halfbaked() };
+}
+
+function halfbaked() {
 
 	/* Scriptaculous Accordion */
 
@@ -12,9 +21,5 @@ NiftyLoad = function() {
 		$("postmeta_slider").hide();
 		$("postmeta_toggle").onclick = function() { new Effect.toggle($("postmeta_slider"), "blind", { duration: 0.5 }); return false; }
 	}
-
-	/* Nifty Corners */
-
-	Nifty("div.highlight,div#half-baked-accordion");
 
 }

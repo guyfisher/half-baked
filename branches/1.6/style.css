@@ -15,9 +15,6 @@ Copyright © 2007 Guy M. Fisher
 Sanscons icons created by P.J. Onori
 http://somerandomdude.com/projects/sanscons/
 
-Nifty Corners Cube script created by Alessandro Fulciniti
-http://html.it/articoli/niftycube/
-
 Scriptaculous Accordion script created by Bruce Williams
 http://codefluency.com/
 
@@ -328,6 +325,9 @@ div.prev-next div.next {
 div.highlight {
 	width: 100% !important;
 	margin-bottom: 1.5em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
 div.highlight div.post, div.sticky, div.message {
 	margin: 0;
@@ -632,20 +632,17 @@ div#feeds li {
 div#half-baked-accordion {
 	width: 100% !important;
 	margin: 2em 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
 div#half-baked-accordion div.accordion_content {
-	margin: 20px 0 20px 20px;
-}
-div#half-baked-accordion div.widget {
-	margin-top: 10px;
+	padding: 1.5em;
 }
 div#half-baked-accordion h3 {
-	margin: 0 20px 10px 0;
+	margin: 0 0 .5em;
 	border: none;
 	padding: 0;
-}
-div#half-baked-accordion div.widget_content div.scriptaculous { /* Right-margin hack for "jumping" accordion content in Internet Explorer */
-	margin-right: 20px;
 }
 
 /* FlickrRSS, Netflix & Scrobbler Widgets */

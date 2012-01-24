@@ -10,7 +10,7 @@ A bold red, two-column theme that splits the index pages of your WordPress blog 
 
 == Description ==
 
-The Half-Baked theme is a bold red, two-column theme that splits the index pages of your WordPress blog right down the middle. It has a fluid layout that's accented with rounded corners thanks to Alessandro Fulciniti's Nifty Corners Cube script and P.J. Onori's Sanscons icons.
+The Half-Baked theme is a bold red, two-column theme that splits the index pages of your WordPress blog right down the middle. It has a fluid layout that's accented with rounded corners and P.J. Onori's Sanscons icons.
 
 The Half-Baked theme is widget-aware, and you can highlight some of your sidebar content inside of Bruce Williams' Scriptaculous Accordion. There's also a Scriptaculous toggle for your post meta-data and a pair of rollover icons that link to your Contact and About pages.
 
@@ -98,9 +98,6 @@ http://creativecommons.org/licenses/GPL/2.0/
 
 Sanscons by P.J. Onori
 http://somerandomdude.com/projects/sanscons/
-
-Nifty Corners Cube by Alessandro Fulciniti
-http://html.it/articoli/niftycube/
 
 Scriptaculous Accordion by Bruce Williams
 http://codefluency.com/
