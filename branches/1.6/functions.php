@@ -223,7 +223,7 @@ function half_baked_widgets_ini() {
 			echo "\t</div>\n";
 		}
 	}
-	$widget_ops = array('classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous Accordion for the Half-Baked theme');
+	$widget_ops = array('classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.');
 	wp_register_sidebar_widget('half-baked-accordion', 'Half-Baked Accordion', 'widget_half_baked_accordion', $widget_ops);
 
 	function widget_half_baked_meta($args) { // Meta Widget
