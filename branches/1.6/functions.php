@@ -60,28 +60,31 @@ function half_baked_about() {
 
 }
 
+/**
+ * Displays subcategories of current category.
+ *
+ * Echoes a comma-separated list of links to subcategories of current category in main index template.
+ *
+ * @uses get_categories()
+ * @return string|null Echoes subcategories or returns null
+ */
 function half_baked_subcategories() {
-
-	/* Echos a comma-separated list of links to subcategories of the current category archive. */
-
-	global $cat;
-
-	$category = get_category($cat);
-	$subcategories = get_categories('child_of=' . $category->cat_ID . '&orderby=name');
-
-	if (empty($subcategories)) return;
-
-	$count = count($subcategories);
-	echo '<p>Subcategories: ';
-	foreach ($subcategories as $key => $value) {
-		echo '<a href="' . get_category_link($value->cat_ID) . '" title="' . $value->category_description . '">' . $value->cat_name . '</a>';
-		if ($key < $count) echo ', ';
+	$subcategories = get_categories( array( 'parent' => get_query_var( 'cat' ) ) );
+	if ( empty( $subcategories ) ) {
+		return;
 	}
-	echo "</p>\n";
-
+	echo '<p>Subcategories: ';
+	foreach ( $subcategories as $key => $value ) {
+		if ( $key > 0 ) {
+			if ( $key == count( $subcategories ) - 1 ) {
+				echo ' and ';
+			}
+			else echo ', ';
+		}
+		echo '<a href="' . esc_url( get_category_link( $value->term_id ) ) . '" title="' . esc_attr( $value->description ) . '">' . $value->name . '</a>';
+	}
+	echo '</p>';
 }
-
-/* comments */
 
 /**
  * Formats comments and pingbacks in comments loop.
