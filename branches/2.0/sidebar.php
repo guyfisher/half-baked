@@ -72,7 +72,7 @@
 <?php
 }
 else if (!is_home()) {
-		$half_baked_recent_posts = new WP_Query(array('showposts' => '5', 'caller_get_posts' => '1'));
+		$half_baked_recent_posts = new WP_Query(array('showposts' => '5', 'ignore_sticky_posts' => '1'));
 		if ($half_baked_recent_posts->have_posts()) :
 ?>
 	<div id="recent-posts" class="widget">

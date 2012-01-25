@@ -1,4 +1,4 @@
-<hr class="clear" />
+<hr>
 
 </div><!-- End of Content Container -->
 

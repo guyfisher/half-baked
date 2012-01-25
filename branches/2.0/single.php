@@ -7,12 +7,12 @@
 <!-- Single Post Meta Information -->
 
 <div id="postmeta">
-	<div class="dateline">Published on <?php the_time('l, F j, Y') ?>&nbsp;&nbsp;<?php edit_post_link('<img class="icon" src="' . get_bloginfo('template_directory') . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this post" />', '', '&nbsp;|&nbsp;');?><a id="postmeta_toggle" href="#postmeta_slider" title="More information about this post"><img class="icon" src="<?php bloginfo('template_directory') ?>/images/sanscons/arrow2_s.gif" width="16" height="16" alt="" /></a></div>
+	<div class="dateline">Published on <?php echo(get_the_date()) ?>&nbsp;&nbsp;<?php edit_post_link('<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this post" />', '', '&nbsp;|&nbsp;');?><a id="postmeta_toggle" href="#postmeta_slider" title="More information about this post"><img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/arrow2_s.gif" width="16" height="16" alt="" /></a></div>
 	<div id="postmeta_slider">
 		<div class="scriptaculous">
 			<dl>
 				<dt>Author</dt>
-				<dd>Posted by <?php the_author_posts_link() ?> at <?php the_time('g:i A T') ?></dd>
+				<dd>Posted by <?php the_author_posts_link() ?> at <?php the_time() ?></dd>
 				<?php if (get_the_category()) { ?>
 				<dt>Category</dt>
 				<dd>Filed under <?php the_category(' and ') ?></dd>
@@ -27,14 +27,14 @@
 
 <!-- Main Content -->
 
-<div id="main" class="single">
+<div id="main" class="single-post">
 	<?php the_content(); ?>
 	<div class="link-pages"><!-- Pages Navigation -->
 		<?php wp_link_pages(); echo("\n"); ?>
 	</div>
 	<?php comments_template(); /* WordPress Comments Template */ ?>
 <?php endwhile; /* Stop Generating Post */ ?>
-	<div id="prev-next"><!-- Posts Navigation -->
+	<div class="prev-next"><!-- Posts Navigation -->
 		<div class="prev"><?php previous_post_link('%link', '&laquo; %title') ?></div>
 		<div class="next"><?php next_post_link('%link', '%title &raquo;') ?></div>
 	</div>

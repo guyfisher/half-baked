@@ -77,8 +77,9 @@ div#foot p#about, div#foot p#about a { /* "About" image replacement */
 div#content { /* Index layout center rule */
 	background-image: url("../images/rule.gif");
 }
-body.document div#content {
+body.single div#content, body.page div#content { /* Override center rule */
 	border-color: #cc9;
+	background-image: none;
 }
 
 /* Headings */
@@ -101,7 +102,7 @@ div#main a:hover, div#main a:focus, div#main a:active {
 	border-color: yellow;
 	color: yellow;
 }
-div#main a img { /* Image links */
+div#main img {
 	border-color: white;
 }
 div#main a:hover img, div#main a:focus img, div#main a:active img {
@@ -117,7 +118,7 @@ div#main div.dateline a,
 div#main div.tags a,
 div#main div.bookmarks a,
 ol#trackbacks li a,
-div#prev-next a {
+div.prev-next a {
 	color: #fc0 !important;
 }
 div.highlight div.message a:visited {
@@ -130,7 +131,7 @@ div#main div.dateline a:hover, div#main div.dateline a:focus, div#main div.datel
 div#main div.tags a:hover, div#main div.tags a:focus, div#main div.tags a:active,
 div#main div.bookmarks a:hover, div#main div.bookmarks a:focus, div#main div.bookmarks a:active,
 ol#trackbacks li a:hover, ol#trackbacks li a:focus, ol#trackbacks li a:active,
-div#prev-next a:hover, div#prev-next a:focus, div#prev-next a:active {
+div.prev-next a:hover, div.prev-next a:focus, div.prev-next a:active {
 	color: yellow !important;
 }
 
@@ -162,43 +163,75 @@ div.bookmarks {
 	border-color: #700;
 }
 
-/* Single Posts */
+/* Single Posts & Pages */
 
-body.document h2 {
+body.single h2, body.page h2 {
 	border-color: #700;
 }
 
-body.document div#postmeta_slider { /* Postmeta Slider */
+div#postmeta div#postmeta_slider { /* Postmeta Slider */
 	background-color: #800;
 }
-body.document div#postmeta div#postmeta_slider dl {
+div#postmeta div#postmeta_slider dl {
 	border-color: #cc9;
 }
-body.document div#postmeta div#postmeta_slider dl dt {
+div#postmeta div#postmeta_slider dl dt {
 	color: #cc9;
 }
 
-/* Comments */
+/* comments */
 
-div#comments div.excerpt div.avatar img { /* Gravatars */
-	border-color: #700;
+div.avatar img {
+	border-color: #700 !important;
 }
-ol#trackbacks li { /* Trackbacks */
-	background-image: url("../images/sanscons/trackback.gif");
+li.bypostauthor {
+	background-color: #700;
 }
-form#commentform fieldset.textarea { /* Comment form */
+li.bypostauthor div.avatar img,
+li.bypostauthor .bookmarks {
+	border-color: #500 !important;
+}
+
+/* pingbacks */
+
+li.pingback,
+li.trackback {
+	background-color: #700;
+}
+li.pingback img.icon,
+li.trackback img.icon {
+	background: #c60 url("../images/sanscons/bg_rounded_700.gif") left top no-repeat;
+}
+
+/* comment form */
+
+div#respond {
+	background-color: #700;
+	color: #cc9;
+}
+div#respond span.required,
+h3#reply-title a#cancel-comment-reply-link {
+	color: #fc0 !important;
+}
+h3#reply-title a#cancel-comment-reply-link:hover,
+h3#reply-title a#cancel-comment-reply-link:focus,
+h3#reply-title a#cancel-comment-reply-link:active {
+	color: yellow !important;
+}
+fieldset.comment-form-fields p {
+	background-color: #600;
+}
+p.comment-form-comment {
 	border-color: red;
 	background-color: #c00;
 }
-form#commentform fieldset.textarea textarea {
+p.comment-form-comment textarea {
+	background-color: transparent;
 	color: white;
 }
-form#commentform input#submit {
+div#respond p.form-submit input {
 	border-color: #500;
 	background-color: #600;
-}
-form#commentform div.bookmarks {
-	border-color: #cc9;
 }
 
 /* Sidebar */
