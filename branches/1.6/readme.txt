@@ -42,6 +42,21 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.6 =
+
+* Fixed subcategories trailing comma on category index pages
+* Fixed redundant database queries in archives template
+* Fixed ARIA role attribute in search form
+* Replaced Nifty Corners Cube script with border-radius property
+* Replaced script elements with wp_enqueue_scripts action
+* Replaced hard-coded comment form with comment_form template tag
+* Reordered bookmark links for post excerpts
+* Edited description for built-in accordion widget
+* Added support for threaded comments
+* Added support for automatic feed links
+* Added maximum width for uploaded images and embedded media
+* Added styles for sticky posts, gallery captions and post author comments
+
 = 1.5.1 =
 
 * Fixed accordion widget resizing bug
@@ -61,20 +76,20 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 = 1.4 =
 
-* Added support for sticky posts
 * Updated template tags
 * Cleaned up custom variables
+* Added support for sticky posts
 
 = 1.3 =
 
 * Added tagline to header template
-* Added tags to post meta-data on index pages
+* Added tags to post meta-data
 
 = 1.2 =
 
+* Updated plugin compatibility
 * Added support for Gravatars
 * Added support for image alignment
-* Updated plugin compatibility
 
 = 1.1 =
 
@@ -86,9 +101,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.5.1 =
+= 1.6 =
 
-This version fixes an accordion widget resizing bug in Internet Explorer. Requires WordPress 3.1 or higher.
+This version adds support for threaded comments and replaces the Nifty Corners Cube rounded corners script with the CSS3 border-radius property. Requires WordPress 3.1 or higher.
 
 == Credits ==
 
