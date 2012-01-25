@@ -4,8 +4,7 @@
 Template Name: Archives
 */
 
-$half_baked_published = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts WHERE post_type = 'post' AND post_status= 'publish'");
-$half_baked_first = $wpdb->get_var("SELECT MIN(post_date) FROM $wpdb->posts WHERE post_type = 'post' AND post_status= 'publish'");
+$half_baked_published = $wpdb->get_row("SELECT COUNT(*) AS count_posts, MIN(post_date) AS min_post_date FROM $wpdb->posts WHERE post_type = 'post' AND post_status= 'publish'");
 
 get_header(); /* WordPress Header Template */
 
@@ -16,14 +15,13 @@ get_header(); /* WordPress Header Template */
 <!-- Single Page Meta Information -->
 
 <div id="postmeta">
-	<div class="dateline">Updated on <?php echo(date('l, F j, Y')); edit_post_link('<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this page" />', '&nbsp;&nbsp;'); ?></div>
+	<div class="dateline">Updated on <?php the_modified_date(); edit_post_link('<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="Edit this page" />', '&nbsp;&nbsp;'); ?></div>
 </div>
 
 <!-- Main Content -->
 
 <div id="main" class="page">
-	<p>There have been <?php echo($half_baked_published) ?> posts published on <em><?php bloginfo('name') ?></em> since <?php echo(date('F j, Y', strtotime($half_baked_first))) ?>. You can browse through them by date, category or keyword.</p>
-	<p>If you&rsquo;re looking for a specific post, you can search for it by using the search box in the sidebar.</p>
+	<p>There have been <?php echo($half_baked_published->count_posts) ?> posts published on <em><?php bloginfo('name') ?></em> since <?php echo(date(get_option('date_format'), strtotime($half_baked_published->min_post_date))) ?>. You can browse through them by date, category or keyword.</p>
 	<h3>Archives by Date</h3>
 	<ul class="get_archives">
 		<?php wp_get_archives(); ?>

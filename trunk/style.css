@@ -1,22 +1,19 @@
 /*
 
 Theme Name: Half-Baked
-Theme URI: http://guyfisher.com/builder/half-baked/
-Description: A half-baked theme for your WordPress blog.
-Tags: red, two-columns, left-sidebar, flexible-width, sticky-post
+Description: A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
+Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
+Theme URI: http://code.google.com/p/half-baked/
 Author: Guy Fisher
 Author URI: http://guyfisher.com/
 License: GNU General Public License
 License URI: http://gnu.org/licenses/gpl-2.0.html
-Version: 1.5.1
+Version: 1.6
 
 Copyright © 2007 Guy M. Fisher
 
 Sanscons icons created by P.J. Onori
 http://somerandomdude.com/projects/sanscons/
-
-Nifty Corners Cube script created by Alessandro Fulciniti
-http://html.it/articoli/niftycube/
 
 Scriptaculous Accordion script created by Bruce Williams
 http://codefluency.com/
@@ -38,10 +35,10 @@ body {
 
 /* "Hidden" Elements (http://www.webaim.org/techniques/articles/hiddentext) */
 
-hr,
+hr, .screen-reader-text,
+p.comment-form-comment label,
 div#sidebar h2,
-div#pages h3, div.flexipages_widget h3, div#search h3, div#feeds h3, div#meta h3,
-.screen-reader-text {
+div#pages h3, div.flexipages_widget h3, div#search h3, div#feeds h3, div#meta h3 {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -235,7 +232,6 @@ h2 {
 
 .wp-caption {
 	text-align: center;
-	font-size: 85%;
 }
 .wp-caption a, .gallery-icon a {
 	border: none !important;
@@ -244,9 +240,14 @@ h2 {
 	margin: 0;
 	padding: 0;
 }
-.wp-caption p.wp-caption-text {
+.wp-caption-text {
 	margin: .5em auto 0;
+	font-size: 85%;
 	font-style: italic;
+}
+.gallery-caption {
+	padding: 0 1em;
+	font-style: normal;
 }
 
 /* Main Content */
@@ -267,7 +268,7 @@ div#main div.dateline a,
 div#main div.tags a,
 div#main div.bookmarks a,
 ol#trackbacks li a,
-div#prev-next a { /* Override text links */
+divprev-next a { /* Override text links */
 	border: none !important;
 }
 div.highlight a.more-link:hover, div.highlight a.more-link:focus, div.highlight a.more-link:active,
@@ -276,7 +277,7 @@ div#main div.dateline a:hover, div#main div.dateline a:focus, div#main div.datel
 div#main div.tags a:hover, div#main div.tags a:focus, div#main div.tags a:active,
 div#main div.bookmarks a:hover, div#main div.bookmarks a:focus, div#main div.bookmarks a:active,
 ol#trackbacks li a:hover, ol#trackbacks li a:focus, ol#trackbacks li a:active,
-div#prev-next a:hover, div#prev-next a:focus, div#prev-next a:active {
+div.prev-next a:hover, div.prev-next a:focus, div.prev-next a:active {
 	text-decoration: underline !important;
 }
 
@@ -292,23 +293,28 @@ div#main h3 a, div#main h4 a, div#main h5 a {
 	border: none;
 }
 div#main img {
+	max-width: 98%;
+	height: auto;
 	border-width: 6px;
 	border-style: solid;
 }
+div#main embed, div#main iframe, div#main object {
+	max-width: 100%;
+}
 
-div#prev-next {
+div.prev-next {
 	clear: both; /* Clear below floated images */
 	width: 100%;
 	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
 	margin: 2em 0 1em;
 	line-height: normal;
 }
-div#prev-next div.prev {
+div.prev-next div.prev {
 	float: left;
 	width: 48%;
 	text-align: left;
 }
-div#prev-next div.next {
+div.prev-next div.next {
 	float: right;
 	width: 48%;
 	text-align: right;
@@ -319,8 +325,11 @@ div#prev-next div.next {
 div.highlight {
 	width: 100% !important;
 	margin-bottom: 1.5em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
-div.highlight div.post, div.highlight div.message {
+div.highlight div.post, div.sticky, div.message {
 	margin: 0;
 	padding: 1em;
 }
@@ -401,85 +410,123 @@ body.single div#main h3, body.page div#main h3 {
 	text-align: left;
 }
 
-/* Comments */
+/* comments */
 
-div#comments {
-	clear: both; /* Clear below floated images */
-}
-div#main div#comments h3 {
+div#main h3#comments {
+	clear: both;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	padding-bottom: 2px;
 	text-align: right;
 }
-
-div.comment { /* Gravatars */
- 	position: relative;
+ol.commentlist,
+ol.children {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
 }
-div.comment h4, div.comment div.dateline {
+ol.children {
 	margin-left: 46px;
 }
-div.comment div.avatar {
-	position: absolute;
-	left: 0;
-	top: 0;
+li.comment,
+li.pingback,
+li.trackback {
+	position: relative;
+	margin: 2em 0;
 }
-div#comments div.comment div.avatar img {
-	border-width: 3px;
-	border-style: solid;
-}
-
-ol#trackbacks { /* Trackbacks */
-	list-style-type: none;
-	margin: 1em 0;
-	padding: 0;
-}
-ol#trackbacks li {
-	margin-left: 0;
-	padding-left: 20px;
-	background-position: 0 1px;
-	background-repeat: no-repeat;
-}
-
-form#commentform { /* Comment form */
-	clear: both; /* Clear below floated images */
-	width: 100%;
-	margin: 3em 0 2em;
-}
-form#commentform div.box {
+li.comment h4 {
 	margin: 0;
+	font-size: 110%;
+}
+li.comment h4,
+div.comment-author {
+	margin-left: 46px;
+}
+div.avatar {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+div.avatar img {
+	border-width: 3px !important;
+}
+li.bypostauthor {
+	padding: .5em;
+}
+li.bypostauthor div.avatar {
+	left: .5em;
+	top: .5em;
+}
+
+/* pingbacks */
+
+li.pingback,
+li.trackback {
+	padding: 10px;
+}
+li.pingback img.icon,
+li.trackback img.icon {
+	border: none !important;
+	vertical-align: text-bottom;
+}
+
+/* comment form */
+
+div#respond {
+	clear: both;
+	margin: 3em 0 2em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 	padding: 1em;
 }
-form#commentform h3 {
+h3#reply-title {
+	position: relative;
 	margin-top: 0 !important;
 }
-form#commentform fieldset.input div {
-	margin-top: .25em;
+h3#reply-title small {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	font-size: small;
+	font-family: tahoma, geneva, "bitstream vera sans", lucida, verdana, sans-serif;
 }
-form#commentform fieldset.input div input {
-	width: 80%;
+h3#reply-title a#cancel-comment-reply-link:hover,
+h3#reply-title a#cancel-comment-reply-link:focus,
+h3#reply-title a#cancel-comment-reply-link:active {
+	text-decoration: underline;
 }
-form#commentform fieldset.input p {
+fieldset.comment-form-fields p {
+	overflow: hidden;
+	width: 100%;
 	margin: .5em 0 0;
 }
-form#commentform fieldset.textarea {
-	margin: 1em 0 .5em;
+fieldset.comment-form-fields p label,
+fieldset.comment-form-fields p span {
+	position: relative;
+	top: .25em;
+	left: .5em;
+}
+fieldset.comment-form-fields p input {
+	float: right;
+	width: 75%;
+	margin-left: 1em;
+}
+p.comment-form-comment {
+	width: auto;
 	border-width: 2px;
 	border-style: inset;
 }
-form#commentform fieldset.textarea div {
-	width: 100%;
-}
-form#commentform fieldset.textarea div textarea {
+p.comment-form-comment textarea {
 	display: block;
+	resize: vertical;
 	width: 100%;
 	margin: 0;
 	border: none;
 	padding: 0;
-	background-color: transparent !important;
 }
-form#commentform div.bookmarks {
-	margin-top: 2em;
+div#respond p.form-submit input {
+	padding: .5em;
 }
 
 /* Archives (archives.php) */
@@ -585,20 +632,17 @@ div#feeds li {
 div#half-baked-accordion {
 	width: 100% !important;
 	margin: 2em 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
 div#half-baked-accordion div.accordion_content {
-	margin: 20px 0 20px 20px;
-}
-div#half-baked-accordion div.widget {
-	margin-top: 10px;
+	padding: 1.5em;
 }
 div#half-baked-accordion h3 {
-	margin: 0 20px 10px 0;
+	margin: 0 0 .5em;
 	border: none;
 	padding: 0;
-}
-div#half-baked-accordion div.widget_content div.scriptaculous { /* Right-margin hack for "jumping" accordion content in Internet Explorer */
-	margin-right: 20px;
 }
 
 /* FlickrRSS, Netflix & Scrobbler Widgets */
