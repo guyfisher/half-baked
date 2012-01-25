@@ -34,7 +34,7 @@
 	</div>
 	<?php comments_template(); /* WordPress Comments Template */ ?>
 <?php endwhile; /* Stop Generating Post */ ?>
-	<div id="prev-next"><!-- Posts Navigation -->
+	<div class="prev-next"><!-- Posts Navigation -->
 		<div class="prev"><?php previous_post_link('%link', '&laquo; %title') ?></div>
 		<div class="next"><?php next_post_link('%link', '%title &raquo;') ?></div>
 	</div>

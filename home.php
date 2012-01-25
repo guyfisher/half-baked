@@ -25,9 +25,9 @@ if (!is_paged()) { // If home page, display highlighted posts ...
 			</div>
 			<div class="tags"><?php the_tags() ?></div>
 			<div class="bookmarks">
-				<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>">Read</a>
-				<?php edit_post_link('Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;'); echo("\n") ?>
-				&nbsp;&nbsp;<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('No Comments', '1 Comment', '% Comments', '', 'Comments Closed'); echo("\n"); ?>
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="Permanent link to <?php the_title(); ?>">Read</a>
+				&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('Comment', '1 Comment', '% Comments', '', 'Comments Closed'); ?>
+				<?php edit_post_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 			</div>
 		</div>
 	</div><!-- End of Highlighted Post -->
@@ -51,13 +51,13 @@ if (have_posts()) : /* WordPress Loop */
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">
-			<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>">Read</a>
-			<?php edit_post_link('Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;'); echo("\n") ?>
-			&nbsp;&nbsp;<img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('No Comments', '1 Comment', '% Comments', '', 'Comments Closed'); echo("\n"); ?>
+			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="Permanent link to <?php the_title(); ?>">Read</a>
+			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('Comment', '1 Comment', '% Comments', '', 'Comments Closed'); ?>
+			<?php edit_post_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 		</div>
 	</div>
 <?php endwhile; /* Stop Generating Posts */ ?>
-	<div id="prev-next"><!-- Posts Navigation -->
+	<div class="prev-next"><!-- Posts Navigation -->
 		<div class="prev"><?php previous_posts_link('&laquo; Previous Page') ?></div>
 		<div class="next"><?php next_posts_link('Even More Posts &raquo;') ?></div>
 	</div>
