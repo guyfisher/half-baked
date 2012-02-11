@@ -2,7 +2,7 @@
 /**
  * Theme Functions
  *
- * Custom functions and variable definitions.
+ * Custom functions, default variable definitions and supported features.
  *
  * @package Half-Baked
  * @author Guy Fisher
@@ -10,9 +10,20 @@
  * @license http://gnu.org/licenses/gpl-2.0.html
  */
 
-if (!isset($content_width)) $content_width = 640; // Define global content width.
-
-add_theme_support( 'automatic-feed-links' ); // Enable automatic RSS feed links.
+/**
+ * Sets up default variable definitions and supported features.
+ *
+ * @since 1.6.1
+ *
+ * @uses add_theme_support()
+ */
+function half_baked_setup_theme() {
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; // global content width
+	}
+	add_theme_support( 'automatic-feed-links' ); // automatic rss feed links
+}
+add_action( 'after_setup_theme', 'half_baked_setup_theme' );
 
 /**
  * Enqueues Scriptaculous Accordion and Half-Baked onLoad scripts.
