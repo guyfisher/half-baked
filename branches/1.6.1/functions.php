@@ -5,7 +5,6 @@
  * Custom functions and variable definitions.
  *
  * @package Half-Baked
- * @subpackage Functions
  * @author Guy Fisher
  * @copyright Copyright © 2007 Guy M. Fisher
  * @license http://gnu.org/licenses/gpl-2.0.html
