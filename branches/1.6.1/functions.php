@@ -71,6 +71,51 @@ function half_baked_about() {
 }
 
 /**
+ * Replaces last comma in categories list with "and" separator.
+ *
+ * Filters the categories list with the_category filter hook.
+ *
+ * @see get_the_category_list()
+ * @since 1.6.1
+ *
+ * @param string $thelist Categories list
+ * @param string $separator Text displayed between categories
+ * @param string $parents Display option for subcategories
+ * @return string Categories list with last comma replaced by "and"
+ */
+function half_baked_category( $thelist, $separator, $parents ) {
+	$last_comma = strrpos( $thelist, ', ' );
+	if ( $last_comma === false ) {
+		return $thelist;
+	}
+	else return substr_replace( $thelist, ' and ', $last_comma, 2 );
+}
+add_filter( 'the_category', 'half_baked_category', 10, 3 );
+
+/**
+ * Replaces last comma in tags list with "and" separator.
+ *
+ * Filters the tags list on single posts with the_tags filter hook.
+ *
+ * @see get_the_tag_list()
+ * @since 1.6.1
+ *
+ * @param string $term_list Tags list
+ * @param string $before Text displayed before tags list
+ * @param string $sep Text displayed between tags
+ * @param string $after Text displayed after tags list
+ * @return string Tags list with last comma replaced by "and"
+ */
+function half_baked_tags( $term_list, $before, $sep, $after ) {
+	$last_comma = strrpos( $term_list, ', ' );
+	if ( ! is_single() || $last_comma === false ) {
+		return $term_list;
+	}
+	else return substr_replace( $term_list, ' and ', $last_comma, 2 );
+}
+add_filter( 'the_tags', 'half_baked_tags', 10, 4 );
+
+/**
  * Displays subcategories of current category.
  *
  * Echoes a comma-separated list of links to subcategories of current category in main index template.

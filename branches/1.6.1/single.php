@@ -15,7 +15,7 @@
 				<dd>Posted by <?php the_author_posts_link() ?> at <?php the_time() ?></dd>
 				<?php if (get_the_category()) { ?>
 				<dt>Category</dt>
-				<dd>Filed under <?php the_category(' and ') ?></dd>
+				<dd>Filed under <?php the_category(', ') ?></dd>
 				<?php } if (get_the_tags()) { ?>
 				<dt>Keywords</dt>
 				<dd><?php the_tags('Tagged with ') ?></dd>

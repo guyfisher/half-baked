@@ -18,7 +18,7 @@ if (!is_paged()) { // If home page, display highlighted posts ...
 	<div class="highlight"><!-- Highlighted Post -->
 		<div id="post-<?php the_ID() ?>" <?php post_class() ?>>
 			<h3><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h3>
-			<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(' and ') ?></div>
+			<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(', ') ?></div>
 			<?php the_content('Read More &raquo;') ?>
 			<div class="link-pages"><!-- Pages Navigation -->
 				<?php wp_link_pages(); echo("\n"); ?>
@@ -47,7 +47,7 @@ if (have_posts()) : /* WordPress Loop */
 ?>
 	<div id="post-<?php the_ID() ?>" <?php post_class('excerpt') ?>>
 		<h4><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h4>
-		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(' and ') ?></div>
+		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(', ') ?></div>
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">

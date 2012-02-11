@@ -37,7 +37,7 @@
 <?php while (have_posts()): the_post(); /* Generate Posts */ ?>
 	<div id="post-<?php the_ID() ?>" <?php post_class('excerpt') ?>>
 		<h4><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h4>
-		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(' and '); ?></div>
+		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(', '); ?></div>
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">
