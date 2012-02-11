@@ -109,7 +109,7 @@ This version adds support for threaded comments and replaces the Nifty Corners C
 
 The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License.
 
-http://creativecommons.org/licenses/GPL/2.0/
+http://gnu.org/licenses/gpl-2.0.html
 
 Sanscons by P.J. Onori
 http://somerandomdude.com/projects/sanscons/
