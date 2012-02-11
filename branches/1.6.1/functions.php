@@ -26,7 +26,7 @@ function half_baked_setup_theme() {
 add_action( 'after_setup_theme', 'half_baked_setup_theme' );
 
 /**
- * Enqueues Scriptaculous Accordion and Half-Baked onLoad scripts.
+ * Enqueues scripts for output in <head> element.
  *
  * @since 1.6
  *
@@ -34,8 +34,8 @@ add_action( 'after_setup_theme', 'half_baked_setup_theme' );
  */
 function half_baked_enqueue_scripts() {
 	$theme = get_theme( get_current_theme() );
-	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) );
-	wp_enqueue_script( 'halfbaked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'scriptaculous-effects', 'accordion' ), $theme['Version'] );
+	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) ); // scriptaculous accordion
+	wp_enqueue_script( 'half-baked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'scriptaculous-effects', 'accordion' ), $theme['Version'] ); // initialize accordion and post meta-data slider
 }
 add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
 
