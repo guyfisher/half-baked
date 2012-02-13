@@ -169,13 +169,13 @@ function half_baked_start_el( $comment, $args, $depth ) {
 			<?php } ?>
 			<?php comment_text(); ?>
 			<div class="bookmarks">
-				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="Permanent link to this comment">Bookmark</a>
-				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;' ) ) ); ?>
-				<?php edit_comment_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="Permanent link to this comment">Bookmark</a>
+				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;' ) ) ); ?>
+				<?php edit_comment_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 			</div>
 		</div>
 	<?php else : ?>
-		<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/trackback.gif" width="16" height="16" alt="Pingback" />&nbsp;<?php comment_author_link(); ?>
+		<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/back-forth.gif" width="16" height="16" alt="Pingback" />&nbsp;<?php comment_author_link(); ?>
 <?php
 	endif;
 }

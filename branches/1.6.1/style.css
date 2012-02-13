@@ -12,11 +12,13 @@ Version: 1.6.1
 
 Copyright © 2007 Guy M. Fisher
 
-Sanscons icons created by P.J. Onori
-http://somerandomdude.com/projects/sanscons/
-
-Scriptaculous Accordion script created by Bruce Williams
+Scriptaculous Accordion script copyright © 2006 by Bruce Williams
+Redistributed under the MIT License (http://opensource.org/licenses/MIT)
 http://codefluency.com/
+
+twotone icons copyright © 2008 by Paul Jarvis
+Redistributed under the GNU General Public License (http://gnu.org/licenses/gpl-2.0.html)
+http://twotiny.googlecode.com/
 
 */
 
@@ -348,6 +350,7 @@ div.dateline, div.tags, div.bookmarks {
 }
 div.dateline img.icon, div.bookmarks img.icon {
 	border: none !important;
+	border-radius: 2px;
 	vertical-align: text-bottom;
 }
 div.bookmarks img.icon {
@@ -467,6 +470,7 @@ li.trackback {
 li.pingback img.icon,
 li.trackback img.icon {
 	border: none !important;
+	border-radius: 2px;
 	vertical-align: text-bottom;
 }
 
