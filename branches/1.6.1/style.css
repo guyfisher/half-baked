@@ -201,6 +201,7 @@ div#content { /* Index layout center rule */
 /* Headings */
 
 h1, h2, h3, h4, h5 {
+	clear: both;
 	line-height: normal !important;
 }
 h1, h2, h3 {
@@ -421,7 +422,6 @@ body.single div#main h3, body.page div#main h3 {
 /* comments */
 
 div#main h3#comments {
-	clear: both;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	padding-bottom: 2px;
