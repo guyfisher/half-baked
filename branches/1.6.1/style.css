@@ -456,6 +456,8 @@ div.avatar {
 	left: 0;
 }
 div.avatar img {
+	width: 38px;
+	height: 38px;
 	border-width: 3px !important;
 }
 li.bypostauthor {
