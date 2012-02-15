@@ -234,16 +234,6 @@ function half_baked_comment_form_after_fields() {
 }
 add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
 
-/* Hooks & Filters */
-
-function half_baked_embed_defaults($embed_sizes) { /* Filter default embedded media width on home page. */
-	if (is_home()) {
-		$embed_sizes['width'] = 450;
-	}
-	return $embed_sizes;
-}
-add_filter('embed_defaults', 'half_baked_embed_defaults');
-
 /* Sidebar Widgets */
 
 if (function_exists('register_sidebar')) {
