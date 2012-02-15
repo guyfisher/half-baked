@@ -233,6 +233,9 @@ h2 {
 }
 
 .wp-caption {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 	text-align: center;
 }
 .wp-caption a, .gallery-icon a {
@@ -295,7 +298,9 @@ div#main h3 a, div#main h4 a, div#main h5 a {
 	border: none;
 }
 div#main img {
-	max-width: 98%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 	height: auto;
 	border-width: 6px;
 	border-style: solid;
