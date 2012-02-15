@@ -79,18 +79,16 @@ function half_baked_about() {
  * @since 1.6.1
  *
  * @param string $thelist Categories list
- * @param string $separator Text displayed between categories
- * @param string $parents Display option for subcategories
  * @return string Categories list with last comma replaced by "and"
  */
-function half_baked_category( $thelist, $separator, $parents ) {
+function half_baked_category( $thelist ) {
 	$last_comma = strrpos( $thelist, ', ' );
 	if ( $last_comma === false ) {
 		return $thelist;
 	}
 	else return substr_replace( $thelist, ' and ', $last_comma, 2 );
 }
-add_filter( 'the_category', 'half_baked_category', 10, 3 );
+add_filter( 'the_category', 'half_baked_category' );
 
 /**
  * Replaces last comma in tags list with "and" separator.
@@ -101,19 +99,16 @@ add_filter( 'the_category', 'half_baked_category', 10, 3 );
  * @since 1.6.1
  *
  * @param string $term_list Tags list
- * @param string $before Text displayed before tags list
- * @param string $sep Text displayed between tags
- * @param string $after Text displayed after tags list
  * @return string Tags list with last comma replaced by "and"
  */
-function half_baked_tags( $term_list, $before, $sep, $after ) {
+function half_baked_tags( $term_list ) {
 	$last_comma = strrpos( $term_list, ', ' );
 	if ( ! is_single() || $last_comma === false ) {
 		return $term_list;
 	}
 	else return substr_replace( $term_list, ' and ', $last_comma, 2 );
 }
-add_filter( 'the_tags', 'half_baked_tags', 10, 4 );
+add_filter( 'the_tags', 'half_baked_tags' );
 
 /**
  * Displays subcategories of current category.
