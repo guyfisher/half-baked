@@ -2,21 +2,32 @@
 /**
  * Theme Functions
  *
- * Custom functions and variable definitions.
+ * Custom functions, default variable definitions and supported features.
  *
  * @package Half-Baked
- * @subpackage Functions
  * @author Guy Fisher
  * @copyright Copyright © 2007 Guy M. Fisher
  * @license http://gnu.org/licenses/gpl-2.0.html
  */
 
-if (!isset($content_width)) $content_width = 640; // Define global content width.
-
-add_theme_support( 'automatic-feed-links' ); // Enable automatic RSS feed links.
+/**
+ * Sets up default variable definitions and supported features.
+ *
+ * @since 1.6.1
+ *
+ * @uses add_theme_support()
+ */
+function half_baked_setup_theme() {
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; // global content width
+	}
+	add_theme_support( 'automatic-feed-links' ); // automatic rss feed links
+}
+add_action( 'after_setup_theme', 'half_baked_setup_theme' );
 
 /**
- * Enqueues Scriptaculous Accordion and Half-Baked onLoad scripts.
+ * Enqueues scripts for output in <head> element.
  *
  * @since 1.6
  *
@@ -24,8 +35,9 @@ add_theme_support( 'automatic-feed-links' ); // Enable automatic RSS feed links.
  */
 function half_baked_enqueue_scripts() {
 	$theme = get_theme( get_current_theme() );
-	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) );
-	wp_enqueue_script( 'halfbaked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'scriptaculous-effects', 'accordion' ), $theme['Version'] );
+	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/scripts/jquery.fitvids.js', array( 'jquery' ), '1.0' ); // fluid videos
+	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) ); // accordion widget
+	wp_enqueue_script( 'half-baked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'fitvids', 'accordion' ), $theme['Version'] );
 }
 add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
 
@@ -87,6 +99,62 @@ function half_baked_subcategories() {
 }
 
 /**
+ * Removes brackets from ellipses at end of excerpts.
+ *
+ * Filters the excerpt more string with the excerpt_more filter hook.
+ *
+ * @see wp_trim_excerpt()
+ * @since 1.6.1
+ *
+ * @param string $more Excerpt more string
+ * @return string Excerpt more string replaced by unbracketed ellipsis
+ */
+function half_baked_excerpt_more( $more ) {
+	return str_replace( '[...]', '&#8230;', $more );
+}
+add_filter( 'excerpt_more', 'half_baked_excerpt_more' );
+
+/**
+ * Replaces last comma in categories list with "and" separator.
+ *
+ * Filters the categories list with the_category filter hook.
+ *
+ * @see get_the_category_list()
+ * @since 1.6.1
+ *
+ * @param string $thelist Categories list
+ * @return string Categories list with last comma replaced by "and"
+ */
+function half_baked_category( $thelist ) {
+	$last_comma = strrpos( $thelist, ', ' );
+	if ( $last_comma === false ) {
+		return $thelist;
+	}
+	else return substr_replace( $thelist, ' and ', $last_comma, 2 );
+}
+add_filter( 'the_category', 'half_baked_category' );
+
+/**
+ * Replaces last comma in tags list with "and" separator.
+ *
+ * Filters the tags list on single posts with the_tags filter hook.
+ *
+ * @see get_the_tag_list()
+ * @since 1.6.1
+ *
+ * @param string $term_list Tags list
+ * @return string Tags list with last comma replaced by "and"
+ */
+function half_baked_tags( $term_list ) {
+	$last_comma = strrpos( $term_list, ', ' );
+	if ( ! is_single() || $last_comma === false ) {
+		return $term_list;
+	}
+	else return substr_replace( $term_list, ' and ', $last_comma, 2 );
+}
+add_filter( 'the_tags', 'half_baked_tags' );
+
+/**
  * Formats comments and pingbacks in comments loop.
  *
  * Callback function for wp_list_comments in comments template.
@@ -114,13 +182,13 @@ function half_baked_start_el( $comment, $args, $depth ) {
 			<?php } ?>
 			<?php comment_text(); ?>
 			<div class="bookmarks">
-				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="Permanent link to this comment">Bookmark</a>
-				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;' ) ) ); ?>
-				<?php edit_comment_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="Permanent link to this comment">Bookmark</a>
+				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;' ) ) ); ?>
+				<?php edit_comment_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 			</div>
 		</div>
 	<?php else : ?>
-		<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/trackback.gif" width="16" height="16" alt="Pingback" />&nbsp;<?php comment_author_link(); ?>
+		<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/back-forth.gif" width="16" height="16" alt="Pingback" />&nbsp;<?php comment_author_link(); ?>
 <?php
 	endif;
 }
@@ -178,16 +246,6 @@ function half_baked_comment_form_after_fields() {
 	echo '</fieldset>';
 }
 add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
-
-/* Hooks & Filters */
-
-function half_baked_embed_defaults($embed_sizes) { /* Filter default embedded media width on home page. */
-	if (is_home()) {
-		$embed_sizes['width'] = 450;
-	}
-	return $embed_sizes;
-}
-add_filter('embed_defaults', 'half_baked_embed_defaults');
 
 /* Sidebar Widgets */
 

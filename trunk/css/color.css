@@ -147,14 +147,11 @@ div.highlight {
 div.highlight div.bookmarks {
 	border-color: #cc9;
 }
-div.highlight div.bookmarks img.icon {
-	background: #c60 url("../images/sanscons/bg_rounded_700.gif") left top no-repeat; /* Sanscons (http://www.somerandomdude.net/srd-projects/sanscons/) */
-}
 div.dateline, div.tags {
 	color: #cc9;
 }
 div.dateline img.icon, div.bookmarks img.icon {
-	background: #c60 url("../images/sanscons/bg_rounded_900.gif") left top no-repeat; /* Sanscons (http://www.somerandomdude.net/srd-projects/sanscons/) */
+	background-color: #c60;
 }
 div.dateline a:hover img.icon, div.dateline a:focus img.icon, div.dateline a:active img.icon {
 	background-color: #e60;
@@ -200,7 +197,7 @@ li.trackback {
 }
 li.pingback img.icon,
 li.trackback img.icon {
-	background: #c60 url("../images/sanscons/bg_rounded_700.gif") left top no-repeat;
+	background-color: #c60;
 }
 
 /* comment form */

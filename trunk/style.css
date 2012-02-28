@@ -3,20 +3,14 @@
 Theme Name: Half-Baked
 Description: A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
-Theme URI: http://code.google.com/p/half-baked/
+Theme URI: http://half-baked.googlecode.com/
 Author: Guy Fisher
 Author URI: http://guyfisher.com/
-License: GNU General Public License
+License: GNU General Public License 2.0
 License URI: http://gnu.org/licenses/gpl-2.0.html
-Version: 1.6
+Version: 1.6.1
 
 Copyright © 2007 Guy M. Fisher
-
-Sanscons icons created by P.J. Onori
-http://somerandomdude.com/projects/sanscons/
-
-Scriptaculous Accordion script created by Bruce Williams
-http://codefluency.com/
 
 */
 
@@ -199,6 +193,7 @@ div#content { /* Index layout center rule */
 /* Headings */
 
 h1, h2, h3, h4, h5 {
+	clear: both;
 	line-height: normal !important;
 }
 h1, h2, h3 {
@@ -231,6 +226,9 @@ h2 {
 }
 
 .wp-caption {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 	text-align: center;
 }
 .wp-caption a, .gallery-icon a {
@@ -293,13 +291,16 @@ div#main h3 a, div#main h4 a, div#main h5 a {
 	border: none;
 }
 div#main img {
-	max-width: 98%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 	height: auto;
 	border-width: 6px;
 	border-style: solid;
 }
-div#main embed, div#main iframe, div#main object {
+div#main video {
 	max-width: 100%;
+	height: auto;
 }
 
 div.prev-next {
@@ -348,6 +349,7 @@ div.dateline, div.tags, div.bookmarks {
 }
 div.dateline img.icon, div.bookmarks img.icon {
 	border: none !important;
+	border-radius: 2px;
 	vertical-align: text-bottom;
 }
 div.bookmarks img.icon {
@@ -413,7 +415,6 @@ body.single div#main h3, body.page div#main h3 {
 /* comments */
 
 div#main h3#comments {
-	clear: both;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	padding-bottom: 2px;
@@ -448,6 +449,8 @@ div.avatar {
 	left: 0;
 }
 div.avatar img {
+	width: 38px;
+	height: 38px;
 	border-width: 3px !important;
 }
 li.bypostauthor {
@@ -467,6 +470,7 @@ li.trackback {
 li.pingback img.icon,
 li.trackback img.icon {
 	border: none !important;
+	border-radius: 2px;
 	vertical-align: text-bottom;
 }
 
