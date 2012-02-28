@@ -306,8 +306,9 @@ div#main img {
 	border-width: 6px;
 	border-style: solid;
 }
-div#main embed, div#main iframe, div#main object {
+div#main video {
 	max-width: 100%;
+	height: auto;
 }
 
 div.prev-next {
