@@ -10,7 +10,7 @@ A bold red, two-column theme that splits the index pages of your WordPress blog 
 
 == Description ==
 
-The Half-Baked theme is a bold red, two-column theme that splits the index pages of your WordPress blog right down the middle. It has a fluid layout that's accented with rounded corners and P.J. Onori's Sanscons icons.
+The Half-Baked theme is a bold red, two-column theme that splits the index pages of your WordPress blog right down the middle. It has a fluid layout that's accented with rounded corners and Paul Jarvis's twotone icons.
 
 The Half-Baked theme is widget-aware, and you can highlight some of your sidebar content inside of Bruce Williams' Scriptaculous Accordion. There's also a Scriptaculous toggle for your post meta-data and a pair of rollover icons that link to your Contact and About pages.
 
@@ -41,6 +41,17 @@ The Half-Baked theme is also widget-aware, with several built-in widgets and sup
 The rollover icons at the top and bottom of each page will automatically link to pages with "contact" and "about" slugs. If there are no pages with those slugs, the top icon will link to the blog's e-mail address and the bottom icon will link to the WordPress website.
 
 == Changelog ==
+
+= 1.6.1 =
+
+* Fixed invalid hr element in footer template
+* Updated bloginfo template tags
+* Replaced Sanscons with GPL-compatible twotone icon set
+* Replaced last comma in category and tag lists with "and" separator
+* Removed brackets from ellipses at end of excerpts
+* Added support for fluid images and videos
+* Added theme setup function
+* Added styles to clear heading elements below floated content
 
 = 1.6 =
 
@@ -101,18 +112,22 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6 =
+= 1.6.1 =
 
-This version adds support for threaded comments and replaces the Nifty Corners Cube rounded corners script with the CSS3 border-radius property. Requires WordPress 3.1 or higher.
+This version replaces the Sanscons icon set with the GPL-compatible twotone icon set. Requires WordPress 3.1 or higher.
 
 == Credits ==
 
-The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License.
+The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License 2.0 (http://gnu.org/licenses/gpl-2.0.html).
 
-http://creativecommons.org/licenses/GPL/2.0/
+FitVids copyright © 2011 Chris Coyier and Dave Rupert
+Redistributed under the WTFPL license (http://gnu.org/philosophy/license-list.html#WTFPL)
+http://fitvidsjs.com/
 
-Sanscons by P.J. Onori
-http://somerandomdude.com/projects/sanscons/
-
-Scriptaculous Accordion by Bruce Williams
+Scriptaculous Accordion copyright © 2006 Bruce Williams
+Redistributed under the MIT License (http://gnu.org/philosophy/license-list.html#Expat)
 http://codefluency.com/
+
+twotone icons copyright © 2008 Paul Jarvis
+Redistributed under the PERL5 License (http://gnu.org/philosophy/license-list.html#PerlLicense)
+http://twotiny.googlecode.com/
