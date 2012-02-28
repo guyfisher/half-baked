@@ -18,16 +18,16 @@ if (!is_paged()) { // If home page, display highlighted posts ...
 	<div class="highlight"><!-- Highlighted Post -->
 		<div id="post-<?php the_ID() ?>" <?php post_class() ?>>
 			<h3><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h3>
-			<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(' and ') ?></div>
+			<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(', ') ?></div>
 			<?php the_content('Read More &raquo;') ?>
 			<div class="link-pages"><!-- Pages Navigation -->
 				<?php wp_link_pages(); echo("\n"); ?>
 			</div>
 			<div class="tags"><?php the_tags() ?></div>
 			<div class="bookmarks">
-				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="Permanent link to <?php the_title(); ?>">Read</a>
-				&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('Comment', '1 Comment', '% Comments', '', 'Comments Closed'); ?>
-				<?php edit_post_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="Permanent link to <?php the_title(); ?>">Read</a>
+				&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('Comment', '1 Comment', '% Comments', '', 'Comments Closed'); ?>
+				<?php edit_post_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 			</div>
 		</div>
 	</div><!-- End of Highlighted Post -->
@@ -47,13 +47,13 @@ if (have_posts()) : /* WordPress Loop */
 ?>
 	<div id="post-<?php the_ID() ?>" <?php post_class('excerpt') ?>>
 		<h4><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title() ?>"><?php the_title() ?></a></h4>
-		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(' and ') ?></div>
+		<div class="dateline"><?php echo(get_the_date()) ?> | <?php the_category(', ') ?></div>
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">
-			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/document.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="Permanent link to <?php the_title(); ?>">Read</a>
-			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/sanscons/comment.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('Comment', '1 Comment', '% Comments', '', 'Comments Closed'); ?>
-			<?php edit_post_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/sanscons/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="Permanent link to <?php the_title(); ?>">Read</a>
+			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link('Comment', '1 Comment', '% Comments', '', 'Comments Closed'); ?>
+			<?php edit_post_link( 'Edit', '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 		</div>
 	</div>
 <?php endwhile; /* Stop Generating Posts */ ?>

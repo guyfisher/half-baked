@@ -19,7 +19,7 @@ echo "</title>\n";
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta name="theme" content="Half-Baked" />
 
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo( get_stylesheet_uri() ); ?>" />
 
 	<link rel="bookmark" href="#content" title="Skip to Content" />
 	<link rel="bookmark" href="#sidebar" title="Skip to Sidebar" />
