@@ -73,6 +73,48 @@ function half_baked_about() {
 }
 
 /**
+ * Displays subcategories of current category.
+ *
+ * Echoes a comma-separated list of links to subcategories of current category in main index template.
+ *
+ * @uses get_categories()
+ * @return string|null Echoes subcategories or returns null
+ */
+function half_baked_subcategories() {
+	$subcategories = get_categories( array( 'parent' => get_query_var( 'cat' ) ) );
+	if ( empty( $subcategories ) ) {
+		return;
+	}
+	echo '<p>Subcategories: ';
+	foreach ( $subcategories as $key => $value ) {
+		if ( $key > 0 ) {
+			if ( $key == count( $subcategories ) - 1 ) {
+				echo ' and ';
+			}
+			else echo ', ';
+		}
+		echo '<a href="' . esc_url( get_category_link( $value->term_id ) ) . '" title="' . esc_attr( $value->description ) . '">' . $value->name . '</a>';
+	}
+	echo '</p>';
+}
+
+/**
+ * Removes brackets from ellipses at end of excerpts.
+ *
+ * Filters the excerpt more string with the excerpt_more filter hook.
+ *
+ * @see wp_trim_excerpt()
+ * @since 1.6.1
+ *
+ * @param string $more Excerpt more string
+ * @return string Excerpt more string replaced by unbracketed ellipsis
+ */
+function half_baked_excerpt_more( $more ) {
+	return str_replace( '[...]', '&#8230;', $more );
+}
+add_filter( 'excerpt_more', 'half_baked_excerpt_more' );
+
+/**
  * Replaces last comma in categories list with "and" separator.
  *
  * Filters the categories list with the_category filter hook.
@@ -111,32 +153,6 @@ function half_baked_tags( $term_list ) {
 	else return substr_replace( $term_list, ' and ', $last_comma, 2 );
 }
 add_filter( 'the_tags', 'half_baked_tags' );
-
-/**
- * Displays subcategories of current category.
- *
- * Echoes a comma-separated list of links to subcategories of current category in main index template.
- *
- * @uses get_categories()
- * @return string|null Echoes subcategories or returns null
- */
-function half_baked_subcategories() {
-	$subcategories = get_categories( array( 'parent' => get_query_var( 'cat' ) ) );
-	if ( empty( $subcategories ) ) {
-		return;
-	}
-	echo '<p>Subcategories: ';
-	foreach ( $subcategories as $key => $value ) {
-		if ( $key > 0 ) {
-			if ( $key == count( $subcategories ) - 1 ) {
-				echo ' and ';
-			}
-			else echo ', ';
-		}
-		echo '<a href="' . esc_url( get_category_link( $value->term_id ) ) . '" title="' . esc_attr( $value->description ) . '">' . $value->name . '</a>';
-	}
-	echo '</p>';
-}
 
 /**
  * Formats comments and pingbacks in comments loop.
