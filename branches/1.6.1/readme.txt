@@ -42,6 +42,17 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.6.1 =
+
+* Fixed invalid hr element in footer template
+* Updated bloginfo template tags
+* Replaced Sanscons with GPL-compatible twotone icon set
+* Replaced last comma in category and tag lists with "and" separator
+* Removed brackets from ellipses at end of excerpts
+* Added support for fluid images and videos
+* Added theme setup function
+* Added styles to clear heading elements below floated content
+
 = 1.6 =
 
 * Fixed subcategories trailing comma on category index pages
@@ -101,9 +112,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6 =
+= 1.6.1 =
 
-This version adds support for threaded comments and replaces the Nifty Corners Cube rounded corners script with the CSS3 border-radius property. Requires WordPress 3.1 or higher.
+This version replaces the Sanscons icon set with the GPL-compatible twotone icon set. Requires WordPress 3.1 or higher.
 
 == Credits ==
 
