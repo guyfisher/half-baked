@@ -107,14 +107,16 @@ This version adds support for threaded comments and replaces the Nifty Corners C
 
 == Credits ==
 
-The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License.
+The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License 2.0 (http://gnu.org/licenses/gpl-2.0.html).
 
-http://gnu.org/licenses/gpl-2.0.html
+FitVids copyright © 2011 Chris Coyier and Dave Rupert
+Redistributed under the WTFPL license (http://gnu.org/philosophy/license-list.html#WTFPL)
+http://fitvidsjs.com/
 
 Scriptaculous Accordion copyright © 2006 Bruce Williams
-Redistributed under the MIT License (http://opensource.org/licenses/MIT)
+Redistributed under the MIT License (http://gnu.org/philosophy/license-list.html#Expat)
 http://codefluency.com/
 
-twotone copyright © 2008 Paul Jarvis
-Redistributed under the GNU General Public License (http://gnu.org/licenses/gpl-2.0.html)
+twotone icons copyright © 2008 Paul Jarvis
+Redistributed under the PERL5 License (http://gnu.org/philosophy/license-list.html#PerlLicense)
 http://twotiny.googlecode.com/
