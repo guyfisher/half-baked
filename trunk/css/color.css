@@ -272,19 +272,14 @@ div.widget_categories ul ul li {
 	background: #900 url("../images/subcat.gif") right top no-repeat;
 }
 
-/* Calendar Widget */
+/* calendar widget */
 
-div#calendar table td#today {
+table#wp-calendar td#today {
 	background-color: #600;
 	color: white;
 }
-div#calendar table caption {
-	background-color: #700;
-	color: #cc9;
-}
-div#calendar table tfoot {
-	border-top-color: #700;
-	background-color: #800;
+table#wp-calendar tfoot {
+	border-top-color: #cc9;
 }
 
 /* Tag Cloud Widget */

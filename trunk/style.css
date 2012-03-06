@@ -8,7 +8,7 @@ Author: Guy Fisher
 Author URI: http://guyfisher.com/
 License: GNU General Public License 2.0
 License URI: http://gnu.org/licenses/gpl-2.0.html
-Version: 1.6.1
+Version: 1.6.2
 
 Copyright © 2007 Guy M. Fisher
 
@@ -680,27 +680,34 @@ div#scrobbler div.widget_content ul li {
 	margin: 0 auto .5em;
 }
 
-/* Calendar Widget */
+/* calendar widget */
 
-div#calendar table {
+table#wp-calendar {
 	border-collapse: collapse;
 	margin-right: 0;
 	margin-left: auto;
 }
-div#calendar table th, div#calendar table td {
-	padding: 2px 4px;
+table#wp-calendar caption {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	padding: 4px;
+	font-weight: bold;
+	text-align: left;
+}
+table#wp-calendar th,
+table#wp-calendar td {
+	padding: 4px;
 	text-align: center;
 }
-div#calendar table caption {
-	padding: 4px 2px 6px;
-	text-align: center;
-}
-div#calendar table tfoot {
+table#wp-calendar tfoot {
 	border-top-width: 1px;
 	border-top-style: solid;
 }
-div#calendar table tfoot td {
-	padding: 2px 4px 4px;
+table#wp-calendar td#prev {
+	text-align: left;
+}
+table#wp-calendar td#next {
+	text-align: right;
 }
 
 /* Meta Widget */
