@@ -4,13 +4,13 @@
 	<hr />
 	<h2>Sidebar</h2>
 <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()): /* Sidebar Widgets Plugin (http://automattic.com/code/widgets/) */ ?>
-	<div id="pages" class="widget">
+	<div id="pages" class="widget widget_pages">
 		<h3>Pages</h3>
 		<?php if (function_exists('wswwpx_fold_page_list')) { ?>
 		<ul>
 			<?php wswwpx_fold_page_list('sort_column=menu_order&title_li='); /* Fold Page List Plugin (http://www.webspaceworks.com/resources/wordpress/30/) */ ?>
 		</ul>
-		<?php } else wp_page_menu('sort_column=menu_order&depth=1&menu_class=widget_content&show_home=1') ?>
+		<?php } else wp_page_menu('sort_column=menu_order&depth=1&show_home=1') ?>
 	</div>
 	<div id="search" class="widget">
 		<h3>Search</h3>

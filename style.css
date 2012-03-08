@@ -583,23 +583,30 @@ div#sidebar li a img {
 	border: none;
 }
 
-/* Pages Widget */
+/* pages widget */
 
-div#pages,
+div.widget_pages,
+div.widget_nav_menu,
 div.flexipages_widget {
 	margin: 2em 0;
 }
-div#pages ul, div#pages ul li,
-div.flexipages_widget ul, div.flexipages_widget ul li { /* Rollover menu list (http://alistapart.com/stories/taminglists/) */
+div.widget_pages ul,
+div.widget_pages ul li,
+div.widget_nav_menu ul,
+div.widget_nav_menu ul li,
+div.flexipages_widget ul,
+div.flexipages_widget ul li { /* Rollover menu list (http://alistapart.com/stories/taminglists/) */
 	margin: 0;
 	border: none;
 	padding: 0;
 }
-div#pages ul li,
+div.widget_pages ul li,
+div.widget_nav_menu ul li,
 div.flexipages_widget ul li {
 	margin: 2px 0;
 }
-div#pages ul li a,
+div.widget_pages ul li a,
+div.widget_nav_menu ul li a,
 div.flexipages_widget ul li a { /* Rollover menu links */
 	display: block;
 	height: 1em; /* Internet Explorer hypercoding hack */
@@ -608,7 +615,8 @@ div.flexipages_widget ul li a { /* Rollover menu links */
 	border-right-style: solid;
 	padding: 8px;
 }
-html>body div#pages ul li a,
+html>body div.widget_pages ul li a,
+html>body div.widget_nav_menu ul li a,
 html>body div.flexipages_widget ul li a { /* Override Internet Explorer hypercoding hack */
 	height: auto;
 }
