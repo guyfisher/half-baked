@@ -42,6 +42,13 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.6.2 =
+
+* Fix extra closing div tag inside untitled widgets
+* Fixed misalignment of calendar widget
+* Removed Author URI from style sheet file header
+* Added styles for custom menu widget
+
 = 1.6.1 =
 
 * Fixed invalid hr element in footer template
@@ -114,20 +121,20 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 = 1.6.1 =
 
-This version replaces the Sanscons icon set with the GPL-compatible twotone icon set. Requires WordPress 3.1 or higher.
+This version fixes a pair of bugs that affected the display of custom menus and calendar widgets. Requires WordPress 3.1 or higher.
 
 == Credits ==
 
 The Half-Baked WordPress Theme is copyright (c) 2007 by Guy M. Fisher. It is free software licensed under the GNU General Public License 2.0 (http://gnu.org/licenses/gpl-2.0.html).
 
-FitVids copyright © 2011 Chris Coyier and Dave Rupert
+FitVids copyright (c) 2011 Chris Coyier and Dave Rupert
 Redistributed under the WTFPL license (http://gnu.org/philosophy/license-list.html#WTFPL)
 http://fitvidsjs.com/
 
-Scriptaculous Accordion copyright © 2006 Bruce Williams
+Scriptaculous Accordion copyright (c) 2006 Bruce Williams
 Redistributed under the MIT License (http://gnu.org/philosophy/license-list.html#Expat)
 http://codefluency.com/
 
-twotone icons copyright © 2008 Paul Jarvis
+twotone icons copyright (c) 2008 Paul Jarvis
 Redistributed under the PERL5 License (http://gnu.org/philosophy/license-list.html#PerlLicense)
 http://twotiny.googlecode.com/

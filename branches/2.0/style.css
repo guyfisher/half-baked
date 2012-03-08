@@ -5,10 +5,9 @@ Description: A bold red, two-column theme that splits the index pages of your Wo
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
 Theme URI: http://half-baked.googlecode.com/
 Author: Guy Fisher
-Author URI: http://guyfisher.com/
 License: GNU General Public License 2.0
 License URI: http://gnu.org/licenses/gpl-2.0.html
-Version: 1.6.1
+Version: 1.6.2
 
 Copyright © 2007 Guy M. Fisher
 
@@ -583,23 +582,30 @@ div#sidebar li a img {
 	border: none;
 }
 
-/* Pages Widget */
+/* pages widget */
 
-div#pages,
+div.widget_pages,
+div.widget_nav_menu,
 div.flexipages_widget {
 	margin: 2em 0;
 }
-div#pages ul, div#pages ul li,
-div.flexipages_widget ul, div.flexipages_widget ul li { /* Rollover menu list (http://alistapart.com/stories/taminglists/) */
+div.widget_pages ul,
+div.widget_pages ul li,
+div.widget_nav_menu ul,
+div.widget_nav_menu ul li,
+div.flexipages_widget ul,
+div.flexipages_widget ul li { /* Rollover menu list (http://alistapart.com/stories/taminglists/) */
 	margin: 0;
 	border: none;
 	padding: 0;
 }
-div#pages ul li,
+div.widget_pages ul li,
+div.widget_nav_menu ul li,
 div.flexipages_widget ul li {
 	margin: 2px 0;
 }
-div#pages ul li a,
+div.widget_pages ul li a,
+div.widget_nav_menu ul li a,
 div.flexipages_widget ul li a { /* Rollover menu links */
 	display: block;
 	height: 1em; /* Internet Explorer hypercoding hack */
@@ -608,7 +614,8 @@ div.flexipages_widget ul li a { /* Rollover menu links */
 	border-right-style: solid;
 	padding: 8px;
 }
-html>body div#pages ul li a,
+html>body div.widget_pages ul li a,
+html>body div.widget_nav_menu ul li a,
 html>body div.flexipages_widget ul li a { /* Override Internet Explorer hypercoding hack */
 	height: auto;
 }
@@ -649,58 +656,50 @@ div#half-baked-accordion h3 {
 	padding: 0;
 }
 
-/* FlickrRSS, Netflix & Scrobbler Widgets */
+/* flickrrss, netflix & scrobbler widgets */
 
-div#flickrrss div.widget_content {
-	width: 275px;
-	height: 170px;
-	margin-left: auto;
-	margin-right: 0;
-	line-height: 0;
-}
-div#flickrrss div.widget_content img, div#netflix-widget div.widget_content img {
+div#flickrrss img,
+div#netflix-widget img {
 	margin-bottom: 6px;
 	margin-left: 6px;
 	border-width: 2px;
 	border-style: solid;
 }
-
-div#netflix-widget div.widget_content br {
+div#netflix-widget br {
 	display: none;
 }
-div#netflix-widget div.widget_content img {
-	margin-left: 8px;
-}
-
-div#scrobbler div.widget_content ul {
-	margin: 0;
-	text-transform: lowercase;
-}
-div#scrobbler div.widget_content ul li {
+div#scrobbler li {
 	margin: 0 auto .5em;
 }
 
-/* Calendar Widget */
+/* calendar widget */
 
-div#calendar table {
+table#wp-calendar {
 	border-collapse: collapse;
 	margin-right: 0;
 	margin-left: auto;
 }
-div#calendar table th, div#calendar table td {
-	padding: 2px 4px;
+table#wp-calendar caption {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	padding: 4px;
+	font-weight: bold;
+	text-align: left;
+}
+table#wp-calendar th,
+table#wp-calendar td {
+	padding: 4px;
 	text-align: center;
 }
-div#calendar table caption {
-	padding: 4px 2px 6px;
-	text-align: center;
-}
-div#calendar table tfoot {
+table#wp-calendar tfoot {
 	border-top-width: 1px;
 	border-top-style: solid;
 }
-div#calendar table tfoot td {
-	padding: 2px 4px 4px;
+table#wp-calendar td#prev {
+	text-align: left;
+}
+table#wp-calendar td#next {
+	text-align: right;
 }
 
 /* Meta Widget */

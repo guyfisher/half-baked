@@ -240,23 +240,30 @@ div#sidebar h3 a:hover, div#sidebar h3 a:focus, div#sidebar h3 a:active {
 	color: yellow;
 }
 
-/* Pages Widget */
+/* pages widget */
 
-div#pages ul li a, div#pages ul li.current_page_item ul a,
-div.flexipages_widget ul li a, div.flexipages_widget ul li.current_page_item ul a { /* Rollover menu links */
-	border-color: #c00 !important;
+div.widget_pages ul li a,
+div.widget_nav_menu ul li a,
+div.flexipages_widget ul li a {
+	border-color: #c00;
 	color: #fc0;
 }
-div#pages ul li.current_page_item a,
-div.flexipages_widget ul li.current_page_item a { /* Current link */
-	border-color: #c60 !important;
+div.widget_pages ul li.current_page_item > a,
+div.widget_nav_menu ul li.current-menu-item > a,
+div.flexipages_widget ul li.current_page_item > a {
+	border-color: #c60;
 }
-div#pages ul li a:hover, div#pages ul li a:focus, div#pages ul li a:active,
-div#pages ul li.current_page_item a:hover, div#pages ul li.current_page_item a:focus, div#pages ul li.current_page_item a:active,
-div.flexipages_widget ul li a:hover, div.flexipages_widget ul li a:focus, div.flexipages_widget ul li a:active,
-div.flexipages_widget ul li.current_page_item a:hover, div.flexipages_widget ul li.current_page_item a:focus, div.flexipages_widget ul li.current_page_item a:active { /* Hover links */
-	border-color: #fc0 !important;
-	color: yellow !important;
+div.widget_pages ul li a:hover,
+div.widget_pages ul li a:focus,
+div.widget_pages ul li a:active,
+div.widget_nav_menu ul li a:hover,
+div.widget_nav_menu ul li a:focus,
+div.widget_nav_menu ul li a:active,
+div.flexipages_widget ul li a:hover,
+div.flexipages_widget ul li a:focus,
+div.flexipages_widget ul li a:active {
+	border-color: #fc0;
+	color: yellow;
 }
 
 /* Accordion Widget */
@@ -272,19 +279,14 @@ div.widget_categories ul ul li {
 	background: #900 url("../images/subcat.gif") right top no-repeat;
 }
 
-/* Calendar Widget */
+/* calendar widget */
 
-div#calendar table td#today {
+table#wp-calendar td#today {
 	background-color: #600;
 	color: white;
 }
-div#calendar table caption {
-	background-color: #700;
-	color: #cc9;
-}
-div#calendar table tfoot {
-	border-top-color: #700;
-	background-color: #800;
+table#wp-calendar tfoot {
+	border-top-color: #cc9;
 }
 
 /* Tag Cloud Widget */
