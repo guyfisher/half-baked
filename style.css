@@ -649,34 +649,19 @@ div#half-baked-accordion h3 {
 	padding: 0;
 }
 
-/* FlickrRSS, Netflix & Scrobbler Widgets */
+/* flickrrss, netflix & scrobbler widgets */
 
-div#flickrrss div.widget_content {
-	width: 275px;
-	height: 170px;
-	margin-left: auto;
-	margin-right: 0;
-	line-height: 0;
-}
-div#flickrrss div.widget_content img, div#netflix-widget div.widget_content img {
+div#flickrrss img,
+div#netflix-widget img {
 	margin-bottom: 6px;
 	margin-left: 6px;
 	border-width: 2px;
 	border-style: solid;
 }
-
-div#netflix-widget div.widget_content br {
+div#netflix-widget br {
 	display: none;
 }
-div#netflix-widget div.widget_content img {
-	margin-left: 8px;
-}
-
-div#scrobbler div.widget_content ul {
-	margin: 0;
-	text-transform: lowercase;
-}
-div#scrobbler div.widget_content ul li {
+div#scrobbler li {
 	margin: 0 auto .5em;
 }
 

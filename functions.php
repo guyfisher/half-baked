@@ -249,9 +249,27 @@ add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' 
 
 /* Sidebar Widgets */
 
-if (function_exists('register_sidebar')) {
-	register_sidebar(array('name' => 'Main Sidebar', 'description' => 'Widgets displayed in the main sidebar', 'before_widget' => "\t" . '<div id="%1$s" class="widget %2$s">' . "\n", 'after_widget' => "\n\t\t</div>\n\t</div>\n", 'before_title' => "\t\t<h3>", 'after_title' => "</h3>\n\t\t<div class=\"widget_content\">\n"));
-	register_sidebar(array('name' => 'Accordion', 'description' => 'Widgets displayed inside the Half-Baked Accordion widget', 'before_widget' => "\t\t\t" . '<div id="%1$s" class="widget %2$s">' . "\n", 'after_widget' => "\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n", 'before_title' => "\t\t\t\t<h3>", 'after_title' => "</h3>\n\t\t\t\t<div class=\"widget_content\">\n\t\t\t\t\t<div class=\"scriptaculous\">\n"));
+if ( function_exists( 'register_sidebar' ) ) {
+	register_sidebar(
+		array(
+			'name' => 'Main Sidebar',
+			'description' => 'Widgets displayed in the main sidebar',
+			'before_widget' => "\t" . '<div id="%1$s" class="widget %2$s">' . "\n",
+			'after_widget' => "\n\t</div>\n",
+			'before_title' => "\t\t<h3>",
+			'after_title' => "</h3>\n"
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => 'Accordion',
+			'description' => 'Widgets displayed inside the Half-Baked Accordion widget',
+			'before_widget' => "\t\t\t" . '<div id="%1$s" class="widget %2$s">' . "\n",
+			'after_widget' => "\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n",
+			'before_title' => "\t\t\t\t<h3>",
+			'after_title' => "</h3>\n\t\t\t\t<div class=\"widget_content\">\n\t\t\t\t\t<div class=\"scriptaculous\">\n"
+		)
+	);
 }
 
 function half_baked_widgets_ini() {
