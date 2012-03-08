@@ -119,7 +119,7 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.1 =
+= 1.6.2 =
 
 This version fixes a pair of bugs that affected the display of custom menus and calendar widgets. Requires WordPress 3.1 or higher.
 
