@@ -34,10 +34,11 @@ add_action( 'after_setup_theme', 'half_baked_setup_theme' );
  * @uses wp_enqueue_script()
  */
 function half_baked_enqueue_scripts() {
-	$theme = get_theme( get_current_theme() );
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/scripts/jquery.fitvids.js', array( 'jquery' ), '1.0' ); // fluid videos
-	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) ); // accordion widget
-	wp_enqueue_script( 'half-baked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'fitvids', 'accordion' ), $theme['Version'] );
+	$theme = wp_get_theme();
+	$template_directory_uri = get_template_directory_uri();
+	wp_enqueue_script( 'fitvids', $template_directory_uri . '/scripts/jquery.fitvids.js', array( 'jquery' ), '1.0' ); // fluid videos
+	wp_enqueue_script( 'accordion', $template_directory_uri . '/scripts/accordion.js', array( 'scriptaculous-effects' ) ); // accordion widget
+	wp_enqueue_script( 'half-baked', $template_directory_uri . '/scripts/half-baked.js', array( 'fitvids', 'accordion' ), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
 
