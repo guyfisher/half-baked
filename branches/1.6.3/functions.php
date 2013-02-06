@@ -308,7 +308,7 @@ function half_baked_widgets_ini() {
 		extract($args);
 		echo $before_widget;
 		echo $before_title . 'Meta' . $after_title;
-		include get_template_directory() . '/meta.php';
+		get_template_part( 'meta' );
 		echo $after_widget;
 	}
 	$widget_ops = array('classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme');

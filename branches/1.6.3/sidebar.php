@@ -97,7 +97,7 @@ if (is_home()) {
 ?>
 	<div id="meta" class="widget">
 		<h3>Meta</h3>
-		<?php include( get_template_directory() . '/meta.php' ); ?>
+		<?php get_template_part( 'meta' ); ?>
 	</div>
 <?php endif; /* End of Sidebar Widgets */?>
 
