@@ -3,7 +3,7 @@
 <div id="sidebar">
 	<hr />
 	<h2>Sidebar</h2>
-<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()): /* Sidebar Widgets Plugin (http://automattic.com/code/widgets/) */ ?>
+<?php if ( ! dynamic_sidebar( 'main' ) ) : /* Sidebar Widgets */ ?>
 	<div id="pages" class="widget widget_pages">
 		<h3>Pages</h3>
 		<?php if (function_exists('wswwpx_fold_page_list')) { ?>

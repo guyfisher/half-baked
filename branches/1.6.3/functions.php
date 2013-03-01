@@ -269,36 +269,38 @@ add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' 
 
 /* Sidebar Widgets */
 
-if ( function_exists( 'register_sidebar' ) ) {
-	register_sidebar(
-		array(
+/**
+ * Registers main widget sidebar and accordion widget area.
+ *
+ * @since Half-Baked 1.6.3
+ *
+ * @uses register_sidebar()
+ */
+function half_baked_widgets_init() {
+	register_sidebar( array(
 			'name' => 'Main Sidebar',
+			'id' => 'main',
 			'description' => 'Widgets displayed in the main sidebar',
 			'before_widget' => "\t" . '<div id="%1$s" class="widget %2$s">' . "\n",
 			'after_widget' => "\n\t</div>\n",
 			'before_title' => "\t\t<h3>",
 			'after_title' => "</h3>\n"
-		)
-	);
-	register_sidebar(
-		array(
+	) );
+	register_sidebar( array(
 			'name' => 'Accordion',
+			'id' => 'accordion',
 			'description' => 'Widgets displayed inside the Half-Baked Accordion widget',
 			'before_widget' => "\t\t\t" . '<div id="%1$s" class="widget %2$s">' . "\n",
 			'after_widget' => "\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n",
 			'before_title' => "\t\t\t\t<h3>",
 			'after_title' => "</h3>\n\t\t\t\t<div class=\"widget_content\">\n\t\t\t\t\t<div class=\"scriptaculous\">\n"
-		)
-	);
+	) );
 }
+add_action( 'widgets_init', 'half_baked_widgets_init' );
 
 function half_baked_widgets_ini() {
 
 	/* Initializes the custom widgets built into the Half-Baked theme. */
-
-	if (!function_exists('register_sidebar_widget')) {
-		return;
-	}
 
 	function widget_half_baked_search($args) { // Search Widget
 		extract($args);
@@ -315,7 +317,7 @@ function half_baked_widgets_ini() {
 			extract($args);
 			echo $before_widget;
 			echo "\t\t<div class=\"accordion_content\">\n";
-			dynamic_sidebar('Accordion');
+			dynamic_sidebar( 'accordion' );
 			echo "\t\t</div>\n";
 			echo "\t</div>\n";
 		}
