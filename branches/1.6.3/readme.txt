@@ -22,19 +22,11 @@ The Half-Baked theme is widget-aware, and you can highlight some of your sidebar
 
 = Accordion Widget =
 
-The Half-Baked theme's default sidebar will automatically display the FlickrRSS, Netflix and Scrobbler plugins inside a Scriptaculous accordion.
-
-If you're using widgets, there's a built-in accordion widget that displays any widgets you choose. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Main Sidebar widget list. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
+The Half-Baked theme's built-in accordion widget displays any widgets you choose inside a Scriptaculous accordion. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Main Sidebar widget list. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
 
 Every widget that you add to the Accordion widget list must have a title. If a widget doesn't have a title, it won't have a heading when it's displayed, and your users won't be able to open it by clicking on its heading.
 
 == Frequently Asked Questions ==
-
-= What plugins does this theme support? =
-
-The default sidebar is configured to work with the Fold Page List and Fold Category List plugins, the WordPress Related Posts plugin, and the FlickrRSS, Netflix and Scrobbler plugins.
-
-The Half-Baked theme is also widget-aware, with several built-in widgets and support for the Flexi Pages widget and the Feeds widget.
 
 = How do the rollover icons at the top and bottom of each page work? =
 
