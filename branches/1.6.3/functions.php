@@ -302,16 +302,6 @@ function half_baked_widgets_ini() {
 
 	/* Initializes the custom widgets built into the Half-Baked theme. */
 
-	function widget_half_baked_search($args) { // Search Widget
-		extract($args);
-		echo $before_widget;
-		echo $before_title . 'Search' . $after_title;
-		get_search_form();
-		echo $after_widget;
-	}
-	$widget_ops = array('classname' => 'widget_search', 'description' => 'A search form for the Half-Baked theme');
-	wp_register_sidebar_widget('search', 'Search', 'widget_half_baked_search', $widget_ops);
-
 	function widget_half_baked_accordion($args) { // Accordion Widget
 		if (is_home()) {
 			extract($args);
