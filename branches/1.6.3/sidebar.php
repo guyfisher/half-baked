@@ -2,7 +2,7 @@
 
 <div id="sidebar">
 	<hr />
-	<h2>sidebar</h2>
+	<h2>Sidebar</h2>
 	<?php if ( ! dynamic_sidebar( 'main' ) ) : /* sidebar widgets */ ?>
 	<div id="pages" class="widget widget_pages">
 		<h3>pages</h3>
