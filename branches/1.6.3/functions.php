@@ -267,7 +267,29 @@ function half_baked_comment_form_after_fields() {
 }
 add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
 
-/* Sidebar Widgets */
+/**
+ * Meta widget child class
+ *
+ * Custom Half-Baked meta widget replaces the default meta widget.
+ *
+ * @see WP_Widget_Meta
+ * @since Half-Baked 1.6.3
+ */
+class Half_Baked_Widget_Meta extends WP_Widget_Meta {
+	function __construct() {
+		WP_Widget::__construct( 'meta', __( 'Meta' ), array( 'classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme' ) );
+	}
+	function widget( $args, $instance ) {
+		extract( $args );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance[ 'title' ], $instance, $this->id_base );
+		echo $before_widget;
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
+		get_template_part( 'meta' );
+		echo $after_widget;
+	}
+}
 
 /**
  * Registers main widget sidebar and accordion widget area.
@@ -275,6 +297,7 @@ add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' 
  * @since Half-Baked 1.6.3
  *
  * @uses register_sidebar()
+ * @uses register_widget()
  */
 function half_baked_widgets_init() {
 	register_sidebar( array(
@@ -295,6 +318,7 @@ function half_baked_widgets_init() {
 			'before_title' => "\t\t\t\t<h3>",
 			'after_title' => "</h3>\n\t\t\t\t<div class=\"widget_content\">\n\t\t\t\t\t<div class=\"scriptaculous\">\n"
 	) );
+	register_widget( 'Half_Baked_Widget_Meta' );
 }
 add_action( 'widgets_init', 'half_baked_widgets_init' );
 
@@ -315,18 +339,7 @@ function half_baked_widgets_ini() {
 	$widget_ops = array('classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.');
 	wp_register_sidebar_widget('half-baked-accordion', 'Half-Baked Accordion', 'widget_half_baked_accordion', $widget_ops);
 
-	function widget_half_baked_meta($args) { // Meta Widget
-		extract($args);
-		echo $before_widget;
-		echo $before_title . 'Meta' . $after_title;
-		get_template_part( 'meta' );
-		echo $after_widget;
-	}
-	$widget_ops = array('classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme');
-	wp_register_sidebar_widget('meta', 'Meta', 'widget_half_baked_meta', $widget_ops);
-
 }
-
 add_action('widgets_init', 'half_baked_widgets_ini');
 
 ?>

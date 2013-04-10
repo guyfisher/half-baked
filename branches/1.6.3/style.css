@@ -31,7 +31,7 @@ body {
 hr, .screen-reader-text,
 p.comment-form-comment label,
 div#sidebar h2,
-div.widget_pages h3, div#search h3, div#feeds h3, div#meta h3 {
+div.widget_pages h3, div#feeds h3 {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -616,7 +616,7 @@ html>body div.widget_nav_menu ul li a { /* Override Internet Explorer hypercodin
 
 /* Search Widget */
 
-div#search form {
+div.widget_search form {
 	margin-top: 2em;
 }
 
@@ -687,16 +687,12 @@ table#wp-calendar td#next {
 
 /* Meta Widget */
 
-div#meta {
-	margin-top: 3em;
-}
-div#meta p {
+div.widget_meta p {
 	font-style: italic;
-	line-height: 135%;
+	line-height: 150%;
 }
-div#meta p.login {
+div.widget_meta p.login {
 	margin-top: 1em;
 	font-style: normal;
-	font-size: 85%;
 	text-transform: capitalize;
 }

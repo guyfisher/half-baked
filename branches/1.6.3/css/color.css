@@ -292,19 +292,13 @@ div#tagcloud a:hover, div#tagcloud a:focus, div#tagcloud a:active {
 
 /* Meta Widget */
 
-div#meta {
+div.widget_meta p, div.widget_meta p a {
 	color: white;
 }
-div#meta p.login {
+div.widget_meta p.login, div.widget_meta p.login a {
 	color: #cc9;
 }
-div#meta p a {
-	color: white;
-}
-div#meta p.login a {
-	color: #cc9;
-}
-div#meta p a:hover, div#meta p a:focus, div#meta p a:active,
-div#meta p.login a:hover, div#meta p.login a:focus, div#meta p.login a:active {
+div.widget_meta p a:hover, div.widget_meta p a:focus, div.widget_meta p a:active,
+div.widget_meta p.login a:hover, div.widget_meta p.login a:focus, div.widget_meta p.login a:active {
 	color: yellow;
 }
