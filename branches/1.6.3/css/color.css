@@ -261,9 +261,9 @@ div.widget_nav_menu ul li a:active {
 	color: yellow;
 }
 
-/* Accordion Widget */
+/* accordion widget */
 
-div#half-baked-accordion {
+div.widget_half_baked_accordion {
 	background-color: #800;
 }
 

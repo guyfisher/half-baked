@@ -268,6 +268,28 @@ function half_baked_comment_form_after_fields() {
 add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
 
 /**
+ * Half-Baked Accordion widget child class
+ *
+ * Built-in Scriptaculous accordion widget for the Half-Baked theme.
+ *
+ * @see WP_Widget
+ * @since Half-Baked 1.6.3
+ */
+class Half_Baked_Widget_Accordion extends WP_Widget {
+	function __construct() {
+		parent::__construct( 'half-baked-accordion', 'Half-Baked Accordion', array( 'classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.' ) );
+	}
+	function widget( $args ) {
+		extract( $args );
+		echo $before_widget;
+		echo "\t\t<div class=\"accordion_content\">\n";
+		dynamic_sidebar( 'accordion' );
+		echo "\t\t</div>\n";
+		echo "\t</div>\n";
+	}
+}
+
+/**
  * Meta widget child class
  *
  * Custom Half-Baked meta widget replaces the default meta widget.
@@ -318,28 +340,9 @@ function half_baked_widgets_init() {
 			'before_title' => "\t\t\t\t<h3>",
 			'after_title' => "</h3>\n\t\t\t\t<div class=\"widget_content\">\n\t\t\t\t\t<div class=\"scriptaculous\">\n"
 	) );
+	register_widget( 'Half_Baked_Widget_Accordion' );
 	register_widget( 'Half_Baked_Widget_Meta' );
 }
 add_action( 'widgets_init', 'half_baked_widgets_init' );
-
-function half_baked_widgets_ini() {
-
-	/* Initializes the custom widgets built into the Half-Baked theme. */
-
-	function widget_half_baked_accordion($args) { // Accordion Widget
-		if (is_home()) {
-			extract($args);
-			echo $before_widget;
-			echo "\t\t<div class=\"accordion_content\">\n";
-			dynamic_sidebar( 'accordion' );
-			echo "\t\t</div>\n";
-			echo "\t</div>\n";
-		}
-	}
-	$widget_ops = array('classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.');
-	wp_register_sidebar_widget('half-baked-accordion', 'Half-Baked Accordion', 'widget_half_baked_accordion', $widget_ops);
-
-}
-add_action('widgets_init', 'half_baked_widgets_ini');
 
 ?>
