@@ -263,7 +263,7 @@ div.widget_nav_menu ul li a:active {
 
 /* accordion widget */
 
-div.widget_half_baked_accordion {
+div#sidebar div.widget_half_baked_accordion {
 	background-color: #800;
 }
 
@@ -290,15 +290,13 @@ div#tagcloud a:hover, div#tagcloud a:focus, div#tagcloud a:active {
 	color: yellow !important;
 }
 
-/* Meta Widget */
+/* meta widget */
 
-div.widget_meta p, div.widget_meta p a {
-	color: white;
-}
-div.widget_meta p.login, div.widget_meta p.login a {
+div.widget_meta p.login a {
 	color: #cc9;
 }
-div.widget_meta p a:hover, div.widget_meta p a:focus, div.widget_meta p a:active,
-div.widget_meta p.login a:hover, div.widget_meta p.login a:focus, div.widget_meta p.login a:active {
+div.widget_meta p.login a:hover,
+div.widget_meta p.login a:focus,
+div.widget_meta p.login a:active {
 	color: yellow;
 }

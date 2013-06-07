@@ -1,15 +1,15 @@
 /*
 
-theme name: half-baked
-description: a bold red, two-column theme that splits the index pages of your wordpress blog right down the middle.
-tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
-theme uri: http://half-baked.googlecode.com/
-author: guy fisher
-license: gnu general public license 2.0
-license uri: http://gnu.org/licenses/gpl-2.0.html
-version: 1.6.3
+Theme Name: Half-Baked
+Description: A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
+Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
+Theme URI: http://half-baked.googlecode.com/
+Author: Guy Fisher
+License: GNU General Public License 2.0
+License URI: http://gnu.org/licenses/gpl-2.0.html
+Version: 1.6.3
 
-copyright © 2007 guy m. fisher
+Copyright © 2007 Guy M. Fisher
 
 */
 
@@ -603,14 +603,14 @@ div.widget_nav_menu ul li {
 div.widget_pages ul li a,
 div.widget_nav_menu ul li a { /* rollover menu links */
 	display: block;
-	height: 1em; /* internet explorer hypercoding hack */
+	height: 1em; /* Internet Explorer hypercoding hack */
 	margin: 0;
 	border-right-width: 4px;
 	border-right-style: solid;
 	padding: 8px;
 }
 html>body div.widget_pages ul li a,
-html>body div.widget_nav_menu ul li a { /* override internet explorer hypercoding hack */
+html>body div.widget_nav_menu ul li a { /* override Internet Explorer hypercoding hack */
 	height: auto;
 }
 
@@ -634,30 +634,30 @@ div#feeds li {
 
 /* accordion widget */
 
-div.widget_half_baked_accordion {
+div#sidebar div.widget_half_baked_accordion {
 	width: 100% !important;
 	margin: 2em 0;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
-div.widget_half_baked_accordion div.accordion_content {
+div#sidebar div.widget_half_baked_accordion div.accordion_content {
 	padding: 1.5em;
 }
-div.widget_half_baked_accordion img {
+div#sidebar div.widget_half_baked_accordion img {
 	margin: 0 0 6px 6px;
 	border-width: 2px;
 	border-style: solid;
 }
-div.widget_half_baked_accordion h3 {
+div#sidebar div.widget_half_baked_accordion h3 {
 	margin: 0 0 .5em;
 	border: none;
 	padding: 0;
 }
-div.widget_half_baked_accordion h3 img {
+div#sidebar div.widget_half_baked_accordion h3 img {
 	margin: 0 6px;
 	border: none;
-	text-align: center;
+	vertical-align: middle;
 }
 
 /* calendar widget */
