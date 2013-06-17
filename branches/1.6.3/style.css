@@ -404,6 +404,11 @@ body.single div#main > *:first-child, body.page div#main > *:first-child {
 	margin-top: 0 !important;
 	padding-top: 0 !important;
 }
+body.single div#main h2,
+body.page div#main h2 {
+	border-bottom: none;
+	padding-bottom: 0;
+}
 body.single div#main h3, body.page div#main h3 {
 	margin-top: 1em;
 	border-bottom: none;
