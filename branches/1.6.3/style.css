@@ -591,17 +591,23 @@ div.widget_nav_menu {
 div.widget_pages ul,
 div.widget_pages ul li,
 div.widget_nav_menu ul,
-div.widget_nav_menu ul li { /* rollover menu list (http://alistapart.com/stories/taminglists/) */
+div.widget_nav_menu ul li { /* page list (http://alistapart.com/stories/taminglists/) */
 	margin: 0;
 	border: none;
 	padding: 0;
 }
+div.widget_pages ul.children,
+div.widget_nav_menu ul.sub-menu { /* child page list */
+	border-right-width: 4px;
+	border-right-style: solid;
+	padding-right: 4px;
+}
 div.widget_pages ul li,
-div.widget_nav_menu ul li {
+div.widget_nav_menu ul li { /* page list item */
 	margin: 2px 0;
 }
 div.widget_pages ul li a,
-div.widget_nav_menu ul li a { /* rollover menu links */
+div.widget_nav_menu ul li a { /* page link */
 	display: block;
 	height: 1em; /* Internet Explorer hypercoding hack */
 	margin: 0;
@@ -688,6 +694,33 @@ table#wp-calendar td#prev {
 }
 table#wp-calendar td#next {
 	text-align: right;
+}
+
+/* rss widget */
+
+div.widget_rss li {
+	padding-bottom: .75em;
+}
+span.rss-date {
+	display: block;
+}
+div.rssSummary {
+	margin: .5em 0 .25em;
+	font-style: italic;
+}
+
+/* tag cloud widget */
+
+div.tagcloud {
+	text-align: justify;
+}
+
+/* text widget */
+
+div.widget_text img,
+div.widget_text select {
+	max-width: 100%;
+	height: auto;
 }
 
 /* meta widget */

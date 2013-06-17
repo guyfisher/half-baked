@@ -231,17 +231,24 @@ div#respond p.form-submit input {
 	background-color: #600;
 }
 
-/* Sidebar */
+/* sidebar */
 
-div#sidebar, div#sidebar h3 a {
+div#sidebar,
+div#sidebar h3 a {
 	color: #cc9;
 }
-div#sidebar h3 a:hover, div#sidebar h3 a:focus, div#sidebar h3 a:active {
+div#sidebar h3 a:hover,
+div#sidebar h3 a:focus,
+div#sidebar h3 a:active {
 	color: yellow;
 }
 
 /* pages widget */
 
+div.widget_pages ul.children,
+div.widget_nav_menu ul.sub-menu {
+	border-color: #a00;
+}
 div.widget_pages ul li a,
 div.widget_nav_menu ul li a {
 	border-color: #c00;
@@ -267,7 +274,7 @@ div#sidebar div.widget_half_baked_accordion {
 	background-color: #800;
 }
 
-/* Categories Widget */
+/* categories widget */
 
 div.widget_categories ul ul li {
 	padding-right: 16px;
@@ -284,9 +291,11 @@ table#wp-calendar tfoot {
 	border-top-color: #cc9;
 }
 
-/* Tag Cloud Widget */
+/* tag cloud widget */
 
-div#tagcloud a:hover, div#tagcloud a:focus, div#tagcloud a:active {
+div.tagcloud a:hover,
+div.tagcloud a:focus,
+div.tagcloud a:active {
 	color: yellow !important;
 }
 
