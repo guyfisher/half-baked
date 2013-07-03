@@ -10,7 +10,7 @@ get_header(); /* WordPress Header Template */
 
 ?>
 
-<h2><?php wp_title('') ?></h2><!-- Document Title -->
+<h2><?php the_title() ?></h2><!-- Document Title -->
 
 <!-- Single Page Meta Information -->
 

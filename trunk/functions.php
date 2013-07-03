@@ -32,14 +32,34 @@ add_action( 'after_setup_theme', 'half_baked_setup_theme' );
  * @since 1.6
  *
  * @uses wp_enqueue_script()
- */
+8 */
 function half_baked_enqueue_scripts() {
-	$theme = get_theme( get_current_theme() );
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/scripts/jquery.fitvids.js', array( 'jquery' ), '1.0' ); // fluid videos
-	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/scripts/accordion.js', array( 'scriptaculous-effects' ) ); // accordion widget
-	wp_enqueue_script( 'half-baked', get_template_directory_uri() . '/scripts/half-baked.js', array( 'fitvids', 'accordion' ), $theme['Version'] );
+	$theme = wp_get_theme();
+	$template_directory_uri = get_template_directory_uri();
+	wp_enqueue_script( 'fitvids', $template_directory_uri . '/scripts/jquery.fitvids.js', array( 'jquery' ), '1.0' ); // fluid videos
+	wp_enqueue_script( 'accordion', $template_directory_uri . '/scripts/accordion.js', array( 'scriptaculous-effects' ) ); // accordion widget
+	wp_enqueue_script( 'half-baked', $template_directory_uri . '/scripts/half-baked.js', array( 'fitvids', 'accordion' ), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
+
+/**
+ * Appends blog name to default page titles.
+ *
+ * Filters the page title string with the wp_title filter hook.
+ *
+ * @see wp_title()
+ * @since 1.6.3
+ *
+ * @param string $title Page title string
+ * @return string Page title string with blog name appended
+ */
+function half_baked_title( $title ) {
+	if ( is_feed() ) {
+		return $title;
+	}
+	return $title . get_bloginfo( 'name' );
+}
+add_filter( 'wp_title', 'half_baked_title' );
 
 function half_baked_contact() {
 
@@ -247,74 +267,82 @@ function half_baked_comment_form_after_fields() {
 }
 add_action( 'comment_form_after_fields', 'half_baked_comment_form_after_fields' );
 
-/* Sidebar Widgets */
+/**
+ * Half-Baked Accordion widget child class
+ *
+ * Built-in Scriptaculous accordion widget for the Half-Baked theme.
+ *
+ * @see WP_Widget
+ * @since Half-Baked 1.6.3
+ */
+class Half_Baked_Widget_Accordion extends WP_Widget {
+	function __construct() {
+		parent::__construct( 'half-baked-accordion', 'Half-Baked Accordion', array( 'classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.' ) );
+	}
+	function widget( $args ) {
+		extract( $args );
+		echo $before_widget;
+		echo "\t\t<div class=\"accordion_content\">\n";
+		dynamic_sidebar( 'accordion' );
+		echo "\t\t</div>\n";
+		echo "\t</div>\n";
+	}
+}
 
-if ( function_exists( 'register_sidebar' ) ) {
-	register_sidebar(
-		array(
+/**
+ * Meta widget child class
+ *
+ * Custom Half-Baked meta widget replaces the default meta widget.
+ *
+ * @see WP_Widget_Meta
+ * @since Half-Baked 1.6.3
+ */
+class Half_Baked_Widget_Meta extends WP_Widget_Meta {
+	function __construct() {
+		WP_Widget::__construct( 'meta', __( 'Meta' ), array( 'classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme' ) );
+	}
+	function widget( $args, $instance ) {
+		extract( $args );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance[ 'title' ], $instance, $this->id_base );
+		echo $before_widget;
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
+		get_template_part( 'meta' );
+		echo $after_widget;
+	}
+}
+
+/**
+ * Registers main widget sidebar and accordion widget area.
+ *
+ * @since Half-Baked 1.6.3
+ *
+ * @uses register_sidebar()
+ * @uses register_widget()
+ */
+function half_baked_widgets_init() {
+	register_sidebar( array(
 			'name' => 'Main Sidebar',
+			'id' => 'main',
 			'description' => 'Widgets displayed in the main sidebar',
 			'before_widget' => "\t" . '<div id="%1$s" class="widget %2$s">' . "\n",
 			'after_widget' => "\n\t</div>\n",
 			'before_title' => "\t\t<h3>",
 			'after_title' => "</h3>\n"
-		)
-	);
-	register_sidebar(
-		array(
+	) );
+	register_sidebar( array(
 			'name' => 'Accordion',
+			'id' => 'accordion',
 			'description' => 'Widgets displayed inside the Half-Baked Accordion widget',
 			'before_widget' => "\t\t\t" . '<div id="%1$s" class="widget %2$s">' . "\n",
 			'after_widget' => "\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n",
 			'before_title' => "\t\t\t\t<h3>",
 			'after_title' => "</h3>\n\t\t\t\t<div class=\"widget_content\">\n\t\t\t\t\t<div class=\"scriptaculous\">\n"
-		)
-	);
+	) );
+	register_widget( 'Half_Baked_Widget_Accordion' );
+	register_widget( 'Half_Baked_Widget_Meta' );
 }
-
-function half_baked_widgets_ini() {
-
-	/* Initializes the custom widgets built into the Half-Baked theme. */
-
-	if (!function_exists('register_sidebar_widget')) {
-		return;
-	}
-
-	function widget_half_baked_search($args) { // Search Widget
-		extract($args);
-		echo $before_widget;
-		echo $before_title . 'Search' . $after_title;
-		get_search_form();
-		echo $after_widget;
-	}
-	$widget_ops = array('classname' => 'widget_search', 'description' => 'A search form for the Half-Baked theme');
-	wp_register_sidebar_widget('search', 'Search', 'widget_half_baked_search', $widget_ops);
-
-	function widget_half_baked_accordion($args) { // Accordion Widget
-		if (is_home()) {
-			extract($args);
-			echo $before_widget;
-			echo "\t\t<div class=\"accordion_content\">\n";
-			dynamic_sidebar('Accordion');
-			echo "\t\t</div>\n";
-			echo "\t</div>\n";
-		}
-	}
-	$widget_ops = array('classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.');
-	wp_register_sidebar_widget('half-baked-accordion', 'Half-Baked Accordion', 'widget_half_baked_accordion', $widget_ops);
-
-	function widget_half_baked_meta($args) { // Meta Widget
-		extract($args);
-		echo $before_widget;
-		echo $before_title . 'Meta' . $after_title;
-		include TEMPLATEPATH . '/meta.php';
-		echo $after_widget;
-	}
-	$widget_ops = array('classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme');
-	wp_register_sidebar_widget('meta', 'Meta', 'widget_half_baked_meta', $widget_ops);
-
-}
-
-add_action('widgets_init', 'half_baked_widgets_ini');
+add_action( 'widgets_init', 'half_baked_widgets_init' );
 
 ?>

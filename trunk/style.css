@@ -7,14 +7,14 @@ Theme URI: http://half-baked.googlecode.com/
 Author: Guy Fisher
 License: GNU General Public License 2.0
 License URI: http://gnu.org/licenses/gpl-2.0.html
-Version: 1.6.2
+Version: 1.6.3
 
 Copyright © 2007 Guy M. Fisher
 
 */
 
-@import "./css/layout.css"; /* Layout style sheet */
-@import "./css/color.css"; /* Color palette style sheet */
+@import "./css/layout.css"; /* layout style sheet */
+@import "./css/color.css"; /* color palette style sheet */
 
 html {
 	border-top-width: 8px;
@@ -26,12 +26,12 @@ body {
 	font-family: tahoma, geneva, "bitstream vera sans", lucida, verdana, sans-serif;
 }
 
-/* "Hidden" Elements (http://www.webaim.org/techniques/articles/hiddentext) */
+/* "hidden" elements (http://www.webaim.org/techniques/articles/hiddentext) */
 
 hr, .screen-reader-text,
 p.comment-form-comment label,
 div#sidebar h2,
-div#pages h3, div.flexipages_widget h3, div#search h3, div#feeds h3, div#meta h3 {
+div.widget_pages h3, div#feeds h3 {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -41,7 +41,7 @@ div#pages h3, div.flexipages_widget h3, div#search h3, div#feeds h3, div#meta h3
 	overflow: hidden;
 }
 
-/* Block Elements */
+/* block elements */
 
 blockquote {
 	margin: auto 2em;
@@ -105,7 +105,7 @@ ul {
 	list-style-type: square;
 }
 
-/* Inline Elements */
+/* inline elements */
 
 a:link, a:visited {
 	text-decoration: none;
@@ -131,7 +131,7 @@ kbd {
 	font-weight: bold;
 }
 
-/* Running Head & Running Foot */
+/* running head & running foot */
 
 div#head, div#foot {
 	text-align: center;
@@ -154,7 +154,7 @@ div#head p#tagline {
 	margin: 0 auto 30px;
 }
 
-div#head p#contact, div#foot p#about { /* "Contact" & "About" image replacement (http://www.mezzoblue.com/tests/revised-image-replacement/#leahylangridge) */
+div#head p#contact, div#foot p#about { /* "contact" & "about" image replacement (http://www.mezzoblue.com/tests/revised-image-replacement/#leahylangridge) */
 	width: 70px;
 	height: 34px;
 	overflow: hidden;
@@ -182,14 +182,14 @@ div#foot p#about {
 	margin-bottom: 20px;
 }
 
-/* Content */
+/* content */
 
-div#content { /* Index layout center rule */
+div#content { /* index layout center rule */
 	background-position: center top;
 	background-repeat: repeat-y;
 }
 
-/* Headings */
+/* headings */
 
 h1, h2, h3, h4, h5 {
 	clear: both;
@@ -206,7 +206,7 @@ h2 {
 	font-size: 300%;
 }
 
-/* Images & Captions */
+/* images & captions */
 
 .alignleft {
 	float: left;
@@ -247,13 +247,13 @@ h2 {
 	font-style: normal;
 }
 
-/* Main Content */
+/* main content */
 
 div#main {
 	line-height: 135%;
 }
 
-div#main a { /* Text links */
+div#main a { /* text links */
 	text-decoration: none;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -265,7 +265,7 @@ div#main div.dateline a,
 div#main div.tags a,
 div#main div.bookmarks a,
 ol#trackbacks li a,
-divprev-next a { /* Override text links */
+divprev-next a { /* override text links */
 	border: none !important;
 }
 div.highlight a.more-link:hover, div.highlight a.more-link:focus, div.highlight a.more-link:active,
@@ -303,9 +303,9 @@ div#main video {
 }
 
 div.prev-next {
-	clear: both; /* Clear below floated images */
+	clear: both; /* clear below floated images */
 	width: 100%;
-	overflow: hidden; /* Extended box hack (http://www.quirksmode.org/css/clearing.html) */
+	overflow: hidden; /* extended box hack (http://www.quirksmode.org/css/clearing.html) */
 	margin: 2em 0 1em;
 	line-height: normal;
 }
@@ -320,7 +320,7 @@ div.prev-next div.next {
 	text-align: right;
 }
 
-/* Index Posts */
+/* index posts */
 
 div.highlight {
 	width: 100% !important;
@@ -358,7 +358,7 @@ div.dateline {
 	margin: .5em 0 1em;
 }
 div.link-pages, div.tags, div.bookmarks {
-	clear: both; /* Clear below floated images */
+	clear: both; /* clear below floated images */
 }
 div.tags {
 	margin: 1em 0 .5em;
@@ -370,7 +370,7 @@ div.bookmarks {
 	padding-top: .5em;
 }
 
-/* Single Posts & Pages */
+/* single posts & pages */
 
 body.single h2, body.page h2 {
 	border-bottom-width: 1px;
@@ -379,7 +379,7 @@ body.single h2, body.page h2 {
 	text-align: left;
 }
 
-div#postmeta { /* Postmeta slider */
+div#postmeta { /* postmeta slider */
 	margin-bottom: 2em;
 	text-align: right;
 }
@@ -403,6 +403,11 @@ div#postmeta div#postmeta_slider dt:first-child {
 body.single div#main > *:first-child, body.page div#main > *:first-child {
 	margin-top: 0 !important;
 	padding-top: 0 !important;
+}
+body.single div#main h2,
+body.page div#main h2 {
+	border-bottom: none;
+	padding-bottom: 0;
 }
 body.single div#main h3, body.page div#main h3 {
 	margin-top: 1em;
@@ -532,7 +537,7 @@ div#respond p.form-submit input {
 	padding: .5em;
 }
 
-/* Archives (archives.php) */
+/* archives (archives.php) */
 
 ul.get_archives, ul.list_categories {
 	list-style: none;
@@ -551,7 +556,7 @@ p.tag_cloud {
 	line-height: 250%;
 }
 
-/* Sidebar */
+/* sidebar */
 
 div#sidebar {
 	margin-top: 2em;
@@ -585,28 +590,29 @@ div#sidebar li a img {
 /* pages widget */
 
 div.widget_pages,
-div.widget_nav_menu,
-div.flexipages_widget {
+div.widget_nav_menu {
 	margin: 2em 0;
 }
 div.widget_pages ul,
 div.widget_pages ul li,
 div.widget_nav_menu ul,
-div.widget_nav_menu ul li,
-div.flexipages_widget ul,
-div.flexipages_widget ul li { /* Rollover menu list (http://alistapart.com/stories/taminglists/) */
+div.widget_nav_menu ul li { /* page list (http://alistapart.com/stories/taminglists/) */
 	margin: 0;
 	border: none;
 	padding: 0;
 }
+div.widget_pages ul.children,
+div.widget_nav_menu ul.sub-menu { /* child page list */
+	border-right-width: 4px;
+	border-right-style: solid;
+	padding-right: 4px;
+}
 div.widget_pages ul li,
-div.widget_nav_menu ul li,
-div.flexipages_widget ul li {
+div.widget_nav_menu ul li { /* page list item */
 	margin: 2px 0;
 }
 div.widget_pages ul li a,
-div.widget_nav_menu ul li a,
-div.flexipages_widget ul li a { /* Rollover menu links */
+div.widget_nav_menu ul li a { /* page link */
 	display: block;
 	height: 1em; /* Internet Explorer hypercoding hack */
 	margin: 0;
@@ -615,18 +621,17 @@ div.flexipages_widget ul li a { /* Rollover menu links */
 	padding: 8px;
 }
 html>body div.widget_pages ul li a,
-html>body div.widget_nav_menu ul li a,
-html>body div.flexipages_widget ul li a { /* Override Internet Explorer hypercoding hack */
+html>body div.widget_nav_menu ul li a { /* override Internet Explorer hypercoding hack */
 	height: auto;
 }
 
-/* Search Widget */
+/* search widget */
 
-div#search form {
+div.widget_search form {
 	margin-top: 2em;
 }
 
-/* Feeds Widget */
+/* feeds widget */
 
 div#feeds {
 	margin: 1em 0 2em;
@@ -638,38 +643,32 @@ div#feeds li {
 	background: transparent url("./images/feed-icon-12x12.png") left center no-repeat;
 }
 
-/* Accordion Widget */
+/* accordion widget */
 
-div#half-baked-accordion {
+div#sidebar div.widget_half_baked_accordion {
 	width: 100% !important;
 	margin: 2em 0;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
-div#half-baked-accordion div.accordion_content {
+div#sidebar div.widget_half_baked_accordion div.accordion_content {
 	padding: 1.5em;
 }
-div#half-baked-accordion h3 {
+div#sidebar div.widget_half_baked_accordion img {
+	margin: 0 0 6px 6px;
+	border-width: 2px;
+	border-style: solid;
+}
+div#sidebar div.widget_half_baked_accordion h3 {
 	margin: 0 0 .5em;
 	border: none;
 	padding: 0;
 }
-
-/* flickrrss, netflix & scrobbler widgets */
-
-div#flickrrss img,
-div#netflix-widget img {
-	margin-bottom: 6px;
-	margin-left: 6px;
-	border-width: 2px;
-	border-style: solid;
-}
-div#netflix-widget br {
-	display: none;
-}
-div#scrobbler li {
-	margin: 0 auto .5em;
+div#sidebar div.widget_half_baked_accordion h3 img {
+	margin: 0 6px;
+	border: none;
+	vertical-align: middle;
 }
 
 /* calendar widget */
@@ -702,40 +701,39 @@ table#wp-calendar td#next {
 	text-align: right;
 }
 
-/* Meta Widget */
+/* rss widget */
 
-div#meta {
-	margin-top: 3em;
+div.widget_rss li {
+	padding-bottom: .75em;
 }
-div#meta p {
+span.rss-date {
+	display: block;
+}
+div.rssSummary {
+	margin: .5em 0 .25em;
 	font-style: italic;
-	line-height: 135%;
 }
-div#meta p.login {
+
+/* tag cloud widget */
+
+div.tagcloud {
+	text-align: justify;
+}
+
+/* text widget */
+
+div.widget_text img,
+div.widget_text select {
+	max-width: 100%;
+	height: auto;
+}
+
+/* meta widget */
+
+div.widget_meta p {
+	line-height: 150%;
+}
+div.widget_meta p.login {
 	margin-top: 1em;
-	font-style: normal;
-	font-size: 85%;
 	text-transform: capitalize;
-}
-
-/* Akismet Widget */
-
-div#akismet div#akismetstats {
-	margin-right: 0;
-	margin-left: auto;
-}
-
-/* ShareThis */
-
-a.stbutton {
-	border-bottom: none !important;
-	text-decoration: none;
-}
-
-/* WordPress.com Stats */
-
-div#foot img#wpstats {
-	width: 0px;
-	height: 0px;
-	overflow: hidden;
 }

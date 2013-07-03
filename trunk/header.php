@@ -4,17 +4,7 @@
 
 <head profile="http://gmpg.org/xfn/11"><!-- XFN Profile for Blogroll Relationships -->
 
-<?php
-echo "\t<title>" . get_bloginfo('name');
-if (is_search()) {
-	echo ' &raquo; ' . get_search_query();
-}
-else if (is_404()) {
-	echo ' &raquo; 404';
-}
-else echo wp_title('&raquo;', false);
-echo "</title>\n";
-?>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta name="theme" content="Half-Baked" />
