@@ -3,7 +3,7 @@
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
 Requires at least: 3.1
-Tested up to: 3.3
+Tested up to: 3.5
 Stable tag: trunk
 
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
@@ -34,12 +34,24 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.6.3 =
+
+* Ported built-in widgets to Widgets API
+* Updated template tags
+* Updated styles for main content headings
+* Updated styles for core widgets
+* Removed backward compatibility for out of date WordPress versions
+* Removed built-in search widget
+* Removed support for third party plugins
+* Added filter on wp_title template tag
+* Added styles for page navigation submenus
+
 = 1.6.2 =
 
-* Fix extra closing div tag inside untitled widgets
+* Fixed extra closing div tag inside untitled widgets
 * Fixed misalignment of calendar widget
 * Removed Author URI from style sheet file header
-* Added styles for custom menu widget
+* Added styles for built-in menu widget
 
 = 1.6.1 =
 
@@ -111,9 +123,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.2 =
+= 1.6.3 =
 
-This version fixes a pair of bugs that affected the display of custom menus and calendar widgets. Requires WordPress 3.1 or higher.
+This version removes support for third party plugins and improves the performance and appearance of built-in and core widgets.
 
 == Credits ==
 
