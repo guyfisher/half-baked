@@ -3,7 +3,7 @@
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
 Requires at least: 3.1
-Tested up to: 3.3
+Tested up to: 3.5
 Stable tag: trunk
 
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
@@ -22,19 +22,11 @@ The Half-Baked theme is widget-aware, and you can highlight some of your sidebar
 
 = Accordion Widget =
 
-The Half-Baked theme's default sidebar will automatically display the FlickrRSS, Netflix and Scrobbler plugins inside a Scriptaculous accordion.
-
-If you're using widgets, there's a built-in accordion widget that displays any widgets you choose. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Main Sidebar widget list. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
+The Half-Baked theme's built-in accordion widget displays any widgets you choose inside a Scriptaculous accordion. Go to the widgets administration panel and add the Half-Baked Accordion widget to the Main Sidebar widget list. Next, open the Accordion widget list and add the widgets that you want displayed inside the Half-Baked Accordion.
 
 Every widget that you add to the Accordion widget list must have a title. If a widget doesn't have a title, it won't have a heading when it's displayed, and your users won't be able to open it by clicking on its heading.
 
 == Frequently Asked Questions ==
-
-= What plugins does this theme support? =
-
-The default sidebar is configured to work with the Fold Page List and Fold Category List plugins, the WordPress Related Posts plugin, and the FlickrRSS, Netflix and Scrobbler plugins.
-
-The Half-Baked theme is also widget-aware, with several built-in widgets and support for the Flexi Pages widget and the Feeds widget.
 
 = How do the rollover icons at the top and bottom of each page work? =
 
@@ -42,12 +34,24 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.6.3 =
+
+* Ported built-in widgets to Widgets API
+* Updated template tags
+* Updated styles for main content headings
+* Updated styles for core widgets
+* Removed backward compatibility for out of date WordPress versions
+* Removed built-in search widget
+* Removed support for third party plugins
+* Added filter on wp_title template tag
+* Added styles for page navigation submenus
+
 = 1.6.2 =
 
-* Fix extra closing div tag inside untitled widgets
+* Fixed extra closing div tag inside untitled widgets
 * Fixed misalignment of calendar widget
 * Removed Author URI from style sheet file header
-* Added styles for custom menu widget
+* Added styles for built-in menu widget
 
 = 1.6.1 =
 
@@ -119,9 +123,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.2 =
+= 1.6.3 =
 
-This version fixes a pair of bugs that affected the display of custom menus and calendar widgets. Requires WordPress 3.1 or higher.
+This version removes support for third party plugins and improves the performance and appearance of built-in and core widgets.
 
 == Credits ==
 
