@@ -3,7 +3,7 @@
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
 Requires at least: 3.1
-Tested up to: 3.5
+Tested up to: 3.7
 Stable tag: trunk
 
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
@@ -16,7 +16,7 @@ The Half-Baked theme is widget-aware, and you can highlight some of your sidebar
 
 == Installation ==
 
-1. Make sure you're using WordPress version 3.1 or higher.
+1. Make sure you're using the latest version of WordPress.
 2. Put the half-baked theme folder in your WordPress themes directory.
 3. Activate the Half-Baked theme on your WordPress themes administration panel.
 
@@ -33,6 +33,10 @@ Every widget that you add to the Accordion widget list must have a title. If a w
 The rollover icons at the top and bottom of each page will automatically link to pages with "contact" and "about" slugs. If there are no pages with those slugs, the top icon will link to the blog's e-mail address and the bottom icon will link to the WordPress website.
 
 == Changelog ==
+
+= 1.6.4 =
+
+* Fixed accordion script enqueueing conflict
 
 = 1.6.3 =
 
@@ -123,9 +127,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.3 =
+= 1.6.4 =
 
-This version removes support for third party plugins and improves the performance and appearance of built-in and core widgets.
+This version fixes a script enqueueing conflict that kept the built-in accordion widget and the post meta-data toggle from working properly.
 
 == Credits ==
 
