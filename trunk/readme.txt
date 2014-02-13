@@ -34,6 +34,10 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Changelog ==
 
+= 1.6.5 =
+
+* Replaced flexible-width tags with fluid-layout tags
+
 = 1.6.4 =
 
 * Fixed accordion script enqueueing conflict
@@ -127,9 +131,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.4 =
+= 1.6.5 =
 
-This version fixes a script enqueueing conflict that kept the built-in accordion widget and the post meta-data toggle from working properly.
+This version updates the theme tags with the new fluid-layout tag.
 
 == Credits ==
 
