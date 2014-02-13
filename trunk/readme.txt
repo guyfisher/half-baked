@@ -1,7 +1,7 @@
 === Half-Baked ===
 
 Contributors: guyfisher
-Tags: red, two-columns, left-sidebar, flexible-width, sticky-post, threaded-comments
+Tags: red, two-columns, left-sidebar, fluid-layout, sticky-post, threaded-comments
 Requires at least: 3.1
 Tested up to: 3.7
 Stable tag: trunk
