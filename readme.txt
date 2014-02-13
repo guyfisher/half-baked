@@ -3,7 +3,7 @@
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, fluid-layout, sticky-post, threaded-comments
 Requires at least: 3.1
-Tested up to: 3.7
+Tested up to: 3.8
 Stable tag: trunk
 
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
