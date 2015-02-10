@@ -279,7 +279,7 @@ class Half_Baked_Widget_Accordion extends WP_Widget {
 	function __construct() {
 		parent::__construct( 'half-baked-accordion', 'Half-Baked Accordion', array( 'classname' => 'widget_half_baked_accordion', 'description' => 'A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the Main Sidebar to display the accordion and then drag the widgets you want displayed inside the accordion to the Accordion sidebar.' ) );
 	}
-	function widget( $args ) {
+	function widget( $args, $instance ) {
 		extract( $args );
 		echo $before_widget;
 		echo "\t\t<div class=\"accordion_content\">\n";
