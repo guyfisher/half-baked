@@ -299,7 +299,7 @@ class Half_Baked_Widget_Accordion extends WP_Widget {
  */
 class Half_Baked_Widget_Meta extends WP_Widget_Meta {
 	function __construct() {
-		WP_Widget::__construct( 'meta', __( 'Meta' ), array( 'classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme' ) );
+		WP_Widget::__construct( 'meta', 'Meta', array( 'classname' => 'widget_meta', 'description' => 'Meta information and login link for the Half-Baked theme' ) );
 	}
 	function widget( $args, $instance ) {
 		extract( $args );
