@@ -4,8 +4,6 @@
 
 <head profile="http://gmpg.org/xfn/11"><!-- XFN Profile for Blogroll Relationships -->
 
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta name="theme" content="Half-Baked" />
 

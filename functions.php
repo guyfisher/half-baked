@@ -23,6 +23,7 @@ function half_baked_setup_theme() {
 		$content_width = 640; // global content width
 	}
 	add_theme_support( 'automatic-feed-links' ); // automatic rss feed links
+	add_theme_support( 'title-tag' ); // automatic title tags
 }
 add_action( 'after_setup_theme', 'half_baked_setup_theme' );
 
@@ -41,25 +42,6 @@ function half_baked_enqueue_scripts() {
 	wp_enqueue_script( 'half-baked', $template_directory_uri . '/scripts/half-baked.js', array( 'fitvids', 'accordion' ), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'half_baked_enqueue_scripts' );
-
-/**
- * Appends blog name to default page titles.
- *
- * Filters the page title string with the wp_title filter hook.
- *
- * @see wp_title()
- * @since 1.6.3
- *
- * @param string $title Page title string
- * @return string Page title string with blog name appended
- */
-function half_baked_title( $title ) {
-	if ( is_feed() ) {
-		return $title;
-	}
-	return $title . get_bloginfo( 'name' );
-}
-add_filter( 'wp_title', 'half_baked_title' );
 
 function half_baked_contact() {
 
