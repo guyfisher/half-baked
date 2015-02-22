@@ -2,8 +2,8 @@
 
 Contributors: guyfisher
 Tags: red, two-columns, left-sidebar, fluid-layout, sticky-post, threaded-comments
-Requires at least: 3.1
-Tested up to: 3.8
+Requires at least: 4.1
+Tested up to: 4.1
 Stable tag: trunk
 
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
@@ -33,6 +33,13 @@ Every widget that you add to the Accordion widget list must have a title. If a w
 The rollover icons at the top and bottom of each page will automatically link to pages with "contact" and "about" slugs. If there are no pages with those slugs, the top icon will link to the blog's e-mail address and the bottom icon will link to the WordPress website.
 
 == Changelog ==
+
+= 1.6.6 =
+
+* Fixed TypeError in Scriptaculous DOM loaded function
+* Fixed missing instance parameter in accordion widget
+* Fixed text domain problem in meta widget
+* Added support for auto-generated title tags
 
 = 1.6.5 =
 
@@ -131,9 +138,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.5 =
+= 1.6.6 =
 
-This version updates the theme tags with the new fluid-layout tag.
+This version adds support for auto-generated title tags. Requires version 4.1.
 
 == Credits ==
 
