@@ -22,6 +22,7 @@ function half_baked_setup_theme() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 640; // global content width
 	}
+	load_theme_textdomain( 'half-baked', get_template_directory() . '/languages' ); // text domain for translation strings
 	add_theme_support( 'automatic-feed-links' ); // automatic rss feed links
 	add_theme_support( 'title-tag' ); // automatic title tags
 }
