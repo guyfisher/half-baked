@@ -8,18 +8,18 @@ if (have_posts()): while (have_posts()): the_post(); /* WordPress Loop */
 <!-- Single Post Meta Information -->
 
 <div id="postmeta">
-	<div class="dateline">Published on <?php echo(get_the_date()) ?>&nbsp;&nbsp;<?php edit_post_link('<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="Edit this post" />', '', '&nbsp;|&nbsp;');?><a id="postmeta_toggle" href="#postmeta_slider" title="More information about this post"><img class="icon" src="<?php echo(get_template_directory_uri()) ?>/images/twotone/arrow-down.gif" width="16" height="16" alt="" /></a></div>
+	<div class="dateline"><?php printf( __( 'Published on %s', 'half-baked'), get_the_date() ); ?>&nbsp;&nbsp;<?php edit_post_link( '<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="' . esc_attr__( 'Edit this post', 'half-baked' ) . '" />', '', '&nbsp;|&nbsp;' ); ?><a id="postmeta_toggle" href="#postmeta_slider" title="<?php esc_attr_e( 'More information about this post', 'half-baked' ); ?>"><img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/arrow-down.gif" width="16" height="16" alt="" /></a></div>
 	<div id="postmeta_slider">
 		<div class="scriptaculous">
 			<dl>
-				<dt>Author</dt>
-				<dd>Posted by <?php the_author_posts_link() ?> at <?php the_time() ?></dd>
+				<dt><?php _e( 'Author', 'half-baked' ); ?></dt>
+				<dd><?php printf( __( 'Posted by %1$s at %2$s', 'half-baked' ), '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . get_the_author() . '</a>', get_the_time() ); ?></dd>
 				<?php if (get_the_category()) { ?>
-				<dt>Category</dt>
-				<dd>Filed under <?php the_category(', ') ?></dd>
+				<dt><?php _e( 'Category', 'half-baked' ); ?></dt>
+				<dd><?php _e( 'Filed under', 'half-baked' ); ?> <?php the_category(', '); ?></dd>
 				<?php } if (get_the_tags()) { ?>
-				<dt>Keywords</dt>
-				<dd><?php the_tags('Tagged with ') ?></dd>
+				<dt><?php _e( 'Keywords', 'half-baked' ); ?></dt>
+				<dd><?php _e( 'Tagged with', 'half-baked' ); ?> <?php the_tags( '' ); ?></dd>
 				<?php } ?>
 			</dl>
 		</div>

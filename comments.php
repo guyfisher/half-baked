@@ -1,6 +1,6 @@
 <?php
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
-	die ( 'Please don\'t load this page directly. Thanks!' );
+	die( 'Please don\'t load this page directly. Thanks!' );
 }
 if ( post_password_required() ) {
 	return;
