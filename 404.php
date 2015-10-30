@@ -7,13 +7,18 @@
 <div id="main" class="page">
 	<div class="highlight"><!-- Message -->
 		<div class="message error">
-			<h3>Page Not Found</h3>
-			<p>Sorry, the page you&rsquo;re looking for cannot be found on <em><?php bloginfo('name') ?></em>.</p>
+			<h3><?php _e( 'Page Not Found', 'half-baked' ); ?></h3>
+			<p><?php printf( __( 'Sorry, the page you&rsquo;re looking for cannot be found on %s.', 'half-baked' ), '<em>' . get_bloginfo() . '</em>' ); ?></p>
 		</div>
 	</div>
-	<p>If you got here by using a bookmark or by following a link, it&rsquo;s either broken or out of date. If you entered the <acronym title="Uniform Resource Locator">URL</acronym> in your browser&rsquo;s address bar, double check it. It&rsquo;s probably misspelled.</p>
-	<p>You might find what you&rsquo;re looking for by browsing the archives or by using the search box in the sidebar.</p>
-	<p>If that doesn&rsquo;t work, you can start fresh on the <a href="<?php echo(home_url()) ?>/">home page</a>.</p>
+	<p>
+		<?php
+			$half_baked_url_abbr = esc_attr__( 'Uniform Resource Locator', 'half-baked' );
+		 	printf( __( 'If you got here by using a bookmark or by following a link, it&rsquo;s either broken or out of date. If you entered the <acronym title="%s">URL</acronym> in your browser&rsquo;s address bar, double check it. It&rsquo;s probably misspelled.', 'half-baked' ), $half_baked_url_abbr );
+		?>
+	</p>
+	<p><?php _e( 'You might find what you&rsquo;re looking for by browsing the archives or by using the search box in the sidebar.', 'half-baked' ); ?></p>
+	<p><?php printf( __( 'If that doesn&rsquo;t work, you can start fresh on the <a href="%s">home page</a>.', 'half-baked' ), home_url() ); ?></p>
 </div><!-- End of Main Content -->
 
 <?php get_sidebar(); /* WordPress Sidebar Template */ ?>
