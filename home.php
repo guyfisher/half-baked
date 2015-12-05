@@ -1,6 +1,6 @@
 <?php get_header(); /* WordPress Header Template */ ?>
 
-<h2>[&nbsp;<?php _ex( 'Blog', 'noun', 'half-baked' ); ?>&nbsp;]</h2><!-- Document Title -->
+<h2>[&nbsp;<?php _ex( 'Blog', 'Noun', 'half-baked' ); ?>&nbsp;]</h2><!-- Document Title -->
 
 <!-- Main Content -->
 
@@ -25,9 +25,9 @@ if (!is_paged()) { // If home page, display highlighted posts ...
 			</div>
 			<div class="tags"><?php the_tags() ?></div>
 			<div class="bookmarks">
-				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Read the full text of %s', 'half-baked' ), the_title( '', '', false ) ); ?>"><?php _ex( 'Read', 'verb, as in read the full post', 'half-baked' ); ?></a>
-				&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link( _x( 'Comment', 'verb, as in comment on this post', 'half-baked' ), __( '1 Comment', 'half-baked' ), __( '% Comments', 'half-baked' ), '', __( 'Comments Closed', 'half-baked' ) ); ?>
-				<?php edit_post_link( _x( 'Edit', 'verb, as in to edit this post', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Read the full text of %s', 'half-baked' ), the_title( '', '', false ) ); ?>"><?php _ex( 'Read', 'Verb, as in read the full post', 'half-baked' ); ?></a>
+				&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link( _x( 'Comment', 'Verb, as in comment on this post', 'half-baked' ), __( '1 Comment', 'half-baked' ), __( '% Comments', 'half-baked' ), '', __( 'Comments Closed', 'half-baked' ) ); ?>
+				<?php edit_post_link( _x( 'Edit', 'Verb, as in edit this post', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 			</div>
 		</div>
 	</div><!-- End of Highlighted Post -->
@@ -51,9 +51,9 @@ if (have_posts()) : /* WordPress Loop */
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">
-			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Read the full text of %s', 'half-baked' ), the_title( '', '', false ) ); ?>"><?php _ex( 'Read', 'verb, as in read the full post', 'half-baked' ); ?></a>
-			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link( _x( 'Comment', 'verb, as in comment on this post', 'half-baked' ), __( '1 Comment', 'half-baked' ), __( '% Comments', 'half-baked' ), '', __( 'Comments Closed', 'half-baked' ) ); ?>
-			<?php edit_post_link( _x( 'Edit', 'verb, as in to edit this post', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Read the full text of %s', 'half-baked' ), the_title( '', '', false ) ); ?>"><?php _ex( 'Read', 'Verb, as in read the full post', 'half-baked' ); ?></a>
+			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link( _x( 'Comment', 'Verb, as in comment on this post', 'half-baked' ), __( '1 Comment', 'half-baked' ), __( '% Comments', 'half-baked' ), '', __( 'Comments Closed', 'half-baked' ) ); ?>
+			<?php edit_post_link( _x( 'Edit', 'Verb, as in edit this post', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 		</div>
 	</div>
 <?php endwhile; /* Stop Generating Posts */ ?>

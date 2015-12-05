@@ -14,13 +14,13 @@
 			<?php } else if ( is_date() ) { ?>
 				<?php if ( is_day() ) { ?>
 					<h3><?php echo( get_the_date() ); ?></h3>
-					<p><?php printf( _x( 'The following posts on %1$s were published on %2$s.', 'posts published on a specific date', 'half-baked' ), '<em>' . get_bloginfo() . '</em>', '<strong>' . get_the_date() . '</strong>' ); ?></p>
+					<p><?php printf( _x( 'The following posts on %1$s were published on %2$s.', 'Posts published on a specific date', 'half-baked' ), '<em>' . get_bloginfo() . '</em>', '<strong>' . get_the_date() . '</strong>' ); ?></p>
 				<?php } if ( is_month() ) { ?>
 					<h3><?php echo( get_the_date( 'F Y' ) ); ?></h3>
-					<p><?php printf( _x( 'The following posts on %1$s were published in %2$s.', 'posts published during a specific month', 'half-baked' ), '<em>' . get_bloginfo() . '</em>', '<strong>' . get_the_date( 'F Y' ) . '</strong>' ); ?></p>
+					<p><?php printf( _x( 'The following posts on %1$s were published in %2$s.', 'Posts published during a specific month', 'half-baked' ), '<em>' . get_bloginfo() . '</em>', '<strong>' . get_the_date( 'F Y' ) . '</strong>' ); ?></p>
 				<?php } if ( is_year() ) { ?>
 					<h3><?php echo( get_the_date( 'Y' ) ); ?></h3>
-					<p><?php printf( _x( 'The following posts on %1$s were published in %2$s.', 'posts published during a specific year', 'half-baked' ), '<em>' . get_bloginfo() . '</em>', '<strong>' . get_the_date( 'Y' ) . '</strong>' ); ?></p>
+					<p><?php printf( _x( 'The following posts on %1$s were published in %2$s.', 'Posts published during a specific year', 'half-baked' ), '<em>' . get_bloginfo() . '</em>', '<strong>' . get_the_date( 'Y' ) . '</strong>' ); ?></p>
 				<?php } ?>
 			<?php } else if ( is_category() ) { ?>
 				<h3><?php single_cat_title(); ?></h3>
@@ -45,9 +45,9 @@
 		<?php the_excerpt() ?>
 		<div class="tags"><?php the_tags() ?></div>
 		<div class="bookmarks">
-			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Read the full text of %s', 'half-baked' ), the_title( '', '', false ) ); ?>"><?php _ex( 'Read', 'verb, as in read the full post', 'half-baked' ); ?></a>
-			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link( _x( 'Comment', 'verb, as in comment on this post', 'half-baked' ), __( '1 Comment', 'half-baked' ), __( '% Comments', 'half-baked' ), '', __( 'Comments Closed', 'half-baked' ) ); ?>
-			<?php edit_post_link( _x( 'Edit', 'verb, as in to edit this post', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+			<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Read the full text of %s', 'half-baked' ), the_title( '', '', false ) ); ?>"><?php _ex( 'Read', 'Verb, as in read the full post', 'half-baked' ); ?></a>
+			&nbsp;&nbsp;<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;<?php comments_popup_link( _x( 'Comment', 'Verb, as in comment on this post', 'half-baked' ), __( '1 Comment', 'half-baked' ), __( '% Comments', 'half-baked' ), '', __( 'Comments Closed', 'half-baked' ) ); ?>
+			<?php edit_post_link( _x( 'Edit', 'Verb, as in edit this post', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 		</div>
 	</div>
 <?php endwhile; /* Stop Generating Posts */ ?>

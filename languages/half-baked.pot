@@ -1,0 +1,391 @@
+# Half-Baked Portable Object Template
+# Copyright © 2015 Guy M. Fisher
+# Distributed under the GNU General Public License 2.0
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Half-Baked\n"
+"Report-Msgid-Bugs-To: https://github.com/guyfisher/half-baked/issues\n"
+"POT-Creation-Date: Thu Dec 03 2015 14:15:39 GMT-0500 (Eastern Standard Time)\n"
+"POT-Revision-Date: Thu Dec 03 2015 14:34:36 GMT-0500 (Eastern Standard Time)\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: 404.php:10
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php:11
+msgid "Sorry, the page you&rsquo;re looking for cannot be found on %s."
+msgstr ""
+
+#: 404.php:16
+msgid "Uniform Resource Locator"
+msgstr ""
+
+#: 404.php:17
+msgid ""
+"If you got here by using a bookmark or by following a link, it&rsquo;s "
+"either broken or out of date. If you entered the <acronym "
+"title=\"%s\">URL</acronym> in your browser&rsquo;s address bar, double check "
+"it. It&rsquo;s probably misspelled."
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"You might find what you&rsquo;re looking for by browsing the archives or by "
+"using the search box in the sidebar."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"If that doesn&rsquo;t work, you can start fresh on the <a href=\"%s\">home "
+"page</a>."
+msgstr ""
+
+#. Name of the template
+msgid "Archives"
+msgstr ""
+
+#: archives.php:18 page.php:11
+msgid "Updated on %s"
+msgstr ""
+
+#: archives.php:18 page.php:11
+msgid "Edit this page"
+msgstr ""
+
+#: archives.php:24
+msgctxt "Number of posts published on site title since date"
+msgid ""
+"There have been %1$d posts published on %2$s since %3$s. You can browse "
+"through them by date, category or keyword."
+msgstr ""
+
+#: archives.php:25
+msgid "Archives by Date"
+msgstr ""
+
+#: archives.php:29
+msgid "Archives by Category"
+msgstr ""
+
+#: archives.php:33
+msgid "Archives by Keyword"
+msgstr ""
+
+#: functions.php:54
+msgctxt "Verb, as in contact this site"
+msgid "Contact %s"
+msgstr ""
+
+#: functions.php:58
+msgid "Send an e-mail message to %s"
+msgstr ""
+
+#: functions.php:71
+msgid "Powered by %s"
+msgstr ""
+
+#: functions.php:74
+msgid "About %s"
+msgstr ""
+
+#: functions.php:94
+msgid "Subcategories"
+msgstr ""
+
+#: functions.php:98 functions.php:139 functions.php:159
+msgctxt "Conjunction before final item of a list"
+msgid "and"
+msgstr ""
+
+#: functions.php:181
+msgid "Comment by %s"
+msgstr ""
+
+#: functions.php:187
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:191
+msgid "Permanent link to this comment"
+msgstr ""
+
+#: functions.php:191
+msgctxt "Verb, as in bookmark this comment"
+msgid "Bookmark"
+msgstr ""
+
+#: functions.php:193
+msgctxt "Verb, as in edit this comment"
+msgid "Edit"
+msgstr ""
+
+#: functions.php:197
+msgid "Pingback"
+msgstr ""
+
+#: functions.php:266
+msgid "Half-Baked Accordion"
+msgstr ""
+
+#: functions.php:266
+msgid ""
+"A Scriptaculous accordion for the Half-Baked theme. Drag this widget to the "
+"Main Sidebar to display the accordion and then drag the widgets you want "
+"displayed inside the accordion to the Accordion sidebar."
+msgstr ""
+
+#: functions.php:288 sidebar.php:44
+msgid "Meta"
+msgstr ""
+
+#: functions.php:288
+msgid "Meta information and login link for the Half-Baked theme"
+msgstr ""
+
+#: functions.php:312
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:314
+msgid "Widgets displayed in the main sidebar"
+msgstr ""
+
+#: functions.php:321
+msgid "Accordion"
+msgstr ""
+
+#: functions.php:323
+msgid "Widgets displayed inside the Half-Baked Accordion widget"
+msgstr ""
+
+#: header.php:12
+msgid "Skip to Content"
+msgstr ""
+
+#: header.php:13
+msgid "Skip to Sidebar"
+msgstr ""
+
+#: header.php:14
+msgid "Skip to Search Form"
+msgstr ""
+
+#: home.php:3
+msgctxt "Noun"
+msgid "Blog"
+msgstr ""
+
+#: home.php:20 home.php:49 index.php:43
+msgid "Permanent link to %s"
+msgstr ""
+
+#: home.php:22
+msgid "Read More &raquo;"
+msgstr ""
+
+#: home.php:28 home.php:54 index.php:48
+msgid "Read the full text of %s"
+msgstr ""
+
+#: home.php:28 home.php:54 index.php:48
+msgctxt "Verb, as in read the full post"
+msgid "Read"
+msgstr ""
+
+#: home.php:29 home.php:55 index.php:49
+msgctxt "Verb, as in comment on this post"
+msgid "Comment"
+msgstr ""
+
+#: home.php:29 home.php:55 index.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: home.php:29 home.php:55 index.php:49
+msgid "% Comments"
+msgstr ""
+
+#: home.php:29 home.php:55 index.php:49
+msgid "Comments Closed"
+msgstr ""
+
+#: home.php:30 home.php:56 index.php:50
+msgctxt "Verb, as in edit this post"
+msgid "Edit"
+msgstr ""
+
+#: home.php:45
+msgid "More Posts"
+msgstr ""
+
+#: home.php:61 index.php:55
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: home.php:62
+msgid "Even More Posts &raquo;"
+msgstr ""
+
+#: index.php:3
+msgid "Search Results"
+msgstr ""
+
+#: index.php:13
+msgid "The following posts published on %1$s match your search for %2$s."
+msgstr ""
+
+#: index.php:17
+msgctxt "Posts published on a specific date"
+msgid "The following posts on %1$s were published on %2$s."
+msgstr ""
+
+#: index.php:20
+msgctxt "Posts published during a specific month"
+msgid "The following posts on %1$s were published in %2$s."
+msgstr ""
+
+#: index.php:23
+msgctxt "Posts published during a specific year"
+msgid "The following posts on %1$s were published in %2$s."
+msgstr ""
+
+#: index.php:27
+msgid "The following posts on %1$s were published in the %2$s category."
+msgstr ""
+
+#: index.php:31
+msgid "The following posts on %1$s were tagged with the keyword %2$s."
+msgstr ""
+
+#: index.php:36
+msgid "The following posts published on %1$s were written by %2$s."
+msgstr ""
+
+#: index.php:56
+msgid "More Posts &raquo;"
+msgstr ""
+
+#: index.php:61
+msgid "No Matches"
+msgstr ""
+
+#: index.php:62
+msgid "Sorry, none of the posts published on %1$s match your search for %2$s."
+msgstr ""
+
+#: meta.php:1
+msgctxt "Powered by WordPress and Half-Baked"
+msgid "%1$s is powered by %2$s and %3$s"
+msgstr ""
+
+#: sidebar.php:5
+msgid "Sidebar"
+msgstr ""
+
+#: sidebar.php:8
+msgid "Pages"
+msgstr ""
+
+#: sidebar.php:12
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:16
+msgid "Feeds"
+msgstr ""
+
+#: sidebar.php:18
+msgid "RSS feed for all posts"
+msgstr ""
+
+#: sidebar.php:18
+msgid "Posts"
+msgstr ""
+
+#: sidebar.php:19
+msgid "RSS feed for all comments"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Comments"
+msgstr ""
+
+#: sidebar.php:20
+msgid "Atom feed for all posts"
+msgstr ""
+
+#: sidebar.php:20
+msgid "Atom"
+msgstr ""
+
+#: sidebar.php:28
+msgid "Recent Posts"
+msgstr ""
+
+#: sidebar.php:37
+msgid "Categories"
+msgstr ""
+
+#: single.php:11
+msgid "Published on %s"
+msgstr ""
+
+#: single.php:11
+msgid "Edit this post"
+msgstr ""
+
+#: single.php:11
+msgid "More information about this post"
+msgstr ""
+
+#: single.php:15
+msgid "Author"
+msgstr ""
+
+#: single.php:16
+msgid "Posted by %1$s at %2$s"
+msgstr ""
+
+#: single.php:18
+msgid "Category"
+msgstr ""
+
+#: single.php:19
+msgid "Filed under"
+msgstr ""
+
+#: single.php:21
+msgid "Keywords"
+msgstr ""
+
+#: single.php:22
+msgid "Tagged with"
+msgstr ""
+
+#. Name of the theme
+msgid "Half-Baked"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://half-baked.googlecode.com/"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"A bold red, two-column theme that splits the index pages of your WordPress "
+"blog right down the middle."
+msgstr ""
+
+#. Author of the theme
+msgid "Guy Fisher"
+msgstr ""

@@ -51,7 +51,7 @@ function half_baked_contact() {
 	global $wpdb;
 
 	$contact_id = $wpdb->get_var("SELECT ID from $wpdb->posts WHERE post_name = 'contact' AND post_type = 'page' AND post_status = 'publish'");
-	$contact_text = sprintf( __( 'Contact %s', 'half-baked' ), get_bloginfo() );
+	$contact_text = sprintf( _x( 'Contact %s', 'Verb, as in contact this site', 'half-baked' ), get_bloginfo() );
 
 	if (is_null($contact_id)) {
 		$contact_email = antispambot('mailto:' . get_option('admin_email'));
@@ -95,7 +95,7 @@ function half_baked_subcategories() {
 	foreach ( $subcategories as $key => $value ) {
 		if ( $key > 0 ) {
 			if ( $key == count( $subcategories ) - 1 ) {
-				echo ' ' . __( 'and', 'half-baked' ) . ' ';
+				echo ' ' . _x( 'and', 'Conjunction before final item of a list', 'half-baked' ) . ' ';
 			}
 			else echo ', ';
 		}
@@ -136,7 +136,7 @@ function half_baked_category( $thelist ) {
 	if ( $last_comma === false ) {
 		return $thelist;
 	}
-	else return substr_replace( $thelist, ' ' . __( 'and', 'half-baked' ) . ' ', $last_comma, 2 );
+	else return substr_replace( $thelist, ' ' . _x( 'and', 'Conjunction before final item of a list', 'half-baked' ) . ' ', $last_comma, 2 );
 }
 add_filter( 'the_category', 'half_baked_category' );
 
@@ -156,7 +156,7 @@ function half_baked_tags( $term_list ) {
 	if ( ! is_single() || $last_comma === false ) {
 		return $term_list;
 	}
-	else return substr_replace( $term_list, ' ' . __( 'and', 'half-baked' ) . ' ', $last_comma, 2 );
+	else return substr_replace( $term_list, ' ' . _x( 'and', 'Conjunction before final item of a list', 'half-baked' ) . ' ', $last_comma, 2 );
 }
 add_filter( 'the_tags', 'half_baked_tags' );
 
@@ -188,9 +188,9 @@ function half_baked_start_el( $comment, $args, $depth ) {
 			<?php } ?>
 			<?php comment_text(); ?>
 			<div class="bookmarks">
-				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="<?php esc_attr_e( 'Permanent link to this comment', 'half-baked' ); ?>"><?php _ex( 'Bookmark', 'verb, as in bookmark this comment', 'half-baked' ); ?></a>
+				<img class="icon" src="<?php echo( get_template_directory_uri() ); ?>/images/twotone/bookmark.gif" width="16" height="16" alt="" />&nbsp;<a href="#comment-<?php comment_ID(); ?>" title="<?php esc_attr_e( 'Permanent link to this comment', 'half-baked' ); ?>"><?php _ex( 'Bookmark', 'Verb, as in bookmark this comment', 'half-baked' ); ?></a>
 				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/quote.gif" width="16" height="16" alt="" />&nbsp;' ) ) ); ?>
-				<?php edit_comment_link( _x( 'Edit', 'verb, as in edit this comment', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
+				<?php edit_comment_link( _x( 'Edit', 'Verb, as in edit this comment', 'half-baked' ), '&nbsp;&nbsp;<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="" />&nbsp;' ); ?>
 			</div>
 		</div>
 	<?php else : ?>

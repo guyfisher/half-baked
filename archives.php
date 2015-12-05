@@ -21,7 +21,7 @@ get_header(); /* WordPress Header Template */
 <!-- Main Content -->
 
 <div id="main" class="page">
-	<p><?php printf( __( 'There have been %1$d posts published on %2$s since %3$s. You can browse through them by date, category or keyword.', 'half-baked' ), $half_baked_published->count_posts, '<em>' . get_bloginfo() . '</em>', date_i18n( get_option( 'date_format' ), strtotime( $half_baked_published->min_post_date ) ) ); ?></p>
+	<p><?php printf( _x( 'There have been %1$d posts published on %2$s since %3$s. You can browse through them by date, category or keyword.', 'Number of posts published on site title since date', 'half-baked' ), $half_baked_published->count_posts, '<em>' . get_bloginfo() . '</em>', date_i18n( get_option( 'date_format' ), strtotime( $half_baked_published->min_post_date ) ) ); ?></p>
 	<h3><?php _e( 'Archives by Date', 'half-baked' ); ?></h3>
 	<ul class="get_archives">
 		<?php wp_get_archives(); ?>
