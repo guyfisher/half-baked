@@ -1,9 +1,9 @@
 === Half-Baked ===
 
 Contributors: guyfisher
-Tags: red, two-columns, left-sidebar, fluid-layout, sticky-post, threaded-comments
+Tags: red, dark, two-columns, left-sidebar, fluid-layout, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.1
-Tested up to: 4.1
+Tested up to: 4.4
 Stable tag: trunk
 
 A bold red, two-column theme that splits the index pages of your WordPress blog right down the middle.
@@ -12,7 +12,7 @@ A bold red, two-column theme that splits the index pages of your WordPress blog 
 
 The Half-Baked theme is a bold red, two-column theme that splits the index pages of your WordPress blog right down the middle. It has a fluid layout that's accented with rounded corners and Paul Jarvis's twotone icons.
 
-The Half-Baked theme is widget-aware, and you can highlight some of your sidebar content inside of Bruce Williams' Scriptaculous Accordion. There's also a Scriptaculous toggle for your post meta-data and a pair of rollover icons that link to your Contact and About pages.
+The Half-Baked theme is widget-aware, and you can highlight some of your sidebar content inside of Bruce Williams's Scriptaculous Accordion. There's also a Scriptaculous toggle for your post meta-data and a pair of rollover icons that link to your Contact and About pages.
 
 == Installation ==
 
@@ -33,6 +33,10 @@ Every widget that you add to the Accordion widget list must have a title. If a w
 The rollover icons at the top and bottom of each page will automatically link to pages with "contact" and "about" slugs. If there are no pages with those slugs, the top icon will link to the blog's e-mail address and the bottom icon will link to the WordPress website.
 
 == Changelog ==
+
+= 1.7 =
+
+* Added support for localization
 
 = 1.6.6 =
 
@@ -138,9 +142,9 @@ The rollover icons at the top and bottom of each page will automatically link to
 
 == Upgrade Notice ==
 
-= 1.6.6 =
+= 1.7 =
 
-This version adds support for auto-generated title tags. Requires version 4.1.
+This version adds support for language translations.
 
 == Credits ==
 
