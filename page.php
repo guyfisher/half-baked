@@ -8,7 +8,7 @@ if (have_posts()): while (have_posts()): the_post(); /* WordPress Loop */
 <!-- Single Page Meta Information -->
 
 <div id="postmeta">
-	<div class="dateline">Updated on <?php the_modified_date(); edit_post_link('<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="Edit this page" />', '&nbsp;&nbsp;'); ?></div>
+	<div class="dateline"><?php printf( __( 'Updated on %s', 'half-baked'), get_the_modified_date() ); ?>&nbsp;&nbsp;<?php edit_post_link( '<img class="icon" src="' . get_template_directory_uri() . '/images/twotone/edit.gif" width="16" height="16" alt="' . esc_attr__( 'Edit this page', 'half-baked' ) . '" />' ); ?></div>
 </div>
 
 <!-- Main Content -->

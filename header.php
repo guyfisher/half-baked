@@ -9,9 +9,9 @@
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo( get_stylesheet_uri() ); ?>" />
 
-	<link rel="bookmark" href="#content" title="Skip to Content" />
-	<link rel="bookmark" href="#sidebar" title="Skip to Sidebar" />
-	<link rel="bookmark" href="#search" title="Skip to Search Form" />
+	<link rel="bookmark" href="#content" title="<?php _e( 'Skip to Content', 'half-baked' ); ?>" />
+	<link rel="bookmark" href="#sidebar" title="<?php _e( 'Skip to Sidebar', 'half-baked' ); ?>" />
+	<link rel="bookmark" href="#search" title="<?php _e( 'Skip to Search Form', 'half-baked' ); ?>" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 
